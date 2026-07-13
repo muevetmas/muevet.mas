@@ -170,7 +170,7 @@ a{ color:inherit }
 .hero-label{ margin-bottom:22px }
 .hero-title{
   font-family:var(--display); font-weight:900; font-stretch:118%;
-  font-size:clamp(40px, 13.5vw, 164px);
+  font-size:clamp(44px, 15vw, 190px);
   line-height:.92; letter-spacing:-.01em; text-transform:uppercase;
 }
 .hero-measure{
@@ -479,8 +479,8 @@ a{ color:inherit }
   *{ transition-duration:.01ms !important; animation-duration:.01ms !important }
 }
 
-/* ── NAV compacta ≤420px ── */
-@media(max-width:420px){
+/* ── NAV compacta ≤600px (4 enlaces + CTA) ── */
+@media(max-width:600px){
   .nav{ gap:10px; padding:12px 14px }
   .nav-links{ gap:0 }
   .nav-links a{ font-size:11.5px; padding:8px 6px; letter-spacing:.04em }
