@@ -3,6 +3,12 @@
    ════════════════════════════════════════════════════════ */
 (() => {
   'use strict';
+
+  /* ── Recargar abre siempre arriba: sin restauración de scroll ni salto a ancla ── */
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  window.scrollTo(0, 0);
+
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ── Coreografía de entrada del hero ── */
@@ -17,7 +23,7 @@
       }
     }
   }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.reveal, .mvt-plus').forEach(el => io.observe(el));
+  document.querySelectorAll('.reveal, .mvt-plus, .topo').forEach(el => io.observe(el));
 
   /* ── Nav: fondo al scrollear + ocultar al bajar, mostrar al subir ── */
   const nav = document.getElementById('nav');
@@ -109,6 +115,94 @@
       { threshold: 0.15 }).observe(hero);
     new IntersectionObserver(([e]) => { endVisible = e.isIntersecting; update(); },
       { threshold: 0.05 }).observe(closing);
+  }
+
+  /* ── Deriva sutil de las imágenes de capítulo (±14px, solo ≥768px) ── */
+  const driftEls = [...document.querySelectorAll('[data-drift]')];
+  if (driftEls.length && !reduced && window.matchMedia('(min-width:768px)').matches) {
+    let dTick = false;
+    const drift = () => {
+      const vh = window.innerHeight;
+      for (const el of driftEls) {
+        const r = el.getBoundingClientRect();
+        if (r.bottom < -40 || r.top > vh + 40) continue;
+        let p = (r.top + r.height / 2 - vh / 2) / (vh / 2);
+        p = Math.max(-1, Math.min(1, p));
+        el.style.transform = `translateY(${(-p * 14).toFixed(1)}px)`;
+      }
+      dTick = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!dTick) { dTick = true; requestAnimationFrame(drift); }
+    }, { passive: true });
+    drift();
+  }
+
+  /* ── Tira RUN+++: flechas de teclado + deriva automática en desktop ── */
+  const strip = document.getElementById('runStrip');
+  if (strip) {
+    const step = () => {
+      const it = strip.querySelector('.strip-item');
+      return it ? it.getBoundingClientRect().width + 20 : 320;
+    };
+    strip.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        strip.scrollBy({ left: (e.key === 'ArrowRight' ? 1 : -1) * step(), behavior: reduced ? 'auto' : 'smooth' });
+      }
+    });
+    if (!reduced && window.matchMedia('(min-width:1080px)').matches) {
+      let paused = false, wasPaused = false, inView = false, dir = 1, last = 0;
+      let pos = 0;
+      ['pointerenter', 'focusin', 'touchstart'].forEach(ev =>
+        strip.addEventListener(ev, () => { paused = true; strip.classList.remove('is-drifting'); }, { passive: true }));
+      ['pointerleave', 'focusout'].forEach(ev =>
+        strip.addEventListener(ev, () => { paused = false; }));
+      new IntersectionObserver(([e]) => { inView = e.isIntersecting; }, { threshold: .2 }).observe(strip);
+      const flow = (t) => {
+        if (!last) last = t;
+        const dt = Math.min(t - last, 50); last = t;
+        if (inView && !paused) {
+          if (wasPaused) pos = strip.scrollLeft;      // resincronizar tras interacción
+          strip.classList.add('is-drifting');
+          const max = strip.scrollWidth - strip.clientWidth;
+          if (pos >= max - 1) dir = -1;
+          else if (pos <= 1) dir = 1;
+          pos = Math.max(0, Math.min(max, pos + dir * 20 * dt / 1000));
+          strip.scrollLeft = pos;
+        }
+        wasPaused = paused || !inView;
+        requestAnimationFrame(flow);
+      };
+      requestAnimationFrame(flow);
+    }
+  }
+
+  /* ── Pila rotatoria de antropometría: cortina desde abajo, pausada fuera de viewport ── */
+  const stackEl = document.getElementById('isakStack');
+  if (stackEl) {
+    const slides = [...stackEl.querySelectorAll('.stack-slide')];
+    const dots = [...stackEl.querySelectorAll('.stack-dots i')];
+    const cota = document.getElementById('stackCota');
+    if (slides.length > 1 && !reduced) {
+      let i = 0, timer = null;
+      const rotate = () => {
+        const prev = slides[i];
+        i = (i + 1) % slides.length;
+        const next = slides[i];
+        prev.classList.add('is-under');
+        prev.classList.remove('is-active');
+        void next.offsetHeight;                       // reflow: la nueva parte de translateY(100%)
+        next.classList.add('is-active');
+        dots.forEach((d, k) => d.classList.toggle('is-on', k === i));
+        if (cota) cota.textContent = next.dataset.cota;
+        setTimeout(() => prev.classList.remove('is-under'), 850);
+      };
+      new IntersectionObserver(([e]) => {
+        if (e.isIntersecting && !timer) timer = setInterval(rotate, 4500);
+        else if (!e.isIntersecting && timer) { clearInterval(timer); timer = null; }
+      }, { threshold: .3 }).observe(stackEl);
+    }
   }
 
   /* ── Vídeo RUN+++: reproducir solo cuando es visible, respetando reduced-motion ── */

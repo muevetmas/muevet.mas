@@ -65,30 +65,52 @@
     <path class="draw" d="M20 4 V36 M4 20 H36" fill="none"/>
   </svg>
 
-  <p class="label hero-label"><span class="line"><span class="line-in">MUÉVETE MÁS&nbsp;·&nbsp;VIVE MEJOR&nbsp;·&nbsp;CANTABRIA</span></span></p>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="label hero-label"><span class="line"><span class="line-in">MUÉVETE MÁS&nbsp;·&nbsp;VIVE MEJOR&nbsp;·&nbsp;CANTABRIA</span></span></p>
 
-  <h1 class="hero-title">
-    <span class="line"><span class="line-in">MUEVET<span class="plus">+</span></span></span>
-  </h1>
+      <h1 class="hero-title">
+        <span class="line"><span class="line-in">MUEVET<span class="plus">+</span></span></span>
+      </h1>
 
-  <div class="hero-measure" aria-hidden="true">
-    <span class="tick-l"></span><span class="mono">43°27′N&nbsp;·&nbsp;3°48′O</span><span class="tick-r"></span>
+      <div class="hero-measure" aria-hidden="true">
+        <span class="tick-l"></span><span class="mono">43°27′N&nbsp;·&nbsp;3°48′O</span><span class="tick-r"></span>
+      </div>
+
+      <p class="hero-sub"><span class="line"><span class="line-in">Movimiento, ciencia y comunidad. Un ecosistema para entrenar</span></span>
+      <span class="line"><span class="line-in">con criterio, correr acompañado y progresar de verdad.</span></span></p>
+
+      <div class="hero-actions">
+        <a class="btn-pill" href="https://ig.me/m/muevet.mas" target="_blank" rel="noopener">Escríbeme por DM <span class="arr">→</span></a>
+      </div>
+
+      <nav class="hero-index" aria-label="Índice del ecosistema">
+        <a href="#entrena"><span class="mono">01</span> Entrena</a>
+        <span class="plus-sep" aria-hidden="true">+</span>
+        <a href="#corre"><span class="mono">02</span> Corre</a>
+        <span class="plus-sep" aria-hidden="true">+</span>
+        <a href="#mvt"><span class="mono">03</span> MVT+</a>
+      </nav>
+    </div>
+
+    <!-- ▓▓ VÍDEO RUN+++ — EDITABLE ▓▓
+         Para cambiarlo: sustituye assets/img/run-clip.mp4 y run-poster.jpg
+         (vertical 9:16, MP4 H.264 sin audio, ideal < 3 MB). -->
+    <figure class="hero-media">
+      <div class="photo-mask">
+        <video id="runClip" poster="assets/img/run-poster.jpg" width="720" height="1280"
+               muted loop playsinline preload="none"
+               aria-label="Vídeo de RUN+++, el club de running de MUEVET+.">
+          <source src="assets/img/run-clip.webm" type="video/webm">
+          <source src="assets/img/run-clip.mp4" type="video/mp4">
+        </video>
+      </div>
+      <figcaption class="photo-note">
+        <span class="note-line" aria-hidden="true"></span>
+        <span class="mono">MUEVET+&nbsp;·&nbsp;CANTABRIA</span>
+      </figcaption>
+    </figure>
   </div>
-
-  <p class="hero-sub"><span class="line"><span class="line-in">Movimiento, ciencia y comunidad. Un ecosistema para entrenar</span></span>
-  <span class="line"><span class="line-in">con criterio, correr acompañado y progresar de verdad.</span></span></p>
-
-  <div class="hero-actions">
-    <a class="btn-pill" href="https://ig.me/m/muevet.mas" target="_blank" rel="noopener">Escríbeme por DM <span class="arr">→</span></a>
-  </div>
-
-  <nav class="hero-index" aria-label="Índice del ecosistema">
-    <a href="#entrena"><span class="mono">01</span> Entrena</a>
-    <span class="plus-sep" aria-hidden="true">+</span>
-    <a href="#corre"><span class="mono">02</span> Corre</a>
-    <span class="plus-sep" aria-hidden="true">+</span>
-    <a href="#mvt"><span class="mono">03</span> MVT+</a>
-  </nav>
 </section>
 
 <!-- ══════════ ACTO 2 · PRINCIPIOS ══════════ -->
@@ -110,40 +132,97 @@
 
 <!-- ══════════ ACTO 3 · 01 ENTRENA ══════════ -->
 <section class="chapter" id="entrena" aria-labelledby="h-entrena">
+  <svg class="topo" viewBox="0 0 600 600" aria-hidden="true">
+    <defs>
+      <g id="topo-rings">
+        <path d="M355 300C354 303 354 306 354 310C354 314 358 319 356 322C355 325 346 325 343 327C340 330 340 334 338 336C335 339 332 342 328 343C325 343 319 341 316 342C312 343 309 348 306 349C302 350 298 348 294 348C290 348 285 351 282 349C279 347 278 340 275 337C273 335 268 335 265 334C263 332 262 328 259 326C255 324 246 324 244 322C242 319 244 314 245 310C246 307 251 304 250 300C249 296 241 292 239 289C238 285 240 281 242 277C244 274 250 273 253 270C256 268 259 265 262 263C265 261 269 259 273 259C276 258 281 261 285 260C289 258 291 250 294 250C297 249 302 255 305 257C309 258 312 257 316 258C319 259 323 260 326 261C329 263 330 266 333 268C337 269 344 268 346 271C349 273 347 278 349 281C351 284 358 286 359 289C360 292 356 297 355 300Z"/>
+        <path d="M393 298C392 304 391 309 391 315C391 321 395 329 392 333C389 338 377 339 372 343C367 346 365 351 360 355C356 359 352 364 347 366C342 369 335 368 329 370C323 372 317 375 311 377C305 378 299 377 292 378C286 378 277 381 272 379C267 376 265 365 261 361C256 357 249 357 245 354C240 351 238 346 233 342C227 339 216 338 213 333C209 329 211 321 212 315C213 309 220 304 219 299C218 293 206 286 205 280C203 274 205 267 209 262C212 257 219 253 225 250C230 246 236 243 241 240C247 237 252 233 258 232C264 231 272 235 278 233C283 231 287 221 293 220C298 219 305 223 311 225C317 227 322 229 327 230C333 232 340 231 345 234C349 237 349 245 354 248C360 251 371 249 376 252C381 255 382 261 386 266C389 271 396 275 397 281C399 286 394 293 393 298Z"/>
+        <path d="M432 297C431 305 426 311 426 320C426 328 434 339 430 346C427 353 412 356 406 361C399 367 395 373 389 379C382 384 375 390 367 393C360 396 350 394 341 397C333 400 326 408 318 410C309 412 300 408 291 408C281 408 269 413 262 408C256 404 256 385 249 380C242 375 229 380 222 376C215 372 217 362 210 357C202 352 183 352 177 346C171 340 171 329 173 321C176 313 193 305 193 297C192 289 173 281 171 272C168 264 172 254 177 248C183 241 197 239 204 234C211 228 211 218 219 214C226 211 239 213 248 212C256 211 263 210 270 207C278 204 284 194 291 192C299 190 308 194 316 195C324 197 331 201 339 203C347 206 355 206 362 210C369 213 371 221 379 224C387 228 402 226 408 231C414 236 408 248 413 255C417 262 431 266 434 273C438 280 434 289 432 297Z"/>
+        <path d="M467 296C466 306 471 316 472 326C472 337 476 350 471 359C466 368 450 374 440 381C431 387 421 392 412 398C404 405 398 415 388 419C378 422 363 416 352 419C342 423 334 437 324 441C313 445 299 446 288 445C276 444 264 440 255 433C246 426 242 411 234 404C226 398 212 399 204 394C197 388 198 376 189 370C180 363 157 364 149 356C141 349 138 336 140 326C142 316 162 306 162 296C162 285 142 275 139 265C137 254 140 242 145 233C151 224 164 219 172 211C181 203 185 193 194 188C204 182 216 179 227 177C238 174 250 176 260 172C270 168 279 155 289 154C299 153 311 164 322 166C332 168 344 165 354 168C363 171 371 180 380 185C389 189 398 192 408 197C418 201 431 204 439 211C448 218 451 228 457 237C464 246 478 254 480 263C481 273 468 285 467 296Z"/>
+        <path d="M557 292C555 307 545 321 542 335C540 350 545 368 540 382C535 396 524 409 512 420C501 432 486 441 473 450C459 458 445 467 429 472C414 477 396 477 380 481C365 484 350 489 334 493C318 498 302 505 284 508C266 511 242 520 228 513C213 506 208 477 195 466C182 455 162 456 152 446C142 435 147 414 135 403C122 393 88 394 78 382C67 371 70 352 71 337C72 322 88 308 84 293C81 277 53 260 50 244C46 228 53 210 63 197C73 184 97 177 111 167C126 157 135 145 148 136C162 128 179 123 194 118C209 112 224 110 239 103C254 96 268 76 284 75C300 74 317 92 334 96C350 100 367 96 382 99C398 102 416 106 427 116C439 125 440 146 453 155C466 164 492 160 505 169C517 179 517 196 526 209C534 222 548 234 553 248C558 261 559 278 557 292Z"/>
+        <path d="M580 291C575 309 585 324 587 342C588 360 594 382 587 397C580 413 556 423 543 437C530 451 524 470 509 482C495 493 474 501 455 507C437 513 416 513 397 520C379 526 362 542 343 547C323 553 301 554 280 552C260 550 236 548 221 536C205 524 200 494 186 482C171 469 148 473 135 462C122 452 123 431 108 420C93 409 59 407 44 395C30 382 21 362 21 345C21 327 48 310 45 291C41 272 3 252 0 233C-2 215 18 197 30 182C42 166 59 154 73 140C87 126 94 105 113 99C132 92 166 104 185 100C205 97 216 87 232 76C248 65 263 38 281 36C299 33 321 56 340 61C359 66 378 61 396 66C414 71 432 78 446 89C460 100 462 121 478 130C495 140 531 133 545 144C559 154 552 178 564 194C575 209 612 219 615 235C618 251 585 273 580 291Z"/>
+      </g>
+      <path id="topo-lime" d="M505 294C504 306 506 318 505 330C504 343 506 357 501 369C495 380 482 389 471 397C461 406 448 412 437 419C426 426 418 438 406 442C394 447 378 442 365 445C352 449 341 459 328 463C315 467 301 470 287 470C273 470 256 471 245 463C234 456 231 434 220 426C210 418 192 422 183 415C174 408 176 392 165 385C153 377 124 378 115 369C107 360 112 343 112 330C113 318 122 307 119 294C115 281 91 266 91 254C90 241 104 229 113 219C122 208 134 200 144 190C154 181 160 169 172 163C184 157 202 157 216 155C229 153 242 156 254 149C266 143 274 117 286 114C299 110 315 124 328 128C341 132 354 135 366 139C379 142 393 144 403 151C413 158 415 174 425 181C435 189 453 188 464 196C474 203 478 215 487 225C495 235 511 244 514 256C517 267 506 282 505 294Z"/>
+    </defs>
+    <use href="#topo-rings"/>
+    <use class="t-lime" href="#topo-lime"/>
+  </svg>
   <header class="chapter-head reveal">
     <span class="mono chapter-num">01</span>
     <h2 id="h-entrena" class="chapter-title">Ciencia aplicada<br>a tu cuerpo.</h2>
   </header>
 
   <div class="entrena-grid">
-    <figure class="photo reveal">
-      <div class="photo-mask">
-        <picture>
-          <source type="image/avif" srcset="assets/img/isak-01-480.avif 480w, assets/img/isak-01-768.avif 768w, assets/img/isak-01-1200.avif 1200w" sizes="(min-width:1080px) 42vw, 100vw">
-          <source type="image/webp" srcset="assets/img/isak-01-480.webp 480w, assets/img/isak-01-768.webp 768w, assets/img/isak-01-1200.webp 1200w" sizes="(min-width:1080px) 42vw, 100vw">
-          <img src="assets/img/isak-01-768.jpg" srcset="assets/img/isak-01-480.jpg 480w, assets/img/isak-01-768.jpg 768w, assets/img/isak-01-1200.jpg 1200w" sizes="(min-width:1080px) 42vw, 100vw"
-               width="4080" height="5100" loading="lazy" decoding="async"
-               alt="Evaluación antropométrica real: medición del perímetro de brazo con cinta métrica siguiendo el protocolo ISAK.">
-        </picture>
+    <figure class="photo reveal" id="isakStack">
+      <div class="photo-mask" data-drift>
+        <div class="stack-frame">
+          <div class="stack-slide is-active" data-cota="PERÍMETRO DE BRAZO · PROTOCOLO ISAK">
+            <picture>
+              <source type="image/avif" srcset="assets/img/isak-01-480.avif 480w, assets/img/isak-01-768.avif 768w, assets/img/isak-01-1200.avif 1200w" sizes="(min-width:1080px) 42vw, 100vw">
+              <source type="image/webp" srcset="assets/img/isak-01-480.webp 480w, assets/img/isak-01-768.webp 768w, assets/img/isak-01-1200.webp 1200w" sizes="(min-width:1080px) 42vw, 100vw">
+              <img src="assets/img/isak-01-768.jpg" srcset="assets/img/isak-01-480.jpg 480w, assets/img/isak-01-768.jpg 768w, assets/img/isak-01-1200.jpg 1200w" sizes="(min-width:1080px) 42vw, 100vw"
+                   width="4080" height="5100" loading="lazy" decoding="async"
+                   alt="Evaluación antropométrica real: medición del perímetro de brazo con cinta métrica siguiendo el protocolo ISAK.">
+            </picture>
+          </div>
+          <div class="stack-slide" data-cota="SALA DE FUERZA">
+            <picture>
+              <source type="image/avif" srcset="assets/img/nuevas/foto-12-480.avif 480w, assets/img/nuevas/foto-12-768.avif 736w" sizes="(min-width:1080px) 42vw, 100vw">
+              <source type="image/webp" srcset="assets/img/nuevas/foto-12-480.webp 480w, assets/img/nuevas/foto-12-768.webp 736w" sizes="(min-width:1080px) 42vw, 100vw">
+              <img src="assets/img/nuevas/foto-12-768.jpg" srcset="assets/img/nuevas/foto-12-480.jpg 480w, assets/img/nuevas/foto-12-768.jpg 736w" sizes="(min-width:1080px) 42vw, 100vw"
+                   width="736" height="1307" loading="lazy" decoding="async"
+                   alt="Sala de fuerza con rack y suelo de césped artificial marcado.">
+            </picture>
+          </div>
+          <div class="stack-slide" data-cota="ANTES DE LA SESIÓN">
+            <picture>
+              <source type="image/avif" srcset="assets/img/nuevas/foto-07-480.avif 480w, assets/img/nuevas/foto-07-768.avif 736w" sizes="(min-width:1080px) 42vw, 100vw">
+              <source type="image/webp" srcset="assets/img/nuevas/foto-07-480.webp 480w, assets/img/nuevas/foto-07-768.webp 736w" sizes="(min-width:1080px) 42vw, 100vw">
+              <img src="assets/img/nuevas/foto-07-768.jpg" srcset="assets/img/nuevas/foto-07-480.jpg 480w, assets/img/nuevas/foto-07-768.jpg 736w" sizes="(min-width:1080px) 42vw, 100vw"
+                   width="736" height="982" loading="lazy" decoding="async"
+                   alt="Mancuernas, auriculares y botella sobre el suelo del gimnasio antes de entrenar.">
+            </picture>
+          </div>
+        </div>
       </div>
       <figcaption class="photo-note">
         <span class="note-line" aria-hidden="true"></span>
-        <span class="mono">PERÍMETRO DE BRAZO&nbsp;·&nbsp;PROTOCOLO ISAK</span>
+        <span class="mono" id="stackCota">PERÍMETRO DE BRAZO&nbsp;·&nbsp;PROTOCOLO ISAK</span>
+        <span class="stack-dots" aria-hidden="true"><i class="is-on"></i><i></i><i></i></span>
       </figcaption>
     </figure>
 
     <div class="entrena-body">
-      <article class="service reveal">
-        <h3><span class="plus" aria-hidden="true">+</span> Antropometría ISAK</h3>
-        <p>Una evaluación completa de tu composición corporal con el protocolo internacional ISAK. No es solo medir: es conocer tu punto de partida con datos objetivos, para decidir mejor tu entrenamiento y tu nutrición.</p>
-      </article>
-      <article class="service reveal">
-        <h3><span class="plus" aria-hidden="true">+</span> Entrenamiento personalizado</h3>
-        <p>Nada de rutinas genéricas. Una planificación adaptada a ti, a tu contexto y a tus objetivos, con seguimiento real y ajustes según tu evolución.</p>
-      </article>
-      <p class="mono cred reveal">ANTROPOMETRISTA ISAK NIVEL 1&nbsp;·&nbsp;CAFYD</p>
-      <a class="link-arrow reveal" href="https://ig.me/m/muevet.mas" target="_blank" rel="noopener">Escríbeme y lo vemos <span class="arr">→</span></a>
+      <h3 class="isak-title reveal"><span class="plus" aria-hidden="true">+</span> ¿Qué mide una evaluación ISAK?</h3>
+      <div class="isak-list">
+        <article class="isak-item reveal">
+          <h4 class="mono isak-num"><span class="plus" aria-hidden="true">+</span> 01&nbsp;·&nbsp;PLIEGUES CUTÁNEOS (×8)</h4>
+          <p>Tríceps, subescapular, bíceps, cresta ilíaca, supraespinal, abdominal, muslo y pierna. Estiman tu grasa subcutánea y, sobre todo, cómo se distribuye. Es el dato que mejor refleja tus cambios reales cuando entrenas y comes bien.</p>
+        </article>
+        <article class="isak-item reveal">
+          <h4 class="mono isak-num"><span class="plus" aria-hidden="true">+</span> 02&nbsp;·&nbsp;PERÍMETROS (×5)</h4>
+          <p>Brazo relajado y contraído, cintura, cadera y pierna. Hablan de tu masa muscular y de su distribución. Junto a los pliegues, permiten separar qué parte del cambio es músculo y qué parte no.</p>
+        </article>
+        <article class="isak-item reveal">
+          <h4 class="mono isak-num"><span class="plus" aria-hidden="true">+</span> 03&nbsp;·&nbsp;DIÁMETROS ÓSEOS (×2)</h4>
+          <p>Húmero y fémur. Tu estructura no cambia con el entrenamiento, pero condiciona la interpretación de todo lo demás: dos cuerpos con el mismo peso pueden ser completamente distintos.</p>
+        </article>
+        <article class="isak-item reveal">
+          <h4 class="mono isak-num"><span class="plus" aria-hidden="true">+</span> 04&nbsp;·&nbsp;EL INFORME</h4>
+          <p>Con las medidas construyo tu perfil: sumatorio de pliegues, estimación de composición corporal y somatotipo. No es un número suelto: es tu punto de partida medido con un protocolo internacional, repetible en cada seguimiento para ver la evolución de verdad.</p>
+        </article>
+      </div>
+      <p class="mono isak-close reveal">PROTOCOLO ISAK&nbsp;·&nbsp;PERFIL RESTRINGIDO&nbsp;·&nbsp;ANTROPOMETRISTA NIVEL 1</p>
     </div>
+  </div>
+
+  <div class="entrena-extra">
+    <article class="service reveal">
+      <h3><span class="plus" aria-hidden="true">+</span> Entrenamiento personalizado</h3>
+      <p>Nada de rutinas genéricas. Una planificación adaptada a ti, a tu contexto y a tus objetivos, con seguimiento real y ajustes según tu evolución.</p>
+    </article>
+    <p class="mono cred reveal">ANTROPOMETRISTA ISAK NIVEL 1&nbsp;·&nbsp;CAFYD</p>
+    <a class="link-arrow reveal" href="https://ig.me/m/muevet.mas" target="_blank" rel="noopener">Escríbeme y lo vemos <span class="arr">→</span></a>
   </div>
 </section>
 
@@ -169,23 +248,96 @@
       <a class="btn-pill reveal" href="https://chat.whatsapp.com/J52jzClYnoVD17e3LXn0wf?mode=gi_t" target="_blank" rel="noopener">Únete al grupo <span class="arr">→</span></a>
     </div>
 
-    <!-- ▓▓ VÍDEO RUN+++ — EDITABLE ▓▓
-         Para cambiarlo: sustituye assets/img/run-clip.mp4 y run-poster.jpg
-         (vertical 9:16, MP4 H.264 sin audio, ideal < 3 MB). -->
-    <figure class="run-media reveal">
-      <div class="photo-mask">
-        <video id="runClip" poster="assets/img/run-poster.jpg" width="720" height="1280"
-               muted loop playsinline preload="none"
-               aria-label="Vídeo de RUN+++, el club de running de MUEVET+.">
-          <source src="assets/img/run-clip.webm" type="video/webm">
-          <source src="assets/img/run-clip.mp4" type="video/mp4">
-        </video>
-      </div>
-      <figcaption class="photo-note">
-        <span class="note-line" aria-hidden="true"></span>
-        <span class="mono">RUN+++&nbsp;·&nbsp;CANTABRIA</span>
-      </figcaption>
-    </figure>
+  </div>
+
+  <!-- Tira deslizable de fotos RUN+++ (scroll-snap, sin librerías) -->
+  <div class="strip reveal" id="runStrip" tabindex="0" role="region" aria-label="Galería de RUN+++: desliza horizontalmente o usa las flechas del teclado">
+    <ul class="strip-track">
+      <li class="strip-item">
+        <figure>
+          <div class="photo-mask">
+            <picture>
+              <source type="image/avif" srcset="assets/img/nuevas/foto-09-480.avif 480w, assets/img/nuevas/foto-09-768.avif 736w" sizes="(min-width:445px) 320px, 72vw">
+              <source type="image/webp" srcset="assets/img/nuevas/foto-09-480.webp 480w, assets/img/nuevas/foto-09-768.webp 736w" sizes="(min-width:445px) 320px, 72vw">
+              <img src="assets/img/nuevas/foto-09-768.jpg" srcset="assets/img/nuevas/foto-09-480.jpg 480w, assets/img/nuevas/foto-09-768.jpg 736w" sizes="(min-width:445px) 320px, 72vw"
+                   width="736" height="920" loading="lazy" decoding="async"
+                   alt="Manos de un grupo de corredores unidas en el centro antes de salir a correr.">
+            </picture>
+          </div>
+          <figcaption class="photo-note"><span class="note-line" aria-hidden="true"></span><span class="mono">LA COMUNIDAD</span></figcaption>
+        </figure>
+      </li>
+      <li class="strip-item">
+        <figure>
+          <div class="photo-mask">
+            <picture>
+              <source type="image/avif" srcset="assets/img/nuevas/foto-13-480.avif 480w, assets/img/nuevas/foto-13-768.avif 726w" sizes="(min-width:445px) 320px, 72vw">
+              <source type="image/webp" srcset="assets/img/nuevas/foto-13-480.webp 480w, assets/img/nuevas/foto-13-768.webp 726w" sizes="(min-width:445px) 320px, 72vw">
+              <img src="assets/img/nuevas/foto-13-768.jpg" srcset="assets/img/nuevas/foto-13-480.jpg 480w, assets/img/nuevas/foto-13-768.jpg 726w" sizes="(min-width:445px) 320px, 72vw"
+                   width="726" height="1283" loading="lazy" decoding="async"
+                   alt="Dos personas corriendo juntas al amanecer por una carretera entre niebla.">
+            </picture>
+          </div>
+          <figcaption class="photo-note"><span class="note-line" aria-hidden="true"></span><span class="mono">CORRER ACOMPAÑADO</span></figcaption>
+        </figure>
+      </li>
+      <li class="strip-item">
+        <figure>
+          <div class="photo-mask">
+            <picture>
+              <source type="image/avif" srcset="assets/img/nuevas/foto-10-480.avif 480w, assets/img/nuevas/foto-10-768.avif 736w" sizes="(min-width:445px) 320px, 72vw">
+              <source type="image/webp" srcset="assets/img/nuevas/foto-10-480.webp 480w, assets/img/nuevas/foto-10-768.webp 736w" sizes="(min-width:445px) 320px, 72vw">
+              <img src="assets/img/nuevas/foto-10-768.jpg" srcset="assets/img/nuevas/foto-10-480.jpg 480w, assets/img/nuevas/foto-10-768.jpg 736w" sizes="(min-width:445px) 320px, 72vw"
+                   width="736" height="1308" loading="lazy" decoding="async"
+                   alt="Dos corredores de espaldas subiendo una cuesta al anochecer.">
+            </picture>
+          </div>
+          <figcaption class="photo-note"><span class="note-line" aria-hidden="true"></span><span class="mono">RITMO NOCTURNO</span></figcaption>
+        </figure>
+      </li>
+      <li class="strip-item">
+        <figure>
+          <div class="photo-mask">
+            <picture>
+              <source type="image/avif" srcset="assets/img/nuevas/foto-11-480.avif 480w, assets/img/nuevas/foto-11-768.avif 720w" sizes="(min-width:445px) 320px, 72vw">
+              <source type="image/webp" srcset="assets/img/nuevas/foto-11-480.webp 480w, assets/img/nuevas/foto-11-768.webp 720w" sizes="(min-width:445px) 320px, 72vw">
+              <img src="assets/img/nuevas/foto-11-768.jpg" srcset="assets/img/nuevas/foto-11-480.jpg 480w, assets/img/nuevas/foto-11-768.jpg 720w" sizes="(min-width:445px) 320px, 72vw"
+                   width="720" height="960" loading="lazy" decoding="async"
+                   alt="Zapatillas de un club de corredores formando un círculo sobre el asfalto.">
+            </picture>
+          </div>
+          <figcaption class="photo-note"><span class="note-line" aria-hidden="true"></span><span class="mono">EL CLUB</span></figcaption>
+        </figure>
+      </li>
+      <li class="strip-item">
+        <figure>
+          <div class="photo-mask">
+            <picture>
+              <source type="image/avif" srcset="assets/img/nuevas/foto-15-480.avif 480w, assets/img/nuevas/foto-15-768.avif 736w" sizes="(min-width:445px) 320px, 72vw">
+              <source type="image/webp" srcset="assets/img/nuevas/foto-15-480.webp 480w, assets/img/nuevas/foto-15-768.webp 736w" sizes="(min-width:445px) 320px, 72vw">
+              <img src="assets/img/nuevas/foto-15-768.jpg" srcset="assets/img/nuevas/foto-15-480.jpg 480w, assets/img/nuevas/foto-15-768.jpg 736w" sizes="(min-width:445px) 320px, 72vw"
+                   width="736" height="981" loading="lazy" decoding="async"
+                   alt="Corredora mostrando una medalla de 21K junto a sus zapatillas.">
+            </picture>
+          </div>
+          <figcaption class="photo-note"><span class="note-line" aria-hidden="true"></span><span class="mono">21K&nbsp;·&nbsp;LA MEDALLA</span></figcaption>
+        </figure>
+      </li>
+      <li class="strip-item">
+        <figure>
+          <div class="photo-mask">
+            <picture>
+              <source type="image/avif" srcset="assets/img/nuevas/foto-08-480.avif 480w, assets/img/nuevas/foto-08-768.avif 564w" sizes="(min-width:445px) 320px, 72vw">
+              <source type="image/webp" srcset="assets/img/nuevas/foto-08-480.webp 480w, assets/img/nuevas/foto-08-768.webp 564w" sizes="(min-width:445px) 320px, 72vw">
+              <img src="assets/img/nuevas/foto-08-768.jpg" srcset="assets/img/nuevas/foto-08-480.jpg 480w, assets/img/nuevas/foto-08-768.jpg 564w" sizes="(min-width:445px) 320px, 72vw"
+                   width="564" height="846" loading="lazy" decoding="async"
+                   alt="Líneas y sombras sobre una pista de atletismo.">
+            </picture>
+          </div>
+          <figcaption class="photo-note"><span class="note-line" aria-hidden="true"></span><span class="mono">LA PISTA</span></figcaption>
+        </figure>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -201,7 +353,14 @@
   </svg>
 
   <p class="mono mvt-status reveal">EN DESARROLLO</p>
-  <p class="mvt-text reveal">La evolución natural de MUEVET+: conectar entrenamiento, datos y progreso en un mismo lugar. Cuando esté listo, lo sabrás aquí y en <a href="https://www.instagram.com/muevet.mas" target="_blank" rel="noopener">@muevet.mas</a>.</p>
+  <p class="mvt-text reveal">MVT+ es la plataforma digital de MUEVET+, en desarrollo. La idea es simple: que tu entrenamiento, tus datos y tu progreso vivan en el mismo sitio, conectados.</p>
+  <ul class="mvt-modules reveal" aria-label="Módulos de MVT+">
+    <li><span class="plus" aria-hidden="true">+</span><strong>Entrenamiento</strong><span class="mod-desc">— tu planificación y tus sesiones, registradas con criterio.</span></li>
+    <li><span class="plus" aria-hidden="true">+</span><strong>Evaluaciones</strong><span class="mod-desc">— tus datos ISAK integrados en tu perfil, medición a medición.</span></li>
+    <li><span class="plus" aria-hidden="true">+</span><strong>Readiness</strong><span class="mod-desc">— cómo llegas hoy, para ajustar lo que toca hoy.</span></li>
+    <li><span class="plus" aria-hidden="true">+</span><strong>Hábitos y objetivos</strong><span class="mod-desc">— el progreso lento que acaba siendo el importante.</span></li>
+  </ul>
+  <p class="mvt-text reveal">Sin fechas y sin humo: cuando esté listo, lo sabrás aquí y en <a href="https://www.instagram.com/muevet.mas" target="_blank" rel="noopener">@muevet.mas</a>.</p>
 </section>
 
 <!-- ══════════ ACTO 6 · SISTEMAS ══════════ -->
@@ -296,25 +455,37 @@
 
 <!-- ══════════ ACTO 8 · CIERRE ══════════ -->
 <section class="closing" id="contacto" aria-labelledby="h-cierre">
+  <svg class="topo topo-closing" viewBox="0 0 600 600" aria-hidden="true">
+    <use href="#topo-rings"/>
+    <use class="t-lime" href="#topo-lime"/>
+  </svg>
   <h2 id="h-cierre" class="closing-title reveal">¿Empezamos?<span class="plus">+</span></h2>
   <a class="btn-pill btn-big reveal" href="https://ig.me/m/muevet.mas" target="_blank" rel="noopener">Escríbeme por DM <span class="arr">→</span></a>
 
   <div class="faq reveal">
     <details>
+      <summary>¿Qué incluye una evaluación ISAK? <span class="plus" aria-hidden="true">+</span></summary>
+      <p>Las mediciones del perfil restringido (8 pliegues, 5 perímetros, 2 diámetros, peso y talla), tu informe de composición corporal y somatotipo, y la explicación de qué significa cada dato en tu caso.</p>
+    </details>
+    <details>
+      <summary>¿Cada cuánto conviene repetirla? <span class="plus" aria-hidden="true">+</span></summary>
+      <p>Depende de tu fase y tu objetivo; lo habitual es cada 6-12 semanas, coincidiendo con los ciclos de entrenamiento. Lo importante es que las condiciones de medición sean comparables.</p>
+    </details>
+    <details>
+      <summary>¿Cómo funciona el entrenamiento personalizado? <span class="plus" aria-hidden="true">+</span></summary>
+      <p>Empezamos por conocerte: tu contexto, tu historial y tu objetivo. A partir de ahí, planificación adaptada, seguimiento real y ajustes según tu evolución. Nada de rutinas genéricas.</p>
+    </details>
+    <details>
       <summary>¿Dónde estás? <span class="plus" aria-hidden="true">+</span></summary>
       <p>MUEVET+ nace en Cantabria. Si no estás cerca, escríbeme igualmente y vemos tu caso.</p>
     </details>
     <details>
-      <summary>¿Cómo empiezo? <span class="plus" aria-hidden="true">+</span></summary>
-      <p>Escríbeme por Instagram a <a href="https://ig.me/m/muevet.mas" target="_blank" rel="noopener">@muevet.mas</a>. Cuéntame tu objetivo y hablamos.</p>
-    </details>
-    <details>
-      <summary>¿Qué es una evaluación ISAK? <span class="plus" aria-hidden="true">+</span></summary>
-      <p>Una valoración de tu composición corporal siguiendo el protocolo internacional ISAK: mediciones precisas y estandarizadas que convierten tu punto de partida en datos objetivos.</p>
-    </details>
-    <details>
       <summary>¿Necesito nivel para RUN+++? <span class="plus" aria-hidden="true">+</span></summary>
       <p>No. RUN+++ es un club social: da igual tu ritmo. Las quedadas se anuncian en Instagram y están abiertas a todos los niveles.</p>
+    </details>
+    <details>
+      <summary>¿Cuánto cuesta? <span class="plus" aria-hidden="true">+</span></summary>
+      <p>Cada caso es distinto y prefiero contártelo bien. Escríbeme por Instagram, cuéntame tu objetivo y te doy el detalle sin compromiso.</p>
     </details>
   </div>
 </section>
