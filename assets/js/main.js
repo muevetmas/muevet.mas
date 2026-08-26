@@ -18,6 +18,18 @@
   const io = new IntersectionObserver((entries) => {
     for (const e of entries) {
       if (e.isIntersecting) {
+        /* Los 4 puntos del ISAK entran escalonados en vez de a la vez.
+           El retardo se pone y se quita aqui, y no con transition-delay
+           en CSS, porque .isak-item comparte esa transicion con su
+           hover y quedaria pastoso al pasar el raton. */
+        if (!reduced && e.target.classList.contains('isak-item')) {
+          const i = [...e.target.parentElement.children].indexOf(e.target);
+          if (i > 0) {
+            const ms = i * 70;
+            e.target.style.transitionDelay = ms + 'ms';
+            setTimeout(() => { e.target.style.transitionDelay = ''; }, 1000 + ms);
+          }
+        }
         e.target.classList.add('is-in');
         io.unobserve(e.target);
       }

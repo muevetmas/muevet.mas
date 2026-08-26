@@ -431,6 +431,26 @@ a{ color:inherit }
   transform:scaleX(1);
 }
 
+/* ── S·03 VELADO: aun no se vende, se anuncia ──
+   No hay tope de plazas, asi que nada de escasez: el contenido se
+   difumina y encima queda un unico camino, escribir. */
+.sys-soon .sys-main,
+.sys-soon .sys-side{
+  filter:blur(5px); opacity:.4;
+  pointer-events:none; user-select:none;
+}
+.soon-over{
+  position:absolute; inset:0;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:16px; text-align:center; padding:20px;
+  background:rgba(10,10,10,.5);
+}
+.soon-flag{ color:var(--lime); letter-spacing:.22em }
+.soon-key{ color:var(--dim); letter-spacing:.16em }
+@media(prefers-reduced-motion:reduce){
+  .sys-soon .sys-main, .sys-soon .sys-side{ filter:blur(4px) }
+}
+
 /* IG */
 .ig-module{ display:grid; gap:48px }
 @media(min-width:1080px){
