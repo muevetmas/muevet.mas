@@ -174,7 +174,6 @@ a{ color:inherit }
 }
 @keyframes draw{ to{ stroke-dashoffset:0 } }
 
-.hero-label{ margin-bottom:22px }
 .hero-title{
   font-family:var(--display); font-weight:900; font-stretch:118%;
   font-size:clamp(40px, 11vw, 118px);
@@ -251,7 +250,6 @@ a{ color:inherit }
 .hero-title .line{ padding-bottom:.06em; margin-bottom:-.06em }
 .line-in{ display:inline-block; transform:translateY(115%) }
 .is-loaded .line-in{ animation:lineup .85s var(--ease-out) forwards }
-.is-loaded .hero-label .line-in{ animation-delay:.05s }
 .is-loaded .hero-title .line:nth-child(1) .line-in{ animation-delay:.15s }
 .is-loaded .hero-title .line:nth-child(2) .line-in{ animation-delay:.26s }
 .is-loaded .hero-sub .line:nth-child(1) .line-in{ animation-delay:.42s }
@@ -266,8 +264,11 @@ a{ color:inherit }
 @keyframes fadeup{ to{ opacity:1; transform:translateY(0) } }
 
 /* ── REVEALS GENERALES ── */
-.reveal{ opacity:0; transform:translateY(24px);
-  transition:opacity var(--d3) var(--ease-out), transform var(--d3) var(--ease-out) }
+/* Entrada generica: deliberadamente discreta. El momento de autor de
+   esta pagina es el barrido con clip-path de las fotos; si todo entra
+   con la misma fuerza, no destaca ninguna. */
+.reveal{ opacity:0; transform:translateY(10px);
+  transition:opacity .5s var(--ease-out), transform .5s var(--ease-out) }
 .reveal.is-in{ opacity:1; transform:none }
 
 /* ── MANIFIESTO ── */
@@ -613,8 +614,6 @@ a{ color:inherit }
       tras "entrenar". Se deja fluir como un solo parrafo y la entrada
       pasa de por-linea a fadeup, la misma del resto del hero. */
 @media(max-width:700px){
-  .hero-label{ padding-right:44px }
-
   /* El indice envuelve y dejaba un "+" colgando al final de linea */
   .hero-index .plus-sep{ display:none }
   .hero-index{ gap:10px 20px }
