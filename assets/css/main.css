@@ -22,6 +22,12 @@
 
 /* ── TOKENS ── */
 :root{
+  /* La pagina es oscura de principio a fin: decirselo al navegador
+     hace que las superficies que no dibujamos -la barra de scroll y,
+     sobre todo, la zona de rebote al hacer overscroll en iOS- se
+     pinten en oscuro en vez de en blanco. */
+  color-scheme:dark;
+
   --ink:#0A0A0A;
   --ink-2:#111214;
   --paper:#FAFAF7;
