@@ -122,7 +122,7 @@ a{ color:inherit }
 .btn-pill:active{ transform:scale(.97) }
 .btn-pill .arr{ transition:transform var(--d1) var(--ease-out) }
 .btn-pill:hover .arr{ transform:translateX(4px) }
-.nav-cta{ padding:9px 18px; font-size:12.5px }
+.nav-cta{ padding:9px 18px; font-size:12px }
 .btn-big{ padding:18px 36px; font-size:16px }
 
 .btn-ghost{
@@ -397,7 +397,7 @@ a{ color:inherit }
 }
 .sys:hover .sys-name{ transform:translateX(8px) }
 .sys-by{
-  display:block; font-size:.36em; font-weight:700; font-stretch:108%;
+  display:block; font-size:max(11px, .36em); font-weight:700; font-stretch:108%;
   letter-spacing:.16em; color:var(--dim); margin-top:10px;
 }
 .sys-claim{
@@ -591,11 +591,11 @@ a{ color:inherit }
   .nav{ gap:10px; padding:12px 14px }
   .nav-cta{ display:none }
   .nav-links{ gap:0; margin-left:auto }
-  .nav-links a{ font-size:11.5px; padding:8px 6px; letter-spacing:.04em }
+  .nav-links a{ font-size:12px; padding:8px 5px; letter-spacing:.03em }
   .nav-brand img{ width:28px; height:28px }
 }
 @media(max-width:360px){
-  .nav-links a{ font-size:10.5px; padding:8px 4px; letter-spacing:.02em }
+  .nav-links a{ font-size:11px; padding:8px 3px; letter-spacing:.01em }
 }
 
 /* ── HERO EN MOVIL ──
@@ -709,7 +709,7 @@ a{ color:inherit }
 .mvt-modules li:last-child{ border-bottom:1px solid var(--line) }
 .mvt-modules strong{
   font-family:var(--display); font-weight:800; font-stretch:110%;
-  font-size:13.5px; letter-spacing:.06em; text-transform:uppercase;
+  font-size:14px; letter-spacing:.06em; text-transform:uppercase;
   color:var(--paper); flex:none;
 }
 .mvt-modules .plus{ font-family:var(--display); font-weight:800; flex:none }
