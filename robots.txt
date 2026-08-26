@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# TODO: al conectar el dominio definitivo, añadir:
-# Sitemap: https://TU-DOMINIO/sitemap.xml
+Sitemap: https://muevetmas.com/sitemap.xml

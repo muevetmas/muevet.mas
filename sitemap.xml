@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO: sustituir la URL por el dominio definitivo al conectarlo -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://TU-USUARIO.github.io/TU-REPO/</loc></url>
+  <url>
+    <loc>https://muevetmas.com/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
 </urlset>
