@@ -460,6 +460,32 @@ a{ color:inherit }
   letter-spacing:-.015em; text-transform:uppercase;
 }
 @media(min-width:768px){ .closing-title{ font-stretch:118% } }
+/* ── MIDE. ANALIZA. MEJORA. ──
+   Frase de marca propia, ya en uso en las piezas de Instagram y
+   ausente de la web hasta ahora. Cierra el bloque ISAK: los cuatro
+   puntos tecnicos, la frase, lo que se lleva el cliente, la credencial. */
+.measure-claim{
+  margin:clamp(28px,4vh,44px) 0 clamp(16px,2.4vh,24px);
+  font-family:var(--display); font-weight:900; font-stretch:112%;
+  font-size:clamp(26px,4.4vw,44px); line-height:1.06;
+  letter-spacing:-.01em; text-transform:uppercase; color:var(--paper);
+}
+.measure-claim .lime-word{ color:var(--lime) }
+
+/* Beneficios en el idioma del cliente, no en el del entrenador */
+.gains{
+  list-style:none; margin:0 0 clamp(22px,3vh,30px); padding:0;
+  display:flex; flex-wrap:wrap; gap:12px 30px;
+}
+.gains li{
+  display:flex; align-items:baseline; gap:9px;
+  font-family:var(--display); font-weight:700; font-stretch:104%;
+  font-size:14px; letter-spacing:.03em; text-transform:uppercase;
+  color:var(--dim);
+}
+.gains .gain-n{ color:var(--lime); font-size:11px; letter-spacing:.14em }
+@media(max-width:700px){ .gains{ flex-direction:column; gap:11px } }
+
 /* ── TESTIMONIOS ── Inerte hasta descomentar el bloque en index.html */
 .voices{ width:100%; max-width:640px; margin-top:clamp(40px,7vh,72px) }
 .voices-label{ color:var(--lime); letter-spacing:.22em; margin-bottom:22px }
