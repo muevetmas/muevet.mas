@@ -460,6 +460,22 @@ a{ color:inherit }
   letter-spacing:-.015em; text-transform:uppercase;
 }
 @media(min-width:768px){ .closing-title{ font-stretch:118% } }
+/* ── TESTIMONIOS ── Inerte hasta descomentar el bloque en index.html */
+.voices{ width:100%; max-width:640px; margin-top:clamp(40px,7vh,72px) }
+.voices-label{ color:var(--lime); letter-spacing:.22em; margin-bottom:22px }
+.voices-list{ display:flex; flex-direction:column }
+.voice{ margin:0; border-top:1px solid var(--line); padding:22px 0 }
+.voice:last-child{ border-bottom:1px solid var(--line) }
+.voice blockquote{ margin:0 }
+.voice blockquote p{
+  margin:0 0 12px; color:var(--paper);
+  font-family:var(--display); font-weight:700; font-stretch:104%;
+  font-size:clamp(17px,2.1vw,21px); line-height:1.42; letter-spacing:.01em;
+}
+.voice blockquote p::before{ content:'\201C'; color:var(--lime); margin-right:2px }
+.voice blockquote p::after{ content:'\201D'; color:var(--lime); margin-left:1px }
+.voice figcaption{ color:var(--dim); letter-spacing:.16em }
+
 .faq{ width:100%; max-width:640px; margin-top:clamp(32px,6vh,64px) }
 .faq details{ border-top:1px solid var(--line) }
 .faq details:last-child{ border-bottom:1px solid var(--line) }
