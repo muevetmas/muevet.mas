@@ -502,13 +502,37 @@ a{ color:inherit }
   .marquee-track{ transform:none !important; animation:none !important }
 }
 
-/* ── NAV compacta ≤600px (4 enlaces + CTA) ── */
-@media(max-width:600px){
+/* ── NAV compacta ≤700px ──
+   El CTA se retira de la barra: con los 4 enlaces no cabia y quedaba
+   cortado por el borde derecho (375px: se salia 29px). En movil el DM
+   ya esta cubierto por el boton del hero y por el CTA fijo inferior,
+   asi que no se pierde ninguna via de contacto. */
+@media(max-width:700px){
   .nav{ gap:10px; padding:12px 14px }
-  .nav-links{ gap:0 }
+  .nav-cta{ display:none }
+  .nav-links{ gap:0; margin-left:auto }
   .nav-links a{ font-size:11.5px; padding:8px 6px; letter-spacing:.04em }
-  .nav-cta{ padding:8px 13px; font-size:11px }
   .nav-brand img{ width:28px; height:28px }
+}
+@media(max-width:360px){
+  .nav-links a{ font-size:10.5px; padding:8px 4px; letter-spacing:.02em }
+}
+
+/* ── HERO EN MOVIL ──
+   1) La etiqueta llegaba hasta x355 y la cruz decorativa vive en
+      x323-355: "CANTABRIA" se montaba encima. Se le reserva el hueco
+      en vez de retirar la cruz, que es parte de LA MEDIDA.
+   2) El parrafo venia partido en dos lineas pensadas para escritorio;
+      en movil cada una envolvia por su cuenta y dejaba un corte seco
+      tras "entrenar". Se deja fluir como un solo parrafo y la entrada
+      pasa de por-linea a fadeup, la misma del resto del hero. */
+@media(max-width:700px){
+  .hero-label{ padding-right:44px }
+
+  .hero-sub .line{ display:inline; overflow:visible }
+  .hero-sub .line-in{ display:inline; transform:none; animation:none }
+  .hero-sub{ opacity:0; transform:translateY(14px) }
+  .is-loaded .hero-sub{ animation:fadeup .7s var(--ease-out) .45s forwards }
 }
 
 /* ── AJUSTES DE AUDITORÍA (Fase 4) ── */
