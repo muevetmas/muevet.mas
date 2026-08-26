@@ -131,9 +131,10 @@ a{ color:inherit }
   font-family:var(--display); font-weight:700; font-stretch:105%;
   font-size:13px; letter-spacing:.04em; text-transform:uppercase;
   text-decoration:none; border-radius:999px; padding:10px 22px;
-  transition:border-color var(--d1) var(--ease-swift), color var(--d1) var(--ease-swift);
+  transition:border-color var(--d1) var(--ease-swift), color var(--d1) var(--ease-swift), transform .16s var(--ease-out);
 }
 .btn-ghost:hover{ border-color:var(--paper) }
+.btn-ghost:active{ transform:scale(.97) }
 
 .link-arrow{
   display:inline-flex; align-items:center; gap:8px;
@@ -141,9 +142,10 @@ a{ color:inherit }
   font-size:14px; letter-spacing:.03em; text-transform:uppercase;
   color:var(--paper); text-decoration:none;
   border-bottom:1px solid var(--line); padding-bottom:4px;
-  transition:border-color var(--d1) var(--ease-swift);
+  transition:border-color var(--d1) var(--ease-swift), transform .16s var(--ease-out);
 }
 .link-arrow:hover{ border-color:var(--lime) }
+.link-arrow:active{ transform:scale(.97) }
 .link-arrow .arr{ transition:transform var(--d1) var(--ease-out) }
 .link-arrow:hover .arr{ transform:translateX(4px) }
 
@@ -453,6 +455,7 @@ a{ color:inherit }
 .faq summary::-webkit-details-marker{ display:none }
 .faq summary .plus{ transition:transform var(--d1) var(--ease-swift); font-weight:800 }
 .faq details[open] summary .plus{ transform:rotate(45deg) }
+.faq-body{ overflow:hidden }
 .faq details p{ color:var(--dim); padding:0 0 20px; max-width:62ch }
 .faq details p a{ color:var(--paper) }
 

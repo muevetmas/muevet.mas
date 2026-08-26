@@ -214,4 +214,44 @@
     }, { threshold: 0.25 });
     vio.observe(clip);
   }
+
+  /* ── FAQ: apertura y cierre animados ──
+     <details> oculta su contenido al instante al cerrar, asi que la
+     altura la conduce WAAPI: hardware-accelerated, interrumpible y sin
+     dependencias. Con reduced-motion se deja el comportamiento nativo. */
+  document.querySelectorAll('.faq details').forEach((d) => {
+    const summary = d.querySelector('summary');
+    const body = d.querySelector('.faq-body');
+    const inner = d.querySelector('.faq-inner');
+    if (!summary || !body || !inner) return;
+
+    let anim = null;
+
+    summary.addEventListener('click', (e) => {
+      if (reduced) return;
+      e.preventDefault();
+
+      const from = body.getBoundingClientRect().height;
+      if (anim) anim.cancel();
+
+      const opening = !d.open;
+      if (opening) d.open = true;
+      const to = opening ? inner.getBoundingClientRect().height : 0;
+
+      anim = body.animate(
+        [{ height: from + 'px' }, { height: to + 'px' }],
+        { duration: 260, easing: 'cubic-bezier(.19, 1, .22, 1)' }
+      );
+      const current = anim;
+      current.finished
+        .then(() => {
+          if (anim !== current) return;   // otra pulsacion tomo el relevo
+          anim = null;
+          if (!opening) d.open = false;
+          body.style.height = '';
+        })
+        .catch(() => {});                 // cancelada al interrumpir: nada que hacer
+    });
+  });
+
 })();
