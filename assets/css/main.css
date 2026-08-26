@@ -61,7 +61,6 @@ a{ color:inherit }
   position:fixed; top:-48px; left:var(--mx); z-index:200;
   background:var(--lime); color:var(--ink); font-family:var(--mono);
   font-size:12px; padding:10px 16px; text-decoration:none;
-  transition:top var(--d1) var(--ease-swift);
 }
 .skip-link:focus{ top:12px }
 
@@ -90,7 +89,7 @@ a{ color:inherit }
   display:flex; align-items:center; gap:20px;
   padding:14px var(--mx);
   background:transparent; border-bottom:1px solid transparent;
-  transition:background var(--d2) var(--ease-swift), border-color var(--d2) var(--ease-swift), transform var(--d2) var(--ease-swift);
+  transition:background var(--d2) var(--ease-swift), border-color var(--d2) var(--ease-swift), transform .2s var(--ease-out);
 }
 .nav.is-scrolled{
   background:rgba(10,10,10,.88);
@@ -482,7 +481,7 @@ a{ color:inherit }
   padding:12px var(--mx) calc(12px + env(safe-area-inset-bottom));
   background:linear-gradient(to top, rgba(10,10,10,.92), rgba(10,10,10,0));
   transform:translateY(110%);
-  transition:transform var(--d2) var(--ease-swift);
+  transition:transform .22s var(--ease-out);
   pointer-events:none;
 }
 .sticky-cta.is-visible{ transform:none; pointer-events:auto }
@@ -498,7 +497,6 @@ a{ color:inherit }
   .photo-mask img, .reveal .photo-mask img{ transform:none; transition:none }
   .hero-cross .draw,.mvt-plus .draw-slow{ stroke-dashoffset:0; animation:none !important }
   .marquee-track{ transform:none !important; animation:none !important }
-  *{ transition-duration:.01ms !important; animation-duration:.01ms !important }
 }
 
 /* ── NAV compacta ≤600px (4 enlaces + CTA) ── */
@@ -621,5 +619,16 @@ a{ color:inherit }
 @media(prefers-reduced-motion:reduce){
   .topo{ display:none }
   .reveal .photo-mask{ clip-path:none !important; transition:none }
+  .isak-item:hover{ transform:none; box-shadow:none }
+}
+
+/* ── HOVER SOLO EN PUNTERO FINO ──
+   En tactil el :hover se queda pegado tras el toque: se anula el
+   movimiento, se conservan color y borde (que son feedback util). */
+@media (hover:none), (pointer:coarse){
+  .btn-pill:hover .arr,
+  .link-arrow:hover .arr,
+  .service:hover h3 .plus,
+  .sys:hover .sys-name{ transform:none }
   .isak-item:hover{ transform:none; box-shadow:none }
 }
