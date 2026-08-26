@@ -191,7 +191,25 @@ a{ color:inherit }
   color:var(--dim); font-size:clamp(16px,2vw,19px); line-height:1.55;
   max-width:60ch; margin-bottom:34px;
 }
-.hero-actions{ margin-bottom:56px }
+.hero-actions{
+  margin-bottom:56px;
+  display:flex; flex-direction:column; align-items:flex-start; gap:20px;
+}
+/* Oferta concreta sobre la linea de flotacion: el ISAK es el producto
+   de entrada y hasta ahora no se veia sin hacer scroll. */
+.hero-offer{
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:var(--mono); font-size:12px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--dim); text-decoration:none;
+  border-bottom:1px solid var(--line); padding-bottom:6px;
+  transition:color var(--d1) var(--ease-swift),
+             border-color var(--d1) var(--ease-swift),
+             transform .16s var(--ease-out);
+}
+.hero-offer .arr{ color:var(--lime); transition:transform var(--d1) var(--ease-out) }
+.hero-offer:hover{ color:var(--paper); border-color:var(--lime) }
+.hero-offer:hover .arr{ transform:translateX(4px) }
+.hero-offer:active{ transform:scale(.97) }
 
 /* Hero a dos columnas con el vídeo de marca */
 .hero-grid{ display:flex; flex-direction:column }
@@ -529,6 +547,11 @@ a{ color:inherit }
 @media(max-width:700px){
   .hero-label{ padding-right:44px }
 
+  /* El indice envuelve y dejaba un "+" colgando al final de linea */
+  .hero-index .plus-sep{ display:none }
+  .hero-index{ gap:10px 20px }
+  .hero-offer{ font-size:11px; letter-spacing:.1em }
+
   .hero-sub .line{ display:inline; overflow:visible }
   .hero-sub .line-in{ display:inline; transform:none; animation:none }
   .hero-sub{ opacity:0; transform:translateY(14px) }
@@ -656,6 +679,7 @@ a{ color:inherit }
   .btn-pill:hover .arr,
   .link-arrow:hover .arr,
   .service:hover h3 .plus,
+  .hero-offer:hover .arr,
   .sys:hover .sys-name{ transform:none }
   .isak-item:hover{ transform:none; box-shadow:none }
 }
