@@ -266,4 +266,92 @@
     });
   });
 
+  /* ▓▓ FORMULARIO — EDITABLE ▓▓
+     Pega aqui la URL de tu app de Google Apps Script (termina en /exec).
+     Mientras este vacia, el boton abre el DM de Instagram para no perder
+     ningun contacto. */
+  const FORM_ENDPOINT = '';
+
+  const form = document.getElementById('applyForm');
+  if (form) {
+    const DM       = 'https://ig.me/m/muevet.mas';
+    const deep     = document.getElementById('applyDeep');
+    const deepIn   = document.getElementById('applyDeepIn');
+    const status   = document.getElementById('applyStatus');
+    const submit   = document.getElementById('applySubmit');
+    const done     = document.getElementById('applyDone');
+    const doneTitle= document.getElementById('applyDoneTitle');
+
+    /* El bloque 03 solo aparece cuando aporta algo: para un analisis
+       suelto de 30 EUR, cinco preguntas mas solo restan respuestas. */
+    const syncDeep = () => {
+      const sel = form.querySelector('input[name="interes"]:checked');
+      const open = !!sel && sel.value !== 'Análisis ISAK';
+      deep.classList.toggle('is-open', open);
+      deepIn.inert = !open;
+    };
+    form.querySelectorAll('input[name="interes"]').forEach(r => r.addEventListener('change', syncDeep));
+
+    /* Los CTA de Sistemas llegan con el producto ya marcado */
+    document.querySelectorAll('[data-preset]').forEach(a => {
+      a.addEventListener('click', () => {
+        const r = form.querySelector(`input[name="interes"][value="${a.dataset.preset}"]`);
+        if (r && !r.checked) { r.checked = true; syncDeep(); }
+      });
+    });
+
+    const validate = () => {
+      form.querySelectorAll('.is-error').forEach(el => el.classList.remove('is-error'));
+      status.textContent = '';
+      const falta = [];
+      const nombre = form.elements.nombre;
+      const email  = form.elements.email;
+      if (!nombre.value.trim()) {
+        nombre.closest('.field').classList.add('is-error'); falta.push('tu nombre');
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+        email.closest('.field').classList.add('is-error'); falta.push('un email válido');
+      }
+      [['interes', 'qué te interesa'], ['punto', 'de dónde partes']].forEach(([name, texto]) => {
+        if (!form.querySelector(`input[name="${name}"]:checked`)) {
+          form.querySelector(`input[name="${name}"]`).closest('.chips').classList.add('is-error');
+          falta.push(texto);
+        }
+      });
+      return falta;
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const falta = validate();
+      if (falta.length) {
+        status.textContent = `FALTA ${falta.join('  ·  ')}`.toUpperCase();
+        const primero = form.querySelector('.is-error input, .is-error textarea');
+        if (primero) primero.focus({ preventScroll: false });
+        return;
+      }
+      if (!FORM_ENDPOINT) {            // sin backend configurado: no perder el contacto
+        window.open(DM, '_blank', 'noopener');
+        return;
+      }
+      const etiqueta = submit.innerHTML;
+      submit.disabled = true;
+      submit.textContent = 'Enviando…';
+      const datos = new FormData(form);
+      datos.append('fecha', new Date().toLocaleString('es-ES'));
+      try {
+        await fetch(FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', body: datos });
+        const nombre = form.elements.nombre.value.trim().split(/\s+/)[0];
+        doneTitle.textContent = nombre ? `Gracias, ${nombre}.` : 'Gracias.';
+        form.hidden = true;
+        done.hidden = false;
+        done.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'center' });
+      } catch {
+        submit.disabled = false;
+        submit.innerHTML = etiqueta;
+        status.textContent = 'NO SE HA PODIDO ENVIAR  ·  ESCRÍBEME POR INSTAGRAM Y LO VEMOS';
+      }
+    });
+  }
+
 })();

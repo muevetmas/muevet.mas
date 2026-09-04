@@ -60,7 +60,7 @@
     <a href="#mvt">MVT+</a>
     <a href="#sistemas">Sistemas</a>
   </nav>
-  <a class="btn-pill nav-cta" href="https://ig.me/m/muevet.mas" target="_blank" rel="noopener">Escríbeme</a>
+  <a class="btn-pill nav-cta" href="#contacto">Escríbeme</a>
 </header>
 
 <main id="main">
@@ -86,7 +86,7 @@
       <span class="line"><span class="line-in">con criterio, correr acompañado y progresar de verdad.</span></span></p>
 
       <div class="hero-actions">
-        <a class="btn-pill" href="https://ig.me/m/muevet.mas" target="_blank" rel="noopener">Escríbeme por DM <span class="arr">→</span></a>
+        <a class="btn-pill" href="#contacto">Cuéntame tu caso <span class="arr">→</span></a>
         <a class="hero-offer" href="#sistemas">Análisis ISAK&nbsp;·&nbsp;30€&nbsp;·&nbsp;Cantabria <span class="arr">→</span></a>
       </div>
 
@@ -236,7 +236,7 @@
       <p>Nada de rutinas genéricas. Una planificación adaptada a ti, a tu contexto y a tus objetivos, con seguimiento real y ajustes según tu evolución.</p>
     </article>
     <p class="mono cred reveal">ANTROPOMETRISTA ISAK NIVEL 1&nbsp;·&nbsp;CAFYD</p>
-    <a class="link-arrow reveal" href="https://ig.me/m/muevet.mas" target="_blank" rel="noopener">Escríbeme y lo vemos <span class="arr">→</span></a>
+    <a class="link-arrow reveal" href="#contacto">Escríbeme y lo vemos <span class="arr">→</span></a>
   </div>
 </section>
 
@@ -399,8 +399,7 @@
       <div class="sys-side">
         <p class="sys-price">30<span class="sys-cur">€</span></p>
         <p class="mono sys-unit">SESIÓN ÚNICA&nbsp;·&nbsp;PRESENCIAL</p>
-        <a class="link-arrow" href="https://ig.me/m/muevet.mas" target="_blank" rel="noopener">Reservar análisis <span class="arr">→</span></a>
-        <p class="mono sys-unit">ESCRÍBEME «ISAK»</p>
+        <a class="link-arrow" href="#contacto" data-preset="Análisis ISAK">Reservar análisis <span class="arr">→</span></a>
       </div>
     </article>
 
@@ -413,10 +412,9 @@
         <p class="mono sys-spec">SEGUIMIENTO REAL&nbsp;·&nbsp;AJUSTES SEGÚN TU EVOLUCIÓN</p>
       </div>
       <div class="sys-side">
-        <p class="sys-price">50<span class="sys-cur">€</span></p>
+        <p class="sys-price sys-price-text">A medida</p>
         <p class="mono sys-unit">PLAN PERSONALIZADO&nbsp;·&nbsp;ONLINE</p>
-        <a class="link-arrow" href="https://ig.me/m/muevet.mas" target="_blank" rel="noopener">Empezar el método <span class="arr">→</span></a>
-        <p class="mono sys-unit">ESCRÍBEME «MÉTODO»</p>
+        <a class="link-arrow" href="#contacto" data-preset="Método MUEVET+">Quiero mi plan <span class="arr">→</span></a>
       </div>
     </article>
 
@@ -432,14 +430,12 @@
       <div class="sys-side" inert>
         <p class="sys-price">99<span class="sys-cur">€</span></p>
         <p class="mono sys-unit">PROGRAMA COMPLETO</p>
-        <a class="btn-pill" href="https://ig.me/m/muevet.mas" target="_blank" rel="noopener">Reservar plaza <span class="arr">→</span></a>
-        <p class="mono sys-unit">ESCRÍBEME «SUMMER»</p>
+        <a class="btn-pill" href="#contacto" data-preset="Athlete Summer">Reservar plaza <span class="arr">→</span></a>
       </div>
 
       <div class="soon-over">
         <p class="mono soon-flag">Próximamente&nbsp;·&nbsp;Verano 2027</p>
-        <a class="btn-pill" href="https://ig.me/m/muevet.mas" target="_blank" rel="noopener">Escríbeme para saber más <span class="arr">→</span></a>
-        <p class="mono soon-key">ESCRÍBEME «SUMMER»</p>
+        <a class="btn-pill" href="#contacto" data-preset="Athlete Summer">Escríbeme para saber más <span class="arr">→</span></a>
       </div>
     </article>
 
@@ -460,7 +456,7 @@
       <p class="ig-bio">CAFYD&nbsp;·&nbsp;Antropometrista ISAK 1<br>Mejora tu salud y rendimiento</p>
       <div class="ig-actions">
         <a class="btn-ghost" href="https://www.instagram.com/muevet.mas" target="_blank" rel="noopener">Seguir</a>
-        <a class="link-arrow" href="https://ig.me/m/muevet.mas" target="_blank" rel="noopener">Escríbeme <span class="arr">→</span></a>
+        <a class="link-arrow" href="#contacto">Escríbeme <span class="arr">→</span></a>
       </div>
     </div>
 
@@ -483,7 +479,103 @@
     <use class="t-lime" href="#topo-lime"/>
   </svg>
   <h2 id="h-cierre" class="closing-title reveal">¿Empezamos?<span class="plus">+</span></h2>
-  <a class="btn-pill btn-big reveal" href="https://ig.me/m/muevet.mas" target="_blank" rel="noopener">Escríbeme por DM <span class="arr">→</span></a>
+
+  <p class="closing-lead reveal">
+    <strong>No hace falta que lo tengas claro.</strong>
+    Cuéntame dónde estás hoy y te digo por dónde empezar.
+  </p>
+
+  <form class="apply reveal" id="applyForm" novalidate>
+
+    <!-- 01 · CAPTURA -->
+    <div class="apply-block">
+      <p class="mono apply-step"><span class="plus" aria-hidden="true">+</span> 01&nbsp;·&nbsp;QUIÉN ERES</p>
+      <div class="apply-fields">
+        <p class="field">
+          <label class="mono" for="f-nombre">NOMBRE</label>
+          <input id="f-nombre" name="nombre" type="text" autocomplete="name" required>
+        </p>
+        <p class="field">
+          <label class="mono" for="f-email">EMAIL</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required>
+        </p>
+        <p class="field">
+          <label class="mono" for="f-contacto">WHATSAPP O INSTAGRAM <span class="opt">(OPCIONAL)</span></label>
+          <input id="f-contacto" name="contacto" type="text" autocomplete="tel">
+        </p>
+      </div>
+    </div>
+
+    <!-- 02 · CUALIFICACIÓN -->
+    <div class="apply-block">
+      <p class="mono apply-step"><span class="plus" aria-hidden="true">+</span> 02&nbsp;·&nbsp;DÓNDE ESTÁS</p>
+
+      <fieldset class="chips">
+        <legend>¿Qué te interesa?</legend>
+        <label class="chip"><input type="radio" name="interes" value="Análisis ISAK" required><span>Análisis ISAK</span></label>
+        <label class="chip"><input type="radio" name="interes" value="Método MUEVET+"><span>Método MUEVET+</span></label>
+        <label class="chip"><input type="radio" name="interes" value="Athlete Summer"><span>Athlete Summer</span></label>
+        <label class="chip"><input type="radio" name="interes" value="Todavía no lo tengo claro"><span>Todavía no lo tengo claro</span></label>
+      </fieldset>
+
+      <fieldset class="chips">
+        <legend>¿De dónde partes?</legend>
+        <label class="chip"><input type="radio" name="punto" value="Empiezo de cero" required><span>Empiezo de cero</span></label>
+        <label class="chip"><input type="radio" name="punto" value="Entreno por mi cuenta"><span>Entreno por mi cuenta</span></label>
+        <label class="chip"><input type="radio" name="punto" value="Vengo de una lesión"><span>Vengo de una lesión</span></label>
+        <label class="chip"><input type="radio" name="punto" value="Compito o quiero competir"><span>Compito o quiero competir</span></label>
+      </fieldset>
+    </div>
+
+    <!-- 03 · PROFUNDIDAD (solo si no es el análisis suelto) -->
+    <div class="apply-deep" id="applyDeep">
+      <div class="apply-deep-in" id="applyDeepIn" inert>
+        <div class="apply-block">
+          <p class="mono apply-step"><span class="plus" aria-hidden="true">+</span> 03&nbsp;·&nbsp;QUÉ QUIERES</p>
+
+          <p class="field">
+            <label class="mono" for="f-objetivo">¿QUÉ QUIERES CONSEGUIR?</label>
+            <textarea id="f-objetivo" name="objetivo" rows="2" placeholder="Con una o dos frases me vale."></textarea>
+          </p>
+
+          <p class="field">
+            <label class="mono" for="f-antes">¿QUÉ HAS INTENTADO ANTES QUE NO TE HA FUNCIONADO? <span class="opt">(OPCIONAL)</span></label>
+            <textarea id="f-antes" name="intentos" rows="2"></textarea>
+          </p>
+
+          <fieldset class="chips">
+            <legend>¿Cuántos días a la semana puedes entrenar de verdad?</legend>
+            <label class="chip"><input type="radio" name="dias" value="1-2 días"><span>1-2</span></label>
+            <label class="chip"><input type="radio" name="dias" value="3-4 días"><span>3-4</span></label>
+            <label class="chip"><input type="radio" name="dias" value="5 o más días"><span>5 o más</span></label>
+          </fieldset>
+
+          <fieldset class="chips">
+            <legend>¿Cuándo quieres empezar?</legend>
+            <label class="chip"><input type="radio" name="cuando" value="Ya"><span>Ya</span></label>
+            <label class="chip"><input type="radio" name="cuando" value="Este mes"><span>Este mes</span></label>
+            <label class="chip"><input type="radio" name="cuando" value="En 2-3 meses"><span>En 2-3 meses</span></label>
+            <label class="chip"><input type="radio" name="cuando" value="Solo me estoy informando"><span>Solo me informo</span></label>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+
+    <div class="apply-send">
+      <button class="btn-pill btn-big" type="submit" id="applySubmit">Quiero empezar <span class="arr">→</span></button>
+      <p class="mono apply-note">TE RESPONDO EN MENOS DE 24&nbsp;H&nbsp;·&nbsp;SIN COMPROMISO</p>
+    </div>
+
+    <p class="apply-status mono" id="applyStatus" role="status" aria-live="polite"></p>
+
+    <p class="apply-alt">¿Prefieres escribirme directamente? <a href="https://ig.me/m/muevet.mas" target="_blank" rel="noopener">Instagram DM</a></p>
+  </form>
+
+  <div class="apply-done" id="applyDone" hidden>
+    <p class="mono apply-done-tag"><span class="plus" aria-hidden="true">+</span> RECIBIDO</p>
+    <p class="apply-done-title" id="applyDoneTitle">Gracias.</p>
+    <p class="apply-done-text">Te escribo en menos de 24 h con el siguiente paso. Si prefieres adelantarlo, escríbeme por <a href="https://ig.me/m/muevet.mas" target="_blank" rel="noopener">Instagram</a>.</p>
+  </div>
 
   <div class="voices reveal">
     <p class="mono voices-label"><span class="plus" aria-hidden="true">+</span> Lo que dicen</p>
@@ -551,7 +643,7 @@
     <details>
       <summary>¿Cuánto cuesta? <span class="plus" aria-hidden="true">+</span></summary>
       <div class="faq-body"><div class="faq-inner">
-        <p>Cada caso es distinto y prefiero contártelo bien. Escríbeme por Instagram, cuéntame tu objetivo y te doy el detalle sin compromiso.</p>
+        <p>El análisis ISAK son 30&nbsp;€. El plan se diseña para ti, así que prefiero contártelo bien: rellena el formulario, cuéntame tu objetivo y te doy el detalle sin compromiso.</p>
       </div></div>
     </details>
   </div>
@@ -572,7 +664,7 @@
 
 <!-- CTA persistente móvil -->
 <div class="sticky-cta" id="stickyCta" aria-hidden="true">
-  <a class="btn-pill" href="https://ig.me/m/muevet.mas" target="_blank" rel="noopener" tabindex="-1">Escríbeme <span class="arr">→</span></a>
+  <a class="btn-pill" href="#contacto" tabindex="-1">Escríbeme <span class="arr">→</span></a>
 </div>
 
 <script src="assets/js/main.js" defer></script>
