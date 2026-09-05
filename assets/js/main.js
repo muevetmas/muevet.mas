@@ -270,7 +270,7 @@
      Pega aqui la URL de tu app de Google Apps Script (termina en /exec).
      Mientras este vacia, el boton abre el DM de Instagram para no perder
      ningun contacto. */
-  const FORM_ENDPOINT = '';
+  const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycby967xzDwrXaPFTkq5bqcqe8QCk191A_0UxeHpP8W0BaCLqIhHf3NlOyOo9Fk44uWxVWg/exec';
 
   const form = document.getElementById('applyForm');
   if (form) {
@@ -337,7 +337,7 @@
       const etiqueta = submit.innerHTML;
       submit.disabled = true;
       submit.textContent = 'Enviando…';
-      const datos = new FormData(form);
+      const datos = new URLSearchParams(new FormData(form));
       datos.append('fecha', new Date().toLocaleString('es-ES'));
       try {
         await fetch(FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', body: datos });

@@ -55,13 +55,20 @@ Guarda (icono del disquete).
    (nombre del proyecto)*.
 6. Copia la **URL de la aplicación web** (termina en `/exec`).
 
-## 4. Conectarla a la web
+## 4. Conectarla a la web  ✅ HECHO
 
-En `assets/js/main.js`, busca `FORM_ENDPOINT` y pega la URL entre las comillas:
+Ya está conectada: la URL vive en `assets/js/main.js`, en `FORM_ENDPOINT`.
+Si algún día vuelves a implementar el script (Google genera una URL nueva en
+cada *implementación nueva*), hay que actualizarla ahí.
 
 ```javascript
-const FORM_ENDPOINT = 'https://script.google.com/macros/s/AAAA..../exec';
+const FORM_ENDPOINT = 'https://script.google.com/macros/s/..../exec';
 ```
+
+Los datos se envían como `application/x-www-form-urlencoded`, que es el único
+formato que Apps Script convierte de forma fiable en `e.parameter`. Si lo
+cambias a `FormData`, el script seguirá respondiendo «ok» pero escribirá filas
+vacías.
 
 ## 5. Probarlo (no te saltes este paso)
 
