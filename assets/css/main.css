@@ -193,7 +193,7 @@ a{ color:inherit }
   margin-bottom:40px;
   display:flex; flex-direction:column; align-items:flex-start; gap:12px;
 }
-.hero-micro{ letter-spacing:.12em }
+.hero-micro{ letter-spacing:.06em }
 /* Cotas del perfil restringido ISAK: la imagen de la portada son datos */
 .hero-rule{ display:flex; align-items:flex-end; margin:0 0 26px; max-width:520px }
 .hero-rule span{
@@ -342,7 +342,7 @@ a{ color:inherit }
 .medir-intro, .coach-intro{ color:var(--dim); font-size:clamp(16px,1.8vw,19px); max-width:60ch; margin-bottom:28px }
 .medir-a, .medir-b{ display:flex; flex-direction:column; gap:26px }
 .cta-row{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; margin-top:6px }
-.cta-micro{ letter-spacing:.12em }
+.cta-micro{ letter-spacing:.06em }
 
 /* 02 · COACH */
 .coach-grid{ display:grid; gap:40px }
@@ -404,7 +404,7 @@ a{ color:inherit }
 .run-text{
   font-size:clamp(18px,2.4vw,24px); line-height:1.5; max-width:60ch;
 }
-.run-note{ letter-spacing:.12em }
+.run-note{ letter-spacing:.06em }
 
 /* 04 · MVT+ */
 .mvt{ padding-bottom:clamp(138px,20vh,253px) }
@@ -524,7 +524,7 @@ a{ color:inherit }
 .doc-body ul{ padding-left:20px } .doc-body li{ margin:8px 0 } .doc-body li::marker{ color:var(--lime) }
 .doc-body a{ color:var(--paper); text-decoration-color:var(--line); text-underline-offset:4px; display:inline-block; padding:10px 0; margin:-10px 0 }
 .doc-body a:hover{ text-decoration-color:var(--lime) }
-.doc-date{ margin-top:48px; letter-spacing:.14em }
+.doc-date{ margin-top:48px; letter-spacing:.06em }
 
 /* ── FOOTER ── */
 .footer{
@@ -649,7 +649,7 @@ a{ color:inherit }
 .isak-num{ color:var(--paper); letter-spacing:.1em; margin-bottom:10px }
 .isak-num b{ color:var(--lime); font-weight:600; font-variant-numeric:tabular-nums }
 .isak-item p{ color:var(--dim); max-width:62ch }
-.isak-close{ margin-top:22px; letter-spacing:.12em }
+.isak-close{ margin-top:22px; letter-spacing:.06em }
 
 /* ── CONTORNOS TOPOGRÁFICOS (profundidad decorativa) ── */
 #medir{ position:relative; overflow:hidden }
@@ -749,7 +749,7 @@ a{ color:inherit }
 
 /* ── Envío ── */
 .apply-send{ display:flex; flex-direction:column; align-items:flex-start; gap:16px }
-.apply-note{ letter-spacing:.12em }
+.apply-note{ letter-spacing:.06em }
 /* ── Casilla de privacidad: obligatoria, sin marcar, zona táctil ≥44px ── */
 .check{
   position:relative; display:flex; align-items:center; gap:12px;
@@ -774,7 +774,7 @@ a{ color:inherit }
 .check-text a{ color:var(--paper); text-decoration-color:var(--line); text-underline-offset:4px; display:inline-block; padding:12px 0; margin:-12px 0 }
 .check-text a:hover{ text-decoration-color:var(--lime) }
 .apply-send .btn-pill[disabled]{ opacity:.55; pointer-events:none }
-.apply-status{ margin-top:18px; color:var(--error); letter-spacing:.08em; line-height:1.5 }
+.apply-status{ margin-top:18px; color:var(--error); letter-spacing:.06em; line-height:1.5 }
 .apply-status:empty{ display:none }
 .apply-alt{ margin-top:26px; color:var(--dim); font-size:14px }
 .apply-alt a{ color:var(--paper); text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:4px; padding:11px 0; margin:-11px 0 }
