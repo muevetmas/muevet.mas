@@ -149,6 +149,7 @@
     };
     clip.addEventListener('playing', () => frame.classList.add('is-ready'), { once: true });
     if (!reduced && !saveData) {
+      if (!clip.dataset.src) clip.preload = 'auto';   /* portada: empieza a bajar ya; el póster ya está pintado */
       if (clip.dataset.src) {
         const near = new IntersectionObserver(([e]) => {
           if (!e.isIntersecting) return;
