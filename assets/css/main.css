@@ -378,10 +378,12 @@ a{ color:inherit }
 .marquee-track{
   display:inline-block; will-change:transform;
   animation:marquee 38s linear infinite;   /* cuatro tramos iguales: −50 % cierra el bucle sin salto */
+  animation-play-state:paused;             /* solo corre en pantalla (.is-on por IntersectionObserver) */
   font-family:var(--display); font-weight:800; font-stretch:115%;
   font-size:clamp(16px,2.2vw,22px); letter-spacing:.12em; color:var(--dim);
 }
 .marquee-track span{ display:inline-block }
+.marquee.is-on .marquee-track{ animation-play-state:running }
 @keyframes marquee{ to{ transform:translateX(-50%) } }
 /* El «+» del logotipo se dibuja al entrar: primero el trazo vertical, luego el horizontal */
 .run-plus{ display:inline-block; width:.64em; height:.64em; vertical-align:-.03em; margin-left:.03em; overflow:visible }
@@ -562,6 +564,8 @@ a{ color:inherit }
   .photo-mask img, .reveal .photo-mask img{ transform:none; transition:none }
   .hero-cross .draw,.mvt-plus .draw-slow{ stroke-dashoffset:0; animation:none !important }
   .mvt-tick::before{ transform:none; transition:none }
+  .apply-done:not([hidden]){ animation:none }
+  .chip span:active{ transform:none }
   .marquee-track{ transform:none !important; animation:none !important }
   .run-plus .draw-plus{ stroke-dashoffset:0; animation:none !important }
 }
@@ -724,9 +728,10 @@ a{ color:inherit }
   border:1px solid var(--line); border-radius:999px;
   padding:13px 18px; font-size:13.5px; line-height:1.2; color:var(--dim);
   transition:border-color var(--d1) var(--ease-swift), color var(--d1) var(--ease-swift),
-             background var(--d1) var(--ease-swift);
+             background var(--d1) var(--ease-swift), transform .16s var(--ease-out);
 }
 .chip span:hover{ border-color:var(--paper); color:var(--paper) }
+.chip span:active{ transform:scale(.97) }
 .chip input:checked + span{ background:var(--lime); border-color:var(--lime); color:var(--ink); font-weight:600 }
 .chip input:focus-visible + span{ outline:2px solid var(--lime); outline-offset:3px }
 
@@ -773,6 +778,9 @@ a{ color:inherit }
 
 /* ── Estado enviado ── */
 .apply-done{ width:100%; max-width:640px; border-top:1px solid var(--line); padding-top:30px }
+/* Cambio de estado (una vez): entra con desenfoque y opacidad, receta de Emil */
+.apply-done:not([hidden]){ animation:appear .35s var(--ease-out) }
+@keyframes appear{ from{ opacity:0; filter:blur(2px); transform:translateY(6px) } }
 .apply-done-tag{ color:var(--lime); letter-spacing:.2em; margin-bottom:16px }
 .apply-done-title{
   font-family:var(--display); font-weight:800; font-stretch:110%;

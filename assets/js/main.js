@@ -134,6 +134,14 @@
     drift();
   }
 
+  /* ── Marquesina RUN+: la animación CSS solo corre mientras está en pantalla ── */
+  const marquee = document.querySelector('.marquee');
+  if (marquee && !reduced) {
+    new IntersectionObserver(([e]) => {
+      marquee.classList.toggle('is-on', e.isIntersecting);
+    }).observe(marquee);
+  }
+
   /* ── Vídeos de marca: póster propio primero, vídeo fundido encima cuando
      reproduce de verdad. Autoarrancan silenciosos salvo con reduced-motion o
      Save-Data: entonces queda el póster y un botón para verlos. Los que llevan
