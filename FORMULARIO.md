@@ -25,7 +25,7 @@ function doPost(e) {
   const libro = SpreadsheetApp.getActiveSpreadsheet();
   const hoja  = libro.getSheetByName(HOJA) || libro.insertSheet(HOJA);
   const p = e.parameter;
-  const cols = ['fecha','nombre','email','contacto','interes','punto',
+  const cols = ['fecha','nombre','email','contacto','interes','punto','privacidad',
                 'objetivo','intentos','dias','cuando'];
 
   if (hoja.getLastRow() === 0) hoja.appendRow(cols);
@@ -87,3 +87,12 @@ implementación.
 Están en `index.html`, dentro de `<form id="applyForm">`. Si añades un campo,
 recuerda añadir su `name` a la lista `cols` del script para que se guarde en la
 hoja.
+
+## Casilla de privacidad
+
+Desde el 22-09-2026 el formulario lleva una casilla obligatoria «He leído la
+política de privacidad» y envía `privacidad=Sí`. Para que quede registrada
+en la hoja (conviene, como prueba del consentimiento), la columna
+`privacidad` tiene que estar en la lista `cols` del script **desplegado**:
+añádela como arriba y vuelve a desplegar. Si no la añades, el envío funciona
+igual y simplemente no se guarda esa columna.

@@ -212,13 +212,9 @@
           <source type="image/webp" srcset="assets/img/medir/pliegue-480.webp 480w, assets/img/medir/pliegue-640.webp 640w" sizes="(min-width:1080px) 30vw, 100vw">
           <img src="assets/img/medir/pliegue-640.jpg" srcset="assets/img/medir/pliegue-480.jpg 480w, assets/img/medir/pliegue-640.jpg 640w" sizes="(min-width:1080px) 30vw, 100vw"
                width="640" height="640" loading="lazy" decoding="async"
-               alt="Medición del pliegue subescapular con plicómetro siguiendo el protocolo ISAK.">
+               alt="Medición antropométrica con plicómetro, protocolo ISAK.">
         </picture>
       </div>
-      <figcaption class="photo-note">
-        <span class="note-line" aria-hidden="true"></span>
-        <span class="mono">PLIEGUE SUBESCAPULAR&nbsp;·&nbsp;PROTOCOLO ISAK</span>
-      </figcaption>
     </figure>
 
     <div class="medir-b">
@@ -420,7 +416,7 @@
         <legend>¿De dónde partes?</legend>
         <label class="chip"><input type="radio" name="punto" value="Empiezo de cero" required><span>Empiezo de cero</span></label>
         <label class="chip"><input type="radio" name="punto" value="Entreno por mi cuenta"><span>Entreno por mi cuenta</span></label>
-        <label class="chip"><input type="radio" name="punto" value="Vengo de una lesión"><span>Vengo de una lesión</span></label>
+        <label class="chip"><input type="radio" name="punto" value="Vuelvo tras un parón"><span>Vuelvo tras un parón</span></label>
         <label class="chip"><input type="radio" name="punto" value="Compito o quiero competir"><span>Compito o quiero competir</span></label>
       </fieldset>
     </div>
@@ -460,9 +456,13 @@
     </div>
 
     <div class="apply-send">
+      <label class="check" for="f-privacidad">
+        <input id="f-privacidad" name="privacidad" type="checkbox" value="Sí" required>
+        <span class="check-box" aria-hidden="true"></span>
+        <span class="check-text">He leído la <a href="privacidad.html">política de privacidad</a></span>
+      </label>
       <button class="btn-pill btn-big" type="submit" id="applySubmit">Empieza con tu valoración <span class="arr">→</span></button>
       <p class="mono apply-note">TE CONTESTO YO, EN CUANTO LO LEA&nbsp;·&nbsp;SIN COMPROMISO</p>
-      <p class="apply-legal">Al enviar aceptas la <a href="privacidad.html">política de privacidad</a>: uso tus datos solo para contestarte.</p>
     </div>
 
     <p class="apply-status mono" id="applyStatus" role="status" aria-live="polite"></p>

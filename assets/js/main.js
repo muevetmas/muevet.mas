@@ -293,6 +293,10 @@
           falta.push(texto);
         }
       });
+      const priv = form.elements.privacidad;
+      if (!priv.checked) {
+        priv.closest('.check').classList.add('is-error'); falta.push('marcar la casilla de privacidad');
+      }
       return falta;
     };
 

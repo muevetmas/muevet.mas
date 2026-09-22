@@ -478,7 +478,6 @@ a{ color:inherit }
 .doc-body a{ color:var(--paper); text-decoration-color:var(--line); text-underline-offset:4px; display:inline-block; padding:2px 0 }
 .doc-body a:hover{ text-decoration-color:var(--lime) }
 .doc-date{ margin-top:48px; letter-spacing:.14em }
-.doc-pendiente{ color:var(--lime); font-family:var(--mono); font-size:12px; letter-spacing:.04em }
 
 /* ── FOOTER ── */
 .footer{
@@ -714,9 +713,29 @@ a{ color:inherit }
 /* ── Envío ── */
 .apply-send{ display:flex; flex-direction:column; align-items:flex-start; gap:16px }
 .apply-note{ letter-spacing:.12em }
-.apply-legal{ font-size:13px; color:var(--dim); margin:0 }
-.apply-legal a{ color:var(--paper); text-decoration-color:var(--line); text-underline-offset:4px }
-.apply-legal a:hover{ text-decoration-color:var(--lime) }
+/* ── Casilla de privacidad: obligatoria, sin marcar, zona táctil ≥44px ── */
+.check{
+  position:relative; display:flex; align-items:center; gap:12px;
+  min-height:44px; padding:6px 0; cursor:pointer; color:var(--dim); font-size:14px;
+}
+.check input{ position:absolute; width:1px; height:1px; opacity:0; pointer-events:none }
+.check-box{
+  flex:none; width:22px; height:22px; border:1px solid var(--dim); border-radius:4px; position:relative;
+  transition:background var(--d1) var(--ease-swift), border-color var(--d1) var(--ease-swift);
+}
+.check-box::after{
+  content:''; position:absolute; left:7px; top:3px; width:6px; height:11px;
+  border:solid var(--ink); border-width:0 2px 2px 0;
+  transform:rotate(45deg) scale(0); opacity:0;
+  transition:transform .16s var(--ease-out), opacity .12s var(--ease-swift);
+}
+.check:hover .check-box{ border-color:var(--paper) }
+.check input:checked + .check-box{ background:var(--lime); border-color:var(--lime) }
+.check input:checked + .check-box::after{ transform:rotate(45deg) scale(1); opacity:1 }
+.check input:focus-visible + .check-box{ outline:2px solid var(--lime); outline-offset:3px }
+.check.is-error .check-box{ border-color:#FF6B5A }
+.check-text a{ color:var(--paper); text-decoration-color:var(--line); text-underline-offset:4px; display:inline-block; padding:4px 0 }
+.check-text a:hover{ text-decoration-color:var(--lime) }
 .apply-send .btn-pill[disabled]{ opacity:.55; pointer-events:none }
 .apply-status{ margin-top:18px; color:#FF6B5A; letter-spacing:.08em; line-height:1.5 }
 .apply-status:empty{ display:none }
