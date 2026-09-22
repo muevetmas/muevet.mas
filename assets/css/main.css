@@ -288,8 +288,20 @@ a{ color:inherit }
   padding:clamp(110px,16vh,202px) var(--mx);
   max-width:var(--content); margin:0 auto;
   border-top:1px solid var(--line);
+  position:relative;
 }
+/* Transición de sección: la línea superior se dibuja en lima al entrar y vuelve a gris */
+.chapter::before{
+  content:''; position:absolute; top:-1px; left:0; right:0; height:1px;
+  background:var(--lime); transform:scaleX(0); transform-origin:left;
+  transition:transform .7s var(--ease-out), opacity .6s var(--ease-out) .7s;
+}
+.chapter.is-in::before{ transform:scaleX(1); opacity:0 }
 .chapter-head{ display:flex; align-items:baseline; gap:18px; margin-bottom:clamp(40px,6vh,72px) }
+.chapter-sub{
+  font-family:var(--display); font-weight:700; font-stretch:105%;
+  font-size:clamp(16px,1.9vw,20px); letter-spacing:.01em; color:var(--dim); margin-top:14px;
+}
 .chapter-num{ font-size:13px; color:var(--lime) }
 .chapter-title{
   font-family:var(--display); font-weight:900; font-stretch:114%;
@@ -297,11 +309,6 @@ a{ color:inherit }
   letter-spacing:-.01em; text-transform:uppercase;
 }
 
-/* 01 · ENTRENA */
-.entrena-grid{ display:grid; gap:48px }
-@media(min-width:1080px){
-  .entrena-grid{ grid-template-columns: 5fr 6fr; gap:72px; align-items:start }
-}
 .photo{ position:relative }
 .photo-mask{ overflow:hidden }
 .reveal .photo-mask img{ transform:scale(1.08); transition:transform .9s var(--ease-out) }
@@ -315,18 +322,23 @@ a{ color:inherit }
   display:flex; align-items:center; gap:12px; margin-top:14px;
 }
 .note-line{ width:34px; height:1px; background:var(--lime); flex:none }
-.entrena-body{ display:flex; flex-direction:column; gap:36px }
-.service h3{
-  font-family:var(--display); font-weight:800; font-stretch:110%;
-  font-size:clamp(20px,2.4vw,26px); text-transform:uppercase;
-  letter-spacing:.01em; margin-bottom:12px;
-}
-.service h3 .plus{ display:inline-block; transition:transform var(--d1) var(--ease-out) }
-.service:hover h3 .plus{ transform:translateX(4px) }
-.service p{ color:var(--dim); max-width:62ch }
-.cred{ border-top:1px solid var(--line); padding-top:20px }
 
-/* 02 · RUN+++ */
+/* 01 · MEDIR */
+.medir-grid{ display:grid; gap:40px }
+@media(min-width:1080px){
+  .medir-grid{
+    grid-template-columns:5fr 6fr; grid-template-areas:"p1 a" "p2 b";
+    gap:56px 72px; align-items:start;
+  }
+  .medir-p1{ grid-area:p1 } .medir-a{ grid-area:a } .medir-p2{ grid-area:p2 } .medir-b{ grid-area:b }
+}
+.medir-p2{ max-width:420px }
+.medir-intro{ color:var(--dim); font-size:clamp(16px,1.8vw,19px); max-width:60ch; margin-bottom:28px }
+.medir-a, .medir-b{ display:flex; flex-direction:column; gap:26px }
+.cta-row{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; margin-top:6px }
+.cta-micro{ letter-spacing:.12em }
+
+/* 02 · RUN+ */
 .run{ overflow:hidden }
 .run-logo{
   font-family:var(--display); font-weight:900; font-stretch:122%;
@@ -441,18 +453,6 @@ a{ color:inherit }
   letter-spacing:-.015em; text-transform:uppercase;
 }
 @media(min-width:768px){ .closing-title{ font-stretch:118% } }
-/* ── MIDE. ANALIZA. MEJORA. ──
-   Frase de marca propia, ya en uso en las piezas de Instagram y
-   ausente de la web hasta ahora. Cierra el bloque ISAK: los cuatro
-   puntos tecnicos, la frase, lo que se lleva el cliente, la credencial. */
-.measure-claim{
-  margin:clamp(28px,4vh,44px) 0 clamp(16px,2.4vh,24px);
-  font-family:var(--display); font-weight:900; font-stretch:112%;
-  font-size:clamp(26px,4.4vw,44px); line-height:1.06;
-  letter-spacing:-.01em; text-transform:uppercase; color:var(--paper);
-}
-.measure-claim .lime-word{ color:var(--lime) }
-
 /* Beneficios en el idioma del cliente, no en el del entrenador */
 .gains{
   list-style:none; margin:0 0 clamp(22px,3vh,30px); padding:0;
@@ -483,6 +483,27 @@ a{ color:inherit }
 .faq-body{ overflow:hidden }
 .faq details p{ color:var(--dim); padding:0 0 20px; max-width:62ch }
 .faq details p a{ color:var(--paper) }
+
+/* ── PÁGINAS DE DOCUMENTO (privacidad, aviso legal) ── */
+.doc{ max-width:var(--content); margin:0 auto; padding:132px var(--mx) clamp(80px,12vh,140px) }
+.doc-head{ max-width:62ch; margin-bottom:clamp(40px,7vh,72px) }
+.doc-title{
+  font-family:var(--display); font-weight:900; font-stretch:114%;
+  font-size:clamp(34px,6vw,72px); line-height:1; letter-spacing:-.012em; text-transform:uppercase; margin:18px 0 20px;
+}
+.doc-lede{ color:var(--dim); font-size:clamp(16px,1.9vw,19px); max-width:56ch }
+.doc-body{ max-width:64ch }
+.doc-body h2{
+  font-family:var(--display); font-weight:800; font-stretch:108%; font-size:clamp(18px,2.2vw,24px);
+  text-transform:uppercase; letter-spacing:.01em; margin:44px 0 12px; padding-top:22px; border-top:1px solid var(--line);
+}
+.doc-body p, .doc-body li{ color:var(--dim); max-width:64ch }
+.doc-body strong{ color:var(--paper); font-weight:600 }
+.doc-body ul{ padding-left:20px } .doc-body li{ margin:8px 0 } .doc-body li::marker{ color:var(--lime) }
+.doc-body a{ color:var(--paper); text-decoration-color:var(--line); text-underline-offset:4px; display:inline-block; padding:2px 0 }
+.doc-body a:hover{ text-decoration-color:var(--lime) }
+.doc-date{ margin-top:48px; letter-spacing:.14em }
+.doc-pendiente{ color:var(--lime); font-family:var(--mono); font-size:12px; letter-spacing:.04em }
 
 /* ── FOOTER ── */
 .footer{
@@ -593,20 +614,17 @@ a{ color:inherit }
 .isak-item{
   border-top:1px solid var(--line);
   padding:20px 6px 24px;
-  transition:opacity var(--d3) var(--ease-out), transform .5s var(--ease-out), box-shadow .5s var(--ease-out);
+  transition:opacity var(--d3) var(--ease-out), transform .16s var(--ease-out), border-color .2s var(--ease-swift);
 }
 .isak-list .isak-item:last-child{ border-bottom:1px solid var(--line) }
-.isak-item:hover{
-  transform:perspective(800px) rotateX(1.4deg) rotateY(-1.2deg) translateY(-2px);
-  box-shadow:0 16px 36px rgba(0,0,0,.35);
+/* Hover casi imperceptible (se ve decenas de veces): 2 px y la línea en lima */
+@media (hover:hover) and (pointer:fine){
+  .isak-item:hover{ transform:translateY(-2px); border-top-color:var(--lime) }
 }
 .isak-num{ color:var(--paper); letter-spacing:.1em; margin-bottom:10px }
+.isak-num b{ color:var(--lime); font-weight:600; font-variant-numeric:tabular-nums }
 .isak-item p{ color:var(--dim); max-width:62ch }
 .isak-close{ margin-top:22px; letter-spacing:.12em }
-.entrena-extra{
-  margin-top:clamp(48px,7vh,80px);
-  display:flex; flex-direction:column; gap:24px; align-items:flex-start;
-}
 
 /* ── 03 · MÓDULOS MVT+ ── */
 .mvt-modules{ list-style:none; margin:30px 0 34px; max-width:640px; width:100% }
@@ -639,8 +657,8 @@ a{ color:inherit }
 /* ── REDUCED MOTION (nuevos elementos) ── */
 @media(prefers-reduced-motion:reduce){
   .topo{ display:none }
+  .chapter::before{ display:none }
   .reveal .photo-mask{ clip-path:none !important; transition:none }
-  .isak-item:hover{ transform:none; box-shadow:none }
 }
 
 /* ── HOVER SOLO EN PUNTERO FINO ──
@@ -649,9 +667,7 @@ a{ color:inherit }
 @media (hover:none), (pointer:coarse){
   .btn-pill:hover .arr,
   .link-arrow:hover .arr,
-  .service:hover h3 .plus,
   .sys:hover .sys-name{ transform:none }
-  .isak-item:hover{ transform:none; box-shadow:none }
 }
 
 /* ══════════════════════════════════════════════════
@@ -724,6 +740,9 @@ a{ color:inherit }
 /* ── Envío ── */
 .apply-send{ display:flex; flex-direction:column; align-items:flex-start; gap:16px }
 .apply-note{ letter-spacing:.12em }
+.apply-legal{ font-size:13px; color:var(--dim); margin:0 }
+.apply-legal a{ color:var(--paper); text-decoration-color:var(--line); text-underline-offset:4px }
+.apply-legal a:hover{ text-decoration-color:var(--lime) }
 .apply-send .btn-pill[disabled]{ opacity:.55; pointer-events:none }
 .apply-status{ margin-top:18px; color:#FF6B5A; letter-spacing:.08em; line-height:1.5 }
 .apply-status:empty{ display:none }

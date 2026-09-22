@@ -37,6 +37,17 @@
   }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.reveal, .mvt-plus, .topo').forEach(el => io.observe(el));
 
+  /* Transición de sección: la línea superior se dibuja cuando el capítulo asoma
+     (umbral 0: en móvil un capítulo mide varias pantallas y nunca llegaría al 18%) */
+  const ioChapter = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('is-in');
+      ioChapter.unobserve(e.target);
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -25% 0px' });
+  document.querySelectorAll('.chapter').forEach(el => ioChapter.observe(el));
+
   /* ── Nav: fondo al scrollear + ocultar al bajar, mostrar al subir ── */
   const nav = document.getElementById('nav');
   let lastY = window.scrollY;
@@ -129,9 +140,9 @@
       { threshold: 0.05 }).observe(closing);
   }
 
-  /* ── Deriva sutil de las imágenes de capítulo (±14px, solo ≥768px) ── */
+  /* ── Deriva sutil de las imágenes de capítulo (±10px, solo escritorio con puntero fino) ── */
   const driftEls = [...document.querySelectorAll('[data-drift]')];
-  if (driftEls.length && !reduced && window.matchMedia('(min-width:768px)').matches) {
+  if (driftEls.length && !reduced && window.matchMedia('(min-width:1080px) and (hover:hover) and (pointer:fine)').matches) {
     let dTick = false;
     const drift = () => {
       const vh = window.innerHeight;
@@ -140,7 +151,7 @@
         if (r.bottom < -40 || r.top > vh + 40) continue;
         let p = (r.top + r.height / 2 - vh / 2) / (vh / 2);
         p = Math.max(-1, Math.min(1, p));
-        el.style.transform = `translateY(${(-p * 14).toFixed(1)}px)`;
+        el.style.transform = `translateY(${(-p * 10).toFixed(1)}px)`;
       }
       dTick = false;
     };
