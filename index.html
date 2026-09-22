@@ -25,7 +25,7 @@
 
 <link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/main.css?v=2026-09-22a">
 
 <script type="application/ld+json">
 {
@@ -55,10 +55,10 @@
     <img src="assets/icons/logo-mv.png" alt="" width="34" height="34">
   </a>
   <nav class="nav-links" aria-label="Secciones">
-    <a href="#entrena">Entrena</a>
-    <a href="#corre">Corre</a>
+    <a href="#medir">Medir</a>
+    <a href="#sistemas">Entrenar</a>
+    <a href="#corre">Correr</a>
     <a href="#mvt">MVT+</a>
-    <a href="#sistemas">Sistemas</a>
   </nav>
   <a class="btn-pill nav-cta" href="#contacto">Empieza con tu valoración</a>
 </header>
@@ -73,46 +73,51 @@
 
   <div class="hero-grid">
     <div class="hero-copy">
+      <p class="label hero-label"><span class="line"><span class="line-in">MUEVET+ &nbsp;·&nbsp; CANTABRIA Y ONLINE</span></span></p>
 
       <h1 class="hero-title">
-        <span class="line"><span class="line-in">MUEVET<span class="plus">+</span></span></span>
+        <span class="line"><span class="line-in">Deja de</span></span>
+        <span class="line"><span class="line-in">entrenar</span></span>
+        <span class="line"><span class="line-in">a ciegas<span class="plus">.</span></span></span>
       </h1>
 
-      <div class="hero-measure" aria-hidden="true">
-        <span class="tick-l"></span><span class="mono">43°27′N&nbsp;·&nbsp;3°48′O</span><span class="tick-r"></span>
-      </div>
-
-      <p class="hero-sub"><span class="line"><span class="line-in">Movimiento, ciencia y comunidad. Un ecosistema para entrenar</span></span>
-      <span class="line"><span class="line-in">con criterio, correr acompañado y progresar de verdad.</span></span></p>
+      <p class="hero-sub"><span class="line"><span class="line-in">Mido tu composición corporal con el protocolo ISAK y planifico tu</span></span>
+      <span class="line"><span class="line-in">entrenamiento con esos datos, con seguimiento semanal. Nada genérico.</span></span></p>
 
       <div class="hero-actions">
-        <a class="btn-pill" href="#contacto">Empieza con tu valoración <span class="arr">→</span></a>
+        <a class="btn-pill btn-big" href="#contacto">Empieza con tu valoración <span class="arr">→</span></a>
+        <p class="mono hero-micro">DOS MINUTOS. TE DIGO POR DÓNDE EMPEZAR.</p>
       </div>
 
-      <nav class="hero-index" aria-label="Índice del ecosistema">
-        <a href="#entrena"><span class="mono">01</span> Entrena</a>
-        <span class="plus-sep" aria-hidden="true">+</span>
-        <a href="#corre"><span class="mono">02</span> Corre</a>
-        <span class="plus-sep" aria-hidden="true">+</span>
-        <a href="#mvt"><span class="mono">03</span> MVT+</a>
-      </nav>
+      <div class="hero-rule" role="group" aria-label="Perfil restringido ISAK: 8 pliegues, 5 perímetros, 2 diámetros">
+        <span><b data-count="8">8</b>PLIEGUES</span>
+        <span><b data-count="5">5</b>PERÍMETROS</span>
+        <span><b data-count="2">2</b>DIÁMETROS</span>
+      </div>
+
+      <p class="mono hero-cred"><span class="note-line" aria-hidden="true"></span>VÍCTOR &nbsp;·&nbsp; GRADUADO CAFYD &nbsp;·&nbsp; ANTROPOMETRISTA ISAK NIVEL 1</p>
     </div>
 
-    <!-- ▓▓ VÍDEO RUN+ — EDITABLE ▓▓
-         Para cambiarlo: sustituye assets/img/run-clip.mp4 y run-poster.jpg
-         (vertical 9:16, MP4 H.264 sin audio, ideal < 3 MB). -->
+    <!-- ▓▓ VÍDEO DE MEDICIÓN — EDITABLE ▓▓
+         Para cambiarlo: sustituye assets/img/hero/medir-clip.mp4 y los dos
+         pósteres medir-poster.avif / .jpg (vertical 9:16, sin audio, ideal < 300 KB).
+         El póster debe ser un fotograma del propio vídeo. -->
     <figure class="hero-media">
-      <div class="photo-mask">
-        <video id="runClip" poster="assets/img/run-poster.jpg" width="720" height="1280"
-               muted loop playsinline preload="none"
-               aria-label="Vídeo de RUN+, el club de running de MUEVET+.">
-          <source src="assets/img/run-clip.webm" type="video/webm">
-          <source src="assets/img/run-clip.mp4" type="video/mp4">
+      <div class="hero-frame" id="heroFrame">
+        <picture class="hero-poster">
+          <source type="image/avif" srcset="assets/img/hero/medir-poster.avif">
+          <img src="assets/img/hero/medir-poster.jpg" width="512" height="910" decoding="async"
+               alt="Medición de pliegues cutáneos con plicómetro en el brazo, protocolo ISAK.">
+        </picture>
+        <video id="heroClip" class="hero-clip" width="512" height="910" muted loop playsinline preload="metadata"
+               aria-label="Vídeo: medición de pliegues cutáneos con plicómetro, protocolo ISAK.">
+          <source src="assets/img/hero/medir-clip.mp4" type="video/mp4">
         </video>
+        <button class="hero-play mono" id="heroPlay" type="button" hidden>VER · 5 S</button>
       </div>
       <figcaption class="photo-note">
         <span class="note-line" aria-hidden="true"></span>
-        <span class="mono">MUEVET+&nbsp;·&nbsp;CANTABRIA</span>
+        <span class="mono">MEDICIÓN DE PLIEGUES&nbsp;·&nbsp;PROTOCOLO ISAK</span>
       </figcaption>
     </figure>
   </div>
@@ -136,7 +141,7 @@
 </section>
 
 <!-- ══════════ ACTO 3 · 01 ENTRENA ══════════ -->
-<section class="chapter" id="entrena" aria-labelledby="h-entrena">
+<section class="chapter" id="medir" aria-labelledby="h-entrena">
   <svg class="topo" viewBox="0 0 600 600" aria-hidden="true">
     <defs>
       <g id="topo-rings">
@@ -488,6 +493,6 @@
   <a class="btn-pill" href="#contacto" tabindex="-1">Empieza con tu valoración <span class="arr">→</span></a>
 </div>
 
-<script src="assets/js/main.js" defer></script>
+<script src="assets/js/main.js?v=2026-09-22a" defer></script>
 </body>
 </html>

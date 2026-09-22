@@ -12,7 +12,7 @@ HTML + CSS + JS vanilla · sin dependencias · GitHub Pages.
 - `assets/icons` — favicon, touch icon, logo
 
 ## Ediciones frecuentes
-- **Vídeo RUN+ (capítulo 02):** sustituye `assets/img/run-clip.webm`, `run-clip.mp4` y `run-poster.jpg`. Vertical 9:16, sin audio, ideal < 3 MB. Busca `VÍDEO RUN+ — EDITABLE` en `index.html`.
+- **Vídeo del hero (medición):** sustituye `assets/img/hero/medir-clip.mp4` y los pósteres `medir-poster.avif` / `.jpg` (vertical 9:16, sin audio, ideal < 300 KB; el póster es un fotograma del vídeo). Busca `VÍDEO DE MEDICIÓN — EDITABLE` en `index.html`.
 - **Dominio propio:** añade fichero `CNAME` con el dominio, actualiza `sitemap.xml`, `robots.txt` y las metas OG (`og:image` con URL absoluta).
 
 ## Deploy

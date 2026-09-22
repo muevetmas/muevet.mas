@@ -130,6 +130,8 @@ a{ color:inherit }
 .btn-pill:hover .arr{ transform:translateX(4px) }
 .nav-cta{ padding:9px 18px; font-size:12px }
 .btn-big{ padding:18px 36px; font-size:16px }
+@media(max-width:480px){ .btn-big{ padding:16px 24px; font-size:13.5px; letter-spacing:.02em } }
+@media(max-width:480px){ .hero-micro{ letter-spacing:.06em } }
 
 .btn-ghost{
   display:inline-flex; align-items:center;
@@ -175,76 +177,82 @@ a{ color:inherit }
 @keyframes draw{ to{ stroke-dashoffset:0 } }
 
 .hero-title{
-  font-family:var(--display); font-weight:900; font-stretch:118%;
-  font-size:clamp(40px, 11vw, 118px);
-  line-height:1; letter-spacing:-.01em; text-transform:uppercase;
+  font-family:var(--display); font-weight:900; font-stretch:114%;
+  font-size:clamp(40px, 6.6vw, 88px);
+  line-height:1; letter-spacing:-.012em; text-transform:uppercase;
 }
-.hero-measure{
-  display:flex; align-items:center; gap:12px;
-  margin:26px 0 22px; max-width:280px;
-}
-.hero-measure .tick-l, .hero-measure .tick-r{
-  flex:1; height:1px; background:var(--line); position:relative;
-}
-.hero-measure .tick-l::before, .hero-measure .tick-r::after{
-  content:''; position:absolute; top:-4px; width:1px; height:9px; background:var(--line);
-}
-.hero-measure .tick-l::before{ left:0 }
-.hero-measure .tick-r::after{ right:0 }
-
 .hero-sub{
   color:var(--dim); font-size:clamp(16px,2vw,19px); line-height:1.55;
   max-width:60ch; margin-bottom:34px;
 }
 .hero-actions{
-  margin-bottom:56px;
-  display:flex; flex-direction:column; align-items:flex-start; gap:20px;
+  margin-bottom:40px;
+  display:flex; flex-direction:column; align-items:flex-start; gap:12px;
 }
+.hero-micro{ letter-spacing:.12em }
+/* Cotas del perfil restringido ISAK: la imagen de la portada son datos */
+.hero-rule{ display:flex; align-items:flex-end; margin:0 0 26px; max-width:520px }
+.hero-rule span{
+  flex:1; position:relative; padding:10px 0 0; border-top:1px solid var(--line);
+  font-family:var(--mono); font-size:11px; letter-spacing:.12em; color:var(--dim);
+}
+.hero-rule span::before{ content:''; position:absolute; left:0; top:-5px; width:1px; height:9px; background:var(--line) }
+.hero-rule span:last-child::after{ content:''; position:absolute; right:0; top:-5px; width:1px; height:9px; background:var(--line) }
+.hero-rule b{
+  display:block; font-family:var(--display); font-weight:900; font-stretch:110%;
+  font-size:22px; line-height:1; letter-spacing:0; color:var(--paper); margin-bottom:4px;
+  font-variant-numeric:tabular-nums;
+}
+.hero-cred{ display:flex; align-items:center; gap:12px }
 /* Hero a dos columnas con el vídeo de marca */
 .hero-grid{ display:flex; flex-direction:column }
 .hero-media{
   margin-top:40px; width:100%;
-  max-width:min(380px, 36svh);
+  max-width:min(360px, 36svh);
   opacity:0; transform:translateY(14px);
 }
-.is-loaded .hero-media{ animation:fadeup .7s var(--ease-out) .9s forwards }
-.hero-media video{ display:block; width:100%; height:auto; background:var(--ink-2) }
+.is-loaded .hero-media{ animation:fadeup .6s var(--ease-out) .8s forwards }
+/* Póster propio primero; el vídeo se funde encima cuando reproduce de verdad */
+.hero-frame{ position:relative; aspect-ratio:9/16; overflow:hidden; background:var(--ink-2) }
+.hero-poster img, .hero-clip{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block }
+.hero-clip{ opacity:0; transition:opacity .24s var(--ease-out) }
+.hero-frame.is-ready .hero-clip{ opacity:1 }
+.hero-play{
+  position:absolute; left:14px; bottom:14px; z-index:2;
+  display:inline-flex; align-items:center; gap:8px; cursor:pointer;
+  background:rgba(10,10,10,.72); color:var(--paper); border:1px solid var(--line);
+  font-size:11px; letter-spacing:.12em; padding:11px 14px; min-height:44px;
+  transition:border-color var(--d1) var(--ease-swift), transform .16s var(--ease-out);
+}
+.hero-play::before{ content:''; width:0; height:0; border-left:8px solid var(--lime); border-top:5px solid transparent; border-bottom:5px solid transparent }
+.hero-play:hover{ border-color:var(--paper) }
+.hero-play:active{ transform:scale(.97) }
 @media(min-width:1080px){
   .hero-grid{
     display:grid; grid-template-columns:minmax(0,1fr) auto;
     gap:64px; align-items:center;
   }
-  .hero-media{ margin-top:0; justify-self:end; width:min(380px, 36svh) }
+  .hero-media{ margin-top:0; justify-self:end; width:min(360px, 36svh) }
 }
-.hero-index{
-  display:flex; align-items:center; gap:14px; flex-wrap:wrap;
-}
-.hero-index a{
-  font-family:var(--display); font-weight:700; font-stretch:108%;
-  font-size:14px; letter-spacing:.05em; text-transform:uppercase;
-  color:var(--dim); text-decoration:none;
-  transition:color var(--d1) var(--ease-swift);
-}
-.hero-index a:hover{ color:var(--paper) }
-.hero-index a .mono{ color:inherit; margin-right:6px; font-size:11px }
-.plus-sep{ color:var(--line); font-family:var(--display); font-weight:700 }
 
 /* Animación de entrada del hero (líneas) */
 .line{ display:block; overflow:hidden }
 .hero-title .line{ padding-bottom:.06em; margin-bottom:-.06em }
 .line-in{ display:inline-block; transform:translateY(115%) }
-.is-loaded .line-in{ animation:lineup .85s var(--ease-out) forwards }
-.is-loaded .hero-title .line:nth-child(1) .line-in{ animation-delay:.15s }
-.is-loaded .hero-title .line:nth-child(2) .line-in{ animation-delay:.26s }
-.is-loaded .hero-sub .line:nth-child(1) .line-in{ animation-delay:.42s }
-.is-loaded .hero-sub .line:nth-child(2) .line-in{ animation-delay:.5s }
+.is-loaded .line-in{ animation:lineup .6s var(--ease-out) forwards }
+.is-loaded .hero-label .line-in{ animation-delay:.05s }
+.is-loaded .hero-title .line:nth-child(1) .line-in{ animation-delay:.12s }
+.is-loaded .hero-title .line:nth-child(2) .line-in{ animation-delay:.2s }
+.is-loaded .hero-title .line:nth-child(3) .line-in{ animation-delay:.28s }
+.is-loaded .hero-sub .line:nth-child(1) .line-in{ animation-delay:.38s }
+.is-loaded .hero-sub .line:nth-child(2) .line-in{ animation-delay:.44s }
 @keyframes lineup{ to{ transform:translateY(0) } }
-.hero-actions, .hero-index, .hero-measure{
+.hero-actions, .hero-rule, .hero-cred{
   opacity:0; transform:translateY(14px);
 }
-.is-loaded .hero-measure{ animation:fadeup .7s var(--ease-out) .55s forwards }
-.is-loaded .hero-actions{ animation:fadeup .7s var(--ease-out) .68s forwards }
-.is-loaded .hero-index{ animation:fadeup .7s var(--ease-out) .8s forwards }
+.is-loaded .hero-actions{ animation:fadeup .6s var(--ease-out) .5s forwards }
+.is-loaded .hero-rule{ animation:fadeup .6s var(--ease-out) .58s forwards }
+.is-loaded .hero-cred{ animation:fadeup .6s var(--ease-out) .66s forwards }
 @keyframes fadeup{ to{ opacity:1; transform:translateY(0) } }
 
 /* ── REVEALS GENERALES ── */
@@ -511,7 +519,8 @@ a{ color:inherit }
 @media(prefers-reduced-motion:reduce){
   html{ scroll-behavior:auto }
   .line-in{ transform:none; animation:none !important }
-  .hero-actions,.hero-index,.hero-measure,.hero-media{ opacity:1; transform:none; animation:none !important }
+  .hero-actions,.hero-rule,.hero-cred,.hero-media{ opacity:1; transform:none; animation:none !important }
+  .hero-clip{ transition:none }
   .reveal{ opacity:1; transform:none; transition:none }
   .photo-mask img, .reveal .photo-mask img{ transform:none; transition:none }
   .hero-cross .draw,.mvt-plus .draw-slow{ stroke-dashoffset:0; animation:none !important }
@@ -524,14 +533,15 @@ a{ color:inherit }
    ya esta cubierto por el boton del hero y por el CTA fijo inferior,
    asi que no se pierde ninguna via de contacto. */
 @media(max-width:700px){
-  .nav{ gap:10px; padding:12px 14px }
+  .nav{ gap:8px; padding:12px 14px }
   .nav-cta{ display:none }
   .nav-links{ gap:0; margin-left:auto }
-  .nav-links a{ font-size:12px; padding:8px 5px; letter-spacing:.03em }
+  .nav-links a{ font-size:11.5px; padding:8px 4px; letter-spacing:.02em }
+  .nav-brand{ display:inline-flex; padding:8px; margin:-8px }   /* 28 px de logo, 44 de zona táctil */
   .nav-brand img{ width:28px; height:28px }
 }
 @media(max-width:360px){
-  .nav-links a{ font-size:11px; padding:8px 3px; letter-spacing:.01em }
+  .nav-links a{ font-size:10.5px; padding:8px 3px; letter-spacing:0 }
 }
 
 /* ── HERO EN MOVIL ──
@@ -543,9 +553,6 @@ a{ color:inherit }
       tras "entrenar". Se deja fluir como un solo parrafo y la entrada
       pasa de por-linea a fadeup, la misma del resto del hero. */
 @media(max-width:700px){
-  /* El indice envuelve y dejaba un "+" colgando al final de linea */
-  .hero-index .plus-sep{ display:none }
-  .hero-index{ gap:10px 20px }
 
   .hero-sub .line{ display:inline; overflow:visible }
   .hero-sub .line-in{ display:inline; transform:none; animation:none }
@@ -616,7 +623,7 @@ a{ color:inherit }
 .mvt-modules .plus{ font-family:var(--display); font-weight:800; flex:none }
 
 /* ── CONTORNOS TOPOGRÁFICOS (profundidad decorativa) ── */
-#entrena{ position:relative; overflow:hidden }
+#medir{ position:relative; overflow:hidden }
 .closing{ position:relative; overflow:hidden }
 .topo{
   position:absolute; z-index:-1; top:2%; right:-14%;

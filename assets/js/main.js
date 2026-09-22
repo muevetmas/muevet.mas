@@ -150,14 +150,45 @@
     drift();
   }
 
-  /* ── Vídeo RUN+: reproducir solo cuando es visible, respetando reduced-motion ── */
-  const clip = document.getElementById('runClip');
-  if (clip && !reduced) {
-    const vio = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) { clip.play().catch(() => {}); }
-      else { clip.pause(); }
-    }, { threshold: 0.25 });
-    vio.observe(clip);
+  /* ── Vídeo de medición del hero: póster propio primero, vídeo fundido encima.
+     Autoarranca silencioso salvo con reduced-motion o Save-Data: entonces
+     queda el póster y un botón para verlo. ── */
+  const clip = document.getElementById('heroClip');
+  if (clip) {
+    const frame = document.getElementById('heroFrame');
+    const play = document.getElementById('heroPlay');
+    const saveData = !!(navigator.connection && navigator.connection.saveData);
+    clip.addEventListener('playing', () => frame.classList.add('is-ready'), { once: true });
+    if (!reduced && !saveData) {
+      new IntersectionObserver(([e]) => {
+        if (e.isIntersecting) clip.play().catch(() => { play.hidden = false; });
+        else clip.pause();
+      }, { threshold: 0.25 }).observe(clip);
+    } else {
+      clip.preload = 'none';
+      play.hidden = false;
+    }
+    play.addEventListener('click', () => { play.hidden = true; clip.play().catch(() => {}); });
+  }
+
+  /* ── Contadores de cotas: de 0 al valor una sola vez, al entrar en pantalla.
+     Con reduced-motion se dejan escritos. ── */
+  const counters = [...document.querySelectorAll('[data-count]')];
+  if (counters.length && !reduced) {
+    const run = (el) => {
+      const end = parseInt(el.dataset.count, 10);
+      const t0 = performance.now();
+      const step = (t) => {
+        const p = Math.min(1, (t - t0) / 700);
+        el.textContent = String(Math.round(end * (1 - Math.pow(1 - p, 3))));
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+    const cio = new IntersectionObserver((entries) => {
+      for (const e of entries) if (e.isIntersecting) { cio.unobserve(e.target); setTimeout(() => run(e.target), 550); }
+    }, { threshold: 0.5 });
+    counters.forEach(el => { el.textContent = '0'; cio.observe(el); });
   }
 
   /* ── FAQ: apertura y cierre animados ──
