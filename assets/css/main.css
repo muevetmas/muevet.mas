@@ -200,22 +200,6 @@ a{ color:inherit }
   margin-bottom:56px;
   display:flex; flex-direction:column; align-items:flex-start; gap:20px;
 }
-/* Oferta concreta sobre la linea de flotacion: el ISAK es el producto
-   de entrada y hasta ahora no se veia sin hacer scroll. */
-.hero-offer{
-  display:inline-flex; align-items:center; gap:10px;
-  font-family:var(--mono); font-size:12px; letter-spacing:.14em;
-  text-transform:uppercase; color:var(--dim); text-decoration:none;
-  border-bottom:1px solid var(--line); padding-bottom:6px;
-  transition:color var(--d1) var(--ease-swift),
-             border-color var(--d1) var(--ease-swift),
-             transform .16s var(--ease-out);
-}
-.hero-offer .arr{ color:var(--lime); transition:transform var(--d1) var(--ease-out) }
-.hero-offer:hover{ color:var(--paper); border-color:var(--lime) }
-.hero-offer:hover .arr{ transform:translateX(4px) }
-.hero-offer:active{ transform:scale(.97) }
-
 /* Hero a dos columnas con el vídeo de marca */
 .hero-grid{ display:flex; flex-direction:column }
 .hero-media{
@@ -419,46 +403,7 @@ a{ color:inherit }
 @media(min-width:1080px){
   .sys-side{ align-items:flex-end; text-align:right; padding-top:4px }
 }
-.sys-price{
-  font-family:var(--display); font-weight:900; font-stretch:110%;
-  font-size:clamp(36px,4vw,50px); line-height:1;
-}
-.sys-cur{ color:var(--lime); font-size:.62em; margin-left:2px }
-/* Cuando el precio no es un numero: el hueco lo ocupa el valor, no un vacio */
-.sys-price-text{ font-size:clamp(22px,2.4vw,30px); text-transform:uppercase; letter-spacing:.02em }
-.sys-unit{ letter-spacing:.16em }
 .sys-side .link-arrow, .sys-side .btn-pill{ margin-top:14px }
-
-/* S·03 — el sistema completo: panel propio, línea lima fija */
-.sys-featured{
-  background:var(--ink-2);
-  padding-inline:clamp(20px,3.4vw,48px);
-  margin-inline:calc(-1 * clamp(20px,3.4vw,48px));
-}
-.sys-featured::after{
-  left:clamp(20px,3.4vw,48px); right:clamp(20px,3.4vw,48px);
-  transform:scaleX(1);
-}
-
-/* ── S·03 VELADO: aun no se vende, se anuncia ──
-   No hay tope de plazas, asi que nada de escasez: el contenido se
-   difumina y encima queda un unico camino, escribir. */
-.sys-soon .sys-main,
-.sys-soon .sys-side{
-  filter:blur(5px); opacity:.4;
-  pointer-events:none; user-select:none;
-}
-.soon-over{
-  position:absolute; inset:0;
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  gap:16px; text-align:center; padding:20px;
-  background:rgba(10,10,10,.5);
-}
-.soon-flag{ color:var(--lime); letter-spacing:.22em }
-.soon-key{ color:var(--dim); letter-spacing:.16em }
-@media(prefers-reduced-motion:reduce){
-  .sys-soon .sys-main, .sys-soon .sys-side{ filter:blur(4px) }
-}
 
 /* IG */
 .ig-module{ display:grid; gap:48px }
@@ -473,8 +418,6 @@ a{ color:inherit }
 }
 .ig-bio{ color:var(--dim); line-height:1.5 }
 .ig-actions{ display:flex; gap:22px; align-items:center; margin-top:10px }
-.ig-post{ max-width:420px }
-@media(min-width:1080px){ .ig-post{ justify-self:end } }
 
 /* ── CIERRE + FAQ ── */
 .closing{
@@ -514,22 +457,6 @@ a{ color:inherit }
 }
 .gains .gain-n{ color:var(--lime); font-size:11px; letter-spacing:.14em }
 @media(max-width:700px){ .gains{ flex-direction:column; gap:11px } }
-
-/* ── TESTIMONIOS ── Inerte hasta descomentar el bloque en index.html */
-.voices{ width:100%; max-width:640px; margin-top:clamp(40px,7vh,72px) }
-.voices-label{ color:var(--lime); letter-spacing:.22em; margin-bottom:22px }
-.voices-list{ display:flex; flex-direction:column }
-.voice{ margin:0; border-top:1px solid var(--line); padding:22px 0 }
-.voice:last-child{ border-bottom:1px solid var(--line) }
-.voice blockquote{ margin:0 }
-.voice blockquote p{
-  margin:0 0 12px; color:var(--paper);
-  font-family:var(--display); font-weight:700; font-stretch:104%;
-  font-size:clamp(17px,2.1vw,21px); line-height:1.42; letter-spacing:.01em;
-}
-.voice blockquote p::before{ content:'\201C'; color:var(--lime); margin-right:2px }
-.voice blockquote p::after{ content:'\201D'; color:var(--lime); margin-left:1px }
-.voice figcaption{ color:var(--dim); letter-spacing:.16em }
 
 .faq{ width:100%; max-width:640px; margin-top:clamp(32px,6vh,64px) }
 .faq details{ border-top:1px solid var(--line) }
@@ -619,7 +546,6 @@ a{ color:inherit }
   /* El indice envuelve y dejaba un "+" colgando al final de linea */
   .hero-index .plus-sep{ display:none }
   .hero-index{ gap:10px 20px }
-  .hero-offer{ font-size:11px; letter-spacing:.1em }
 
   .hero-sub .line{ display:inline; overflow:visible }
   .hero-sub .line-in{ display:inline; transform:none; animation:none }
@@ -647,38 +573,6 @@ a{ color:inherit }
 
 /* ── CAPÍTULO 02: copy + tira deslizable ── */
 .run-copy{ display:flex; flex-direction:column; gap:24px; align-items:flex-start }
-
-.strip{
-  margin:clamp(40px,6vh,64px) calc(-1 * var(--mx)) 0;
-  padding:0 var(--mx) 8px;
-  overflow-x:auto; overscroll-behavior-x:contain;
-  scroll-snap-type:x mandatory; scroll-padding-left:var(--mx);
-  -webkit-overflow-scrolling:touch;
-  scrollbar-width:none;
-}
-.strip::-webkit-scrollbar{ display:none }
-.strip.is-drifting{ scroll-snap-type:none }
-.strip:focus-visible{ outline:2px solid var(--lime); outline-offset:4px }
-.strip-track{ display:flex; gap:20px; list-style:none; width:max-content }
-.strip-item{ scroll-snap-align:start; flex:none; width:min(72vw,320px) }
-.strip-item figure{ margin:0 }
-.strip-item .photo-mask{ aspect-ratio:4/5; background:var(--ink-2) }
-.strip-item img{ width:100%; height:100%; object-fit:cover; display:block }
-.strip-item .photo-note{ margin-top:12px }
-
-/* Tratamiento de color de marca para las fotos nuevas */
-.strip-item img, .stack-slide img{ filter:saturate(.88) contrast(1.03) }
-
-/* ── PILA ROTATORIA (antropometría) ── */
-.stack-frame{ position:relative; aspect-ratio:4/5; overflow:hidden; background:var(--ink-2) }
-.stack-slide{ position:absolute; inset:0; transform:translateY(100%); z-index:1 }
-.stack-slide picture{ display:block; width:100%; height:100% }
-.stack-slide img{ width:100%; height:100%; object-fit:cover }
-.stack-slide.is-active{ transform:translateY(0); z-index:2; transition:transform .8s var(--ease-out) }
-.stack-slide.is-under{ transform:translateY(0); z-index:1; transition:none }
-.stack-dots{ display:inline-flex; gap:6px; align-items:center; margin-left:auto }
-.stack-dots i{ width:12px; height:2px; background:var(--line) }
-.stack-dots i.is-on{ background:var(--lime) }
 
 /* ── 01 · ¿QUÉ MIDE UNA EVALUACIÓN ISAK? ── */
 .isak-title{
@@ -748,7 +642,6 @@ a{ color:inherit }
   .btn-pill:hover .arr,
   .link-arrow:hover .arr,
   .service:hover h3 .plus,
-  .hero-offer:hover .arr,
   .sys:hover .sys-name{ transform:none }
   .isak-item:hover{ transform:none; box-shadow:none }
 }

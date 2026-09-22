@@ -84,7 +84,7 @@
     moveCursor();
   }
 
-  /* ── Marquee RUN+++: velocidad base + reacción sutil al scroll ──
+  /* ── Marquee RUN+: velocidad base + reacción sutil al scroll ──
      El único latido experimental de la web. */
   const track = document.getElementById('marqueeTrack');
   if (track && !reduced) {
@@ -150,74 +150,7 @@
     drift();
   }
 
-  /* ── Tira RUN+++: flechas de teclado + deriva automática en desktop ── */
-  const strip = document.getElementById('runStrip');
-  if (strip) {
-    const step = () => {
-      const it = strip.querySelector('.strip-item');
-      return it ? it.getBoundingClientRect().width + 20 : 320;
-    };
-    strip.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
-        e.preventDefault();
-        strip.scrollBy({ left: (e.key === 'ArrowRight' ? 1 : -1) * step(), behavior: reduced ? 'auto' : 'smooth' });
-      }
-    });
-    if (!reduced && window.matchMedia('(min-width:1080px)').matches) {
-      let paused = false, wasPaused = false, inView = false, dir = 1, last = 0;
-      let pos = 0;
-      ['pointerenter', 'focusin', 'touchstart'].forEach(ev =>
-        strip.addEventListener(ev, () => { paused = true; strip.classList.remove('is-drifting'); }, { passive: true }));
-      ['pointerleave', 'focusout'].forEach(ev =>
-        strip.addEventListener(ev, () => { paused = false; }));
-      new IntersectionObserver(([e]) => { inView = e.isIntersecting; }, { threshold: .2 }).observe(strip);
-      const flow = (t) => {
-        if (!last) last = t;
-        const dt = Math.min(t - last, 50); last = t;
-        if (inView && !paused) {
-          if (wasPaused) pos = strip.scrollLeft;      // resincronizar tras interacción
-          strip.classList.add('is-drifting');
-          const max = strip.scrollWidth - strip.clientWidth;
-          if (pos >= max - 1) dir = -1;
-          else if (pos <= 1) dir = 1;
-          pos = Math.max(0, Math.min(max, pos + dir * 20 * dt / 1000));
-          strip.scrollLeft = pos;
-        }
-        wasPaused = paused || !inView;
-        requestAnimationFrame(flow);
-      };
-      requestAnimationFrame(flow);
-    }
-  }
-
-  /* ── Pila rotatoria de antropometría: cortina desde abajo, pausada fuera de viewport ── */
-  const stackEl = document.getElementById('isakStack');
-  if (stackEl) {
-    const slides = [...stackEl.querySelectorAll('.stack-slide')];
-    const dots = [...stackEl.querySelectorAll('.stack-dots i')];
-    const cota = document.getElementById('stackCota');
-    if (slides.length > 1 && !reduced) {
-      let i = 0, timer = null;
-      const rotate = () => {
-        const prev = slides[i];
-        i = (i + 1) % slides.length;
-        const next = slides[i];
-        prev.classList.add('is-under');
-        prev.classList.remove('is-active');
-        void next.offsetHeight;                       // reflow: la nueva parte de translateY(100%)
-        next.classList.add('is-active');
-        dots.forEach((d, k) => d.classList.toggle('is-on', k === i));
-        if (cota) cota.textContent = next.dataset.cota;
-        setTimeout(() => prev.classList.remove('is-under'), 850);
-      };
-      new IntersectionObserver(([e]) => {
-        if (e.isIntersecting && !timer) timer = setInterval(rotate, 4500);
-        else if (!e.isIntersecting && timer) { clearInterval(timer); timer = null; }
-      }, { threshold: .3 }).observe(stackEl);
-    }
-  }
-
-  /* ── Vídeo RUN+++: reproducir solo cuando es visible, respetando reduced-motion ── */
+  /* ── Vídeo RUN+: reproducir solo cuando es visible, respetando reduced-motion ── */
   const clip = document.getElementById('runClip');
   if (clip && !reduced) {
     const vio = new IntersectionObserver(([e]) => {
