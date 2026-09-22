@@ -207,7 +207,7 @@ a{ color:inherit }
   font-size:22px; line-height:1; letter-spacing:0; color:var(--paper); margin-bottom:4px;
   font-variant-numeric:tabular-nums;
 }
-.hero-cred{ display:flex; align-items:center; gap:12px }
+.hero-cred{ display:flex; align-items:center; gap:12px; letter-spacing:.06em }
 /* Hero a dos columnas con el vídeo de marca */
 .hero-grid{ display:flex; flex-direction:column }
 .hero-media{
