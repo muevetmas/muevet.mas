@@ -326,8 +326,10 @@ a{ color:inherit }
 /* 01 · MEDIR */
 .medir-grid{ display:grid; gap:40px }
 @media(min-width:1080px){
+  /* La segunda foto sube pegada a la primera; el texto ocupa las filas que necesite */
   .medir-grid{
-    grid-template-columns:5fr 6fr; grid-template-areas:"p1 a" "p2 b";
+    grid-template-columns:5fr 6fr; grid-template-rows:auto auto auto;
+    grid-template-areas:"p1 a" "p2 a" "p2 b";
     gap:56px 72px; align-items:start;
   }
   .medir-p1{ grid-area:p1 } .medir-a{ grid-area:a } .medir-p2{ grid-area:p2 } .medir-b{ grid-area:b }
