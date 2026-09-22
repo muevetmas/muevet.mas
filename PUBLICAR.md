@@ -9,6 +9,8 @@ hasta que todo lo de esta lista esté hecho** y Víctor haya dicho «publica».
       desplegado y volver a desplegar (ver `FORMULARIO.md`). Así el «Sí» de
       la casilla queda en la hoja como prueba del consentimiento.
 - [ ] **Gestor:** revisión de `privacidad.html` y `aviso-legal.html`.
+- [ ] **Hoja de cálculo:** borrar la fila de la prueba de envío real.
+- [ ] **RUN+:** comprobar que el enlace del grupo de WhatsApp sigue activo.
 - [ ] **«Publica»** explícito en el chat.
 
 ## Lo que se comprueba antes del push
