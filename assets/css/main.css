@@ -402,16 +402,44 @@ a{ color:inherit }
 
 /* 04 · MVT+ */
 .mvt{ padding-bottom:clamp(138px,20vh,253px) }
-.mvt-plus{ width:clamp(72px,10vw,110px); height:auto; margin:8px 0 32px }
+.mvt-lead{ display:grid; gap:28px; margin-bottom:clamp(36px,6vh,56px) }
+.mvt-plus{ width:clamp(88px,10vw,150px); height:auto }
 .mvt-plus .draw-slow{
   stroke:var(--dim); stroke-width:1.5;
   stroke-dasharray:520; stroke-dashoffset:520;
 }
 .mvt-plus.is-in .draw-slow{ animation:draw 1.6s var(--ease-out) .2s forwards }
+@media(min-width:1080px){
+  .mvt-lead{ grid-template-columns:minmax(0,1fr) auto; grid-template-areas:"copy cross"; gap:72px; align-items:center }
+  .mvt-copy{ grid-area:copy } .mvt-plus{ grid-area:cross; justify-self:end }
+}
 .mvt-status{ color:var(--lime); letter-spacing:.2em; margin-bottom:16px }
 .mvt-text{ color:var(--dim); max-width:60ch; font-size:clamp(16px,1.8vw,19px) }
 .mvt-text a{ color:var(--paper); text-decoration-color:var(--line); text-underline-offset:4px }
 .mvt-text a:hover{ text-decoration-color:var(--lime) }
+/* Escala: en móvil una regla vertical con marcas horizontales; en escritorio una regla
+   horizontal con cuatro marcas que crecen escalonadas al entrar */
+.mvt-scale{ list-style:none; margin:0 0 clamp(36px,6vh,56px); padding:0; border-left:1px solid var(--line) }
+.mvt-tick{ position:relative; padding:14px 0 22px 28px }
+.mvt-tick::before{
+  content:''; position:absolute; left:0; top:22px; width:18px; height:1px; background:var(--lime);
+  transform:scaleX(0); transform-origin:left; transition:transform .4s var(--ease-out);
+}
+.mvt-scale.is-in .mvt-tick::before{ transform:none }
+.mvt-tick:nth-child(2)::before{ transition-delay:.05s }
+.mvt-tick:nth-child(3)::before{ transition-delay:.1s }
+.mvt-tick:nth-child(4)::before{ transition-delay:.15s }
+.mvt-tick-n{ display:block; color:var(--lime); letter-spacing:.14em; margin-bottom:8px }
+.mvt-tick strong{
+  display:block; font-family:var(--display); font-weight:800; font-stretch:110%;
+  font-size:clamp(18px,2.2vw,24px); text-transform:uppercase; letter-spacing:.01em; margin-bottom:8px;
+}
+.mvt-tick p{ color:var(--dim); max-width:30ch }
+@media(min-width:1080px){
+  .mvt-scale{ display:grid; grid-template-columns:repeat(4,1fr); gap:0 32px; border-left:0; border-top:1px solid var(--line) }
+  .mvt-tick{ padding:30px 0 0 }
+  .mvt-tick::before{ left:0; top:-1px; width:1px; height:26px; transform:scaleY(0); transform-origin:top }
+}
 
 
 /* IG */
@@ -533,6 +561,7 @@ a{ color:inherit }
   .reveal{ opacity:1; transform:none; transition:none }
   .photo-mask img, .reveal .photo-mask img{ transform:none; transition:none }
   .hero-cross .draw,.mvt-plus .draw-slow{ stroke-dashoffset:0; animation:none !important }
+  .mvt-tick::before{ transform:none; transition:none }
   .marquee-track{ transform:none !important; animation:none !important }
   .run-plus .draw-plus{ stroke-dashoffset:0; animation:none !important }
 }
@@ -613,21 +642,6 @@ a{ color:inherit }
 .isak-num b{ color:var(--lime); font-weight:600; font-variant-numeric:tabular-nums }
 .isak-item p{ color:var(--dim); max-width:62ch }
 .isak-close{ margin-top:22px; letter-spacing:.12em }
-
-/* ── 03 · MÓDULOS MVT+ ── */
-.mvt-modules{ list-style:none; margin:30px 0 34px; max-width:640px; width:100% }
-.mvt-modules li{
-  display:flex; gap:12px; align-items:baseline;
-  border-top:1px solid var(--line); padding:16px 0;
-  color:var(--dim);
-}
-.mvt-modules li:last-child{ border-bottom:1px solid var(--line) }
-.mvt-modules strong{
-  font-family:var(--display); font-weight:800; font-stretch:110%;
-  font-size:14px; letter-spacing:.06em; text-transform:uppercase;
-  color:var(--paper); flex:none;
-}
-.mvt-modules .plus{ font-family:var(--display); font-weight:800; flex:none }
 
 /* ── CONTORNOS TOPOGRÁFICOS (profundidad decorativa) ── */
 #medir{ position:relative; overflow:hidden }
