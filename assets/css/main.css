@@ -69,6 +69,7 @@ a{ color:inherit }
   font-size:12px; padding:10px 16px; text-decoration:none;
 }
 .skip-link:focus{ top:12px }
+.skip-link{ min-height:44px; display:inline-flex; align-items:center }
 
 .mono{ font-family:var(--mono); font-size:12px; letter-spacing:.08em; color:var(--dim) }
 .label{ font-family:var(--mono); font-size:12px; letter-spacing:.14em; color:var(--dim) }
@@ -103,6 +104,7 @@ a{ color:inherit }
   border-bottom-color:var(--line);
 }
 .nav.is-hidden{ transform:translateY(-100%) }
+.nav-brand{ display:inline-flex; padding:5px; margin:-5px }   /* 34 px de logo, 44 de zona táctil */
 .nav-brand img{ border-radius:50% }
 .nav-links{ display:flex; gap:6px; margin-left:auto }
 .nav-links a{
@@ -518,7 +520,7 @@ a{ color:inherit }
 .doc-body p, .doc-body li{ color:var(--dim); max-width:64ch }
 .doc-body strong{ color:var(--paper); font-weight:600 }
 .doc-body ul{ padding-left:20px } .doc-body li{ margin:8px 0 } .doc-body li::marker{ color:var(--lime) }
-.doc-body a{ color:var(--paper); text-decoration-color:var(--line); text-underline-offset:4px; display:inline-block; padding:2px 0 }
+.doc-body a{ color:var(--paper); text-decoration-color:var(--line); text-underline-offset:4px; display:inline-block; padding:10px 0; margin:-10px 0 }
 .doc-body a:hover{ text-decoration-color:var(--lime) }
 .doc-date{ margin-top:48px; letter-spacing:.14em }
 
@@ -615,7 +617,7 @@ a{ color:inherit }
 .footer-links a{ padding-top:11px; padding-bottom:11px; border-bottom:none; position:relative }
 .footer-links a::after{ content:''; position:absolute; left:0; right:0; bottom:7px; height:1px; background:var(--line); transition:background var(--d1) var(--ease-swift) }
 .footer-links a:hover::after{ background:var(--lime) }
-.mvt-text a, .faq details p a{ display:inline-block; padding:4px 0 }
+.mvt-text a, .faq details p a, .apply-alt a, .apply-done-text a{ display:inline-block; padding:11px 0; margin:-11px 0 }
 .nav-cta{ padding-top:11px; padding-bottom:11px }
 .btn-ghost{ padding-top:12px; padding-bottom:12px }
 @media(max-width:420px){ .nav-cta{ padding-top:12px; padding-bottom:12px } .nav-links a{ padding-top:14px; padding-bottom:14px } }
@@ -699,7 +701,7 @@ a{ color:inherit }
 .apply-fields{ display:flex; flex-direction:column; gap:22px }
 .field{ display:flex; flex-direction:column; gap:6px }
 .field label{ color:var(--dim); letter-spacing:.1em; transition:color var(--d1) var(--ease-swift) }
-.field .opt{ color:var(--line) }
+.field .opt{ color:var(--dim) }
 .field input, .field textarea{
   width:100%; background:transparent; color:var(--paper);
   font-family:var(--body); font-size:16px; line-height:1.5;
@@ -708,7 +710,7 @@ a{ color:inherit }
   transition:border-color var(--d1) var(--ease-swift);
 }
 .field textarea{ resize:vertical; min-height:52px }
-.field input::placeholder, .field textarea::placeholder{ color:var(--line) }
+.field input::placeholder, .field textarea::placeholder{ color:var(--dim); opacity:.8 }
 .field input:focus, .field textarea:focus{ outline:none; border-bottom-color:var(--lime) }
 .field:focus-within label{ color:var(--paper) }
 .field.is-error input, .field.is-error textarea{ border-bottom-color:#FF6B5A }
@@ -767,7 +769,7 @@ a{ color:inherit }
 .check input:checked + .check-box::after{ transform:rotate(45deg) scale(1); opacity:1 }
 .check input:focus-visible + .check-box{ outline:2px solid var(--lime); outline-offset:3px }
 .check.is-error .check-box{ border-color:#FF6B5A }
-.check-text a{ color:var(--paper); text-decoration-color:var(--line); text-underline-offset:4px; display:inline-block; padding:4px 0 }
+.check-text a{ color:var(--paper); text-decoration-color:var(--line); text-underline-offset:4px; display:inline-block; padding:12px 0; margin:-12px 0 }
 .check-text a:hover{ text-decoration-color:var(--lime) }
 .apply-send .btn-pill[disabled]{ opacity:.55; pointer-events:none }
 .apply-status{ margin-top:18px; color:#FF6B5A; letter-spacing:.08em; line-height:1.5 }
