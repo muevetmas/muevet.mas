@@ -777,8 +777,8 @@ a{ color:inherit }
 .apply-status{ margin-top:18px; color:var(--error); letter-spacing:.08em; line-height:1.5 }
 .apply-status:empty{ display:none }
 .apply-alt{ margin-top:26px; color:var(--dim); font-size:14px }
-.apply-alt a{ color:var(--paper); text-decoration:none; border-bottom:1px solid var(--line); padding:11px 0 2px; margin:-11px 0 0 }
-.apply-alt a:hover{ border-color:var(--lime) }
+.apply-alt a{ color:var(--paper); text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:4px; padding:11px 0; margin:-11px 0 }
+.apply-alt a:hover{ text-decoration-color:var(--lime) }
 
 /* ── Estado enviado ── */
 .apply-done{ width:100%; max-width:640px; border-top:1px solid var(--line); padding-top:30px }
