@@ -209,9 +209,9 @@ a{ color:inherit }
 .hero-media{
   margin-top:40px; width:100%;
   max-width:min(360px, 36svh);
-  opacity:0; transform:translateY(14px);
+  transform:translateY(14px);
 }
-.is-loaded .hero-media{ animation:fadeup .6s var(--ease-out) .8s forwards }
+.is-loaded .hero-media{ animation:rise .6s var(--ease-out) .5s forwards }
 /* Póster propio primero; el vídeo se funde encima cuando reproduce de verdad */
 .hero-frame{ position:relative; aspect-ratio:9/16; overflow:hidden; background:var(--ink-2) }
 .hero-poster img, .hero-clip{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block }
@@ -236,17 +236,18 @@ a{ color:inherit }
 }
 
 /* Animación de entrada del hero (líneas) */
-.line{ display:block; overflow:hidden }
-.hero-title .line{ padding-bottom:.06em; margin-bottom:-.06em }
-.line-in{ display:inline-block; transform:translateY(115%) }
-.is-loaded .line-in{ animation:lineup .6s var(--ease-out) forwards }
+/* Entrada del hero: todo visible desde el primer fotograma (el LCP es el
+   titular o el póster, no la barra); solo un desplazamiento corto de 14 px. */
+.line{ display:block }
+.line-in{ display:inline-block; transform:translateY(14px) }
+.is-loaded .line-in{ animation:rise .6s var(--ease-out) forwards }
 .is-loaded .hero-label .line-in{ animation-delay:.05s }
 .is-loaded .hero-title .line:nth-child(1) .line-in{ animation-delay:.12s }
 .is-loaded .hero-title .line:nth-child(2) .line-in{ animation-delay:.2s }
 .is-loaded .hero-title .line:nth-child(3) .line-in{ animation-delay:.28s }
 .is-loaded .hero-sub .line:nth-child(1) .line-in{ animation-delay:.38s }
 .is-loaded .hero-sub .line:nth-child(2) .line-in{ animation-delay:.44s }
-@keyframes lineup{ to{ transform:translateY(0) } }
+@keyframes rise{ to{ transform:translateY(0) } }
 .hero-actions, .hero-rule, .hero-cred{
   opacity:0; transform:translateY(14px);
 }
