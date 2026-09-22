@@ -95,33 +95,6 @@
     moveCursor();
   }
 
-  /* ── Marquee RUN+: velocidad base + reacción sutil al scroll ──
-     El único latido experimental de la web. */
-  const track = document.getElementById('marqueeTrack');
-  if (track && !reduced) {
-    let x = 0;
-    let vel = 0;                    // aportación del scroll
-    let prevY = window.scrollY;
-    const BASE = 0.5;               // px/frame ≈ ritmo de trote
-    let segW = 0;
-    const measure = () => { segW = track.scrollWidth / 4; };
-    measure();
-    window.addEventListener('resize', measure);
-    window.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      vel += Math.min(Math.abs(y - prevY) * 0.06, 6);  // impulso limitado
-      prevY = y;
-    }, { passive: true });
-    const loop = () => {
-      vel *= 0.92;                  // frenada con inercia
-      x -= BASE + vel;
-      if (segW > 0 && -x >= segW) x += segW;
-      track.style.transform = `translate3d(${x}px,0,0)`;
-      requestAnimationFrame(loop);
-    };
-    requestAnimationFrame(loop);
-  }
-
   /* ── CTA persistente móvil: visible tras el hero, oculto en cierre/footer ── */
   const sticky = document.getElementById('stickyCta');
   const hero = document.querySelector('.hero');
@@ -161,26 +134,40 @@
     drift();
   }
 
-  /* ── Vídeo de medición del hero: póster propio primero, vídeo fundido encima.
-     Autoarranca silencioso salvo con reduced-motion o Save-Data: entonces
-     queda el póster y un botón para verlo. ── */
-  const clip = document.getElementById('heroClip');
-  if (clip) {
-    const frame = document.getElementById('heroFrame');
-    const play = document.getElementById('heroPlay');
-    const saveData = !!(navigator.connection && navigator.connection.saveData);
+  /* ── Vídeos de marca: póster propio primero, vídeo fundido encima cuando
+     reproduce de verdad. Autoarrancan silenciosos salvo con reduced-motion o
+     Save-Data: entonces queda el póster y un botón para verlos. Los que llevan
+     data-src (RUN+) no se descargan hasta acercarse a pantalla. ── */
+  const saveData = !!(navigator.connection && navigator.connection.saveData);
+  document.querySelectorAll('.clip-frame').forEach((frame) => {
+    const clip = frame.querySelector('.clip-video');
+    const play = frame.querySelector('.clip-play');
+    const load = () => {
+      if (!clip.dataset.src) return;
+      clip.src = clip.dataset.src;
+      delete clip.dataset.src;
+    };
     clip.addEventListener('playing', () => frame.classList.add('is-ready'), { once: true });
     if (!reduced && !saveData) {
+      if (clip.dataset.src) {
+        const near = new IntersectionObserver(([e]) => {
+          if (!e.isIntersecting) return;
+          near.disconnect();
+          clip.preload = 'auto';
+          load();
+        }, { rootMargin: '600px 0px' });
+        near.observe(clip);
+      }
       new IntersectionObserver(([e]) => {
-        if (e.isIntersecting) clip.play().catch(() => { play.hidden = false; });
+        if (e.isIntersecting) { load(); clip.play().catch(() => { play.hidden = false; }); }
         else clip.pause();
       }, { threshold: 0.25 }).observe(clip);
     } else {
       clip.preload = 'none';
       play.hidden = false;
     }
-    play.addEventListener('click', () => { play.hidden = true; clip.play().catch(() => {}); });
-  }
+    play.addEventListener('click', () => { play.hidden = true; load(); clip.play().catch(() => {}); });
+  });
 
   /* ── Contadores de cotas: de 0 al valor una sola vez, al entrar en pantalla.
      Con reduced-motion se dejan escritos. ── */

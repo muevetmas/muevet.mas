@@ -103,17 +103,17 @@
          pósteres medir-poster.avif / .jpg (vertical 9:16, sin audio, ideal < 300 KB).
          El póster debe ser un fotograma del propio vídeo. -->
     <figure class="hero-media">
-      <div class="hero-frame" id="heroFrame">
-        <picture class="hero-poster">
+      <div class="clip-frame">
+        <picture class="clip-poster">
           <source type="image/avif" srcset="assets/img/hero/medir-poster.avif">
           <img src="assets/img/hero/medir-poster.jpg" width="512" height="910" decoding="async"
                alt="Medición de pliegues cutáneos con plicómetro en el brazo, protocolo ISAK.">
         </picture>
-        <video id="heroClip" class="hero-clip" width="512" height="910" muted loop playsinline preload="metadata"
+        <video class="clip-video" width="512" height="910" muted loop playsinline preload="metadata"
                aria-label="Vídeo: medición de pliegues cutáneos con plicómetro, protocolo ISAK.">
           <source src="assets/img/hero/medir-clip.mp4" type="video/mp4">
         </video>
-        <button class="hero-play mono" id="heroPlay" type="button" hidden>VER · 5 S</button>
+        <button class="clip-play mono" type="button" hidden>VER · 5 S</button>
       </div>
       <figcaption class="photo-note">
         <span class="note-line" aria-hidden="true"></span>
@@ -303,21 +303,32 @@
     <h2 id="h-corre" class="visually-hidden">RUN+, el club de running social de MUEVET+</h2>
   </header>
 
-  <p class="run-logo reveal" aria-hidden="true">RUN<span class="plus">+</span></p>
+  <p class="run-logo reveal" aria-hidden="true">RUN<svg class="run-plus" viewBox="0 0 100 100" aria-hidden="true"><path class="draw-plus draw-v" d="M50 12V88"/><path class="draw-plus draw-h" d="M12 50H88"/></svg></p>
 
-  <div class="marquee" id="marquee" aria-hidden="true">
-    <div class="marquee-track" id="marqueeTrack">
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
       <span>CORRER.&nbsp;&nbsp;CONECTAR.&nbsp;&nbsp;REPETIR.&nbsp;&nbsp;+&nbsp;&nbsp;</span><span>CORRER.&nbsp;&nbsp;CONECTAR.&nbsp;&nbsp;REPETIR.&nbsp;&nbsp;+&nbsp;&nbsp;</span><span>CORRER.&nbsp;&nbsp;CONECTAR.&nbsp;&nbsp;REPETIR.&nbsp;&nbsp;+&nbsp;&nbsp;</span><span>CORRER.&nbsp;&nbsp;CONECTAR.&nbsp;&nbsp;REPETIR.&nbsp;&nbsp;+&nbsp;&nbsp;</span>
     </div>
   </div>
 
   <div class="run-body">
+    <!-- ▓▓ VÍDEO RUN+ — EDITABLE: assets/img/run/run-clip.mp4 + run-poster.avif/jpg ▓▓ -->
+    <figure class="run-media reveal">
+      <div class="clip-frame">
+        <picture class="clip-poster">
+          <source type="image/avif" srcset="assets/img/run/run-poster.avif">
+          <img src="assets/img/run/run-poster.jpg" width="512" height="910" loading="lazy" decoding="async" alt="Fotograma del vídeo de RUN+: una medalla de 21 K y unas zapatillas de running.">
+        </picture>
+        <video class="clip-video" width="512" height="910" muted loop playsinline preload="none" data-src="assets/img/run/run-clip.mp4" aria-label="Vídeo de RUN+, el club de running social de MUEVET+."></video>
+        <button class="clip-play mono" type="button" hidden>VER&nbsp;·&nbsp;8 S</button>
+      </div>
+    </figure>
+
     <div class="run-copy">
       <p class="run-text reveal">Un club de running social en Cantabria. La carrera es la excusa: lo importante es quién corre a tu lado. Da igual tu ritmo — aquí no se viene a competir, se viene a compartir el movimiento.</p>
       <p class="mono run-note reveal">QUEDADAS ABIERTAS A TODOS LOS NIVELES&nbsp;·&nbsp;SE ANUNCIAN EN INSTAGRAM</p>
-      <a class="btn-pill reveal" href="https://chat.whatsapp.com/J52jzClYnoVD17e3LXn0wf?mode=gi_t" target="_blank" rel="noopener">Únete al grupo <span class="arr">→</span></a>
+      <a class="btn-pill reveal" href="https://chat.whatsapp.com/J52jzClYnoVD17e3LXn0wf?mode=gi_t" target="_blank" rel="noopener">Únete al grupo de WhatsApp <span class="arr">→</span></a>
     </div>
-
   </div>
 </section>
 

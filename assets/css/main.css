@@ -213,20 +213,20 @@ a{ color:inherit }
 }
 .is-loaded .hero-media{ animation:rise .6s var(--ease-out) .5s forwards }
 /* Póster propio primero; el vídeo se funde encima cuando reproduce de verdad */
-.hero-frame{ position:relative; aspect-ratio:9/16; overflow:hidden; background:var(--ink-2) }
-.hero-poster img, .hero-clip{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block }
-.hero-clip{ opacity:0; transition:opacity .24s var(--ease-out) }
-.hero-frame.is-ready .hero-clip{ opacity:1 }
-.hero-play{
+.clip-frame{ position:relative; aspect-ratio:9/16; overflow:hidden; background:var(--ink-2) }
+.clip-poster img, .clip-video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block }
+.clip-video{ opacity:0; transition:opacity .24s var(--ease-out) }
+.clip-frame.is-ready .clip-video{ opacity:1 }
+.clip-play{
   position:absolute; left:14px; bottom:14px; z-index:2;
   display:inline-flex; align-items:center; gap:8px; cursor:pointer;
   background:rgba(10,10,10,.72); color:var(--paper); border:1px solid var(--line);
   font-size:11px; letter-spacing:.12em; padding:11px 14px; min-height:44px;
   transition:border-color var(--d1) var(--ease-swift), transform .16s var(--ease-out);
 }
-.hero-play::before{ content:''; width:0; height:0; border-left:8px solid var(--lime); border-top:5px solid transparent; border-bottom:5px solid transparent }
-.hero-play:hover{ border-color:var(--paper) }
-.hero-play:active{ transform:scale(.97) }
+.clip-play::before{ content:''; width:0; height:0; border-left:8px solid var(--lime); border-top:5px solid transparent; border-bottom:5px solid transparent }
+.clip-play:hover{ border-color:var(--paper) }
+.clip-play:active{ transform:scale(.97) }
 @media(min-width:1080px){
   .hero-grid{
     display:grid; grid-template-columns:minmax(0,1fr) auto;
@@ -377,11 +377,24 @@ a{ color:inherit }
 }
 .marquee-track{
   display:inline-block; will-change:transform;
+  animation:marquee 38s linear infinite;   /* cuatro tramos iguales: −50 % cierra el bucle sin salto */
   font-family:var(--display); font-weight:800; font-stretch:115%;
   font-size:clamp(16px,2.2vw,22px); letter-spacing:.12em; color:var(--dim);
 }
 .marquee-track span{ display:inline-block }
-.run-body{ margin-top:clamp(40px,6vh,64px); display:flex; flex-direction:column; gap:24px; align-items:flex-start }
+@keyframes marquee{ to{ transform:translateX(-50%) } }
+/* El «+» del logotipo se dibuja al entrar: primero el trazo vertical, luego el horizontal */
+.run-plus{ display:inline-block; width:.64em; height:.64em; vertical-align:-.03em; margin-left:.03em; overflow:visible }
+.run-plus .draw-plus{ fill:none; stroke:var(--lime); stroke-width:23; stroke-linecap:butt; stroke-dasharray:76; stroke-dashoffset:76 }
+.run-logo.is-in .draw-v{ animation:drawplus .42s var(--ease-out) .15s forwards }
+.run-logo.is-in .draw-h{ animation:drawplus .42s var(--ease-out) .42s forwards }
+@keyframes drawplus{ to{ stroke-dashoffset:0 } }
+.run-body{ margin-top:clamp(40px,6vh,64px); display:grid; gap:36px; align-items:center }
+.run-media{ width:min(280px, 62vw) }
+@media(min-width:1080px){
+  .run-body{ grid-template-columns:auto minmax(0,1fr); gap:72px }
+  .run-media{ width:min(340px, 40svh) }
+}
 .run-text{
   font-size:clamp(18px,2.4vw,24px); line-height:1.5; max-width:60ch;
 }
@@ -516,11 +529,12 @@ a{ color:inherit }
   html{ scroll-behavior:auto }
   .line-in{ transform:none; animation:none !important }
   .hero-actions,.hero-rule,.hero-cred,.hero-media{ opacity:1; transform:none; animation:none !important }
-  .hero-clip{ transition:none }
+  .clip-video{ transition:none }
   .reveal{ opacity:1; transform:none; transition:none }
   .photo-mask img, .reveal .photo-mask img{ transform:none; transition:none }
   .hero-cross .draw,.mvt-plus .draw-slow{ stroke-dashoffset:0; animation:none !important }
   .marquee-track{ transform:none !important; animation:none !important }
+  .run-plus .draw-plus{ stroke-dashoffset:0; animation:none !important }
 }
 
 /* ── NAV compacta ≤700px ──
