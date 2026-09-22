@@ -17,3 +17,7 @@ HTML + CSS + JS vanilla · sin dependencias · GitHub Pages.
 
 ## Deploy
 Push a `main` → Settings → Pages → Deploy from branch (`main`, `/root`).
+
+## Antes de publicar
+
+La lista de comprobación previa al push está en `PUBLICAR.md`. No se publica sin el «publica» explícito de Víctor.
