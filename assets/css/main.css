@@ -415,6 +415,13 @@ a{ color:inherit }
   stroke-dasharray:520; stroke-dashoffset:520;
 }
 .mvt-plus.is-in .draw-slow{ animation:draw 1.6s var(--ease-out) .2s forwards }
+/* La app: un móvil (trazo gris) que se dibuja y, dentro, la cruz de la marca en lima */
+.mvt-phone{ width:clamp(72px,7vw,108px) }
+.mvt-phone .draw-phone{ fill:none; stroke:var(--dim); stroke-width:1.5; stroke-linecap:round; stroke-dasharray:570; stroke-dashoffset:570 }
+.mvt-phone .draw-slot{ stroke-dasharray:16; stroke-dashoffset:16 }
+.mvt-phone .draw-slow{ stroke:var(--lime); stroke-dasharray:312; stroke-dashoffset:312 }
+.mvt-phone.is-in .draw-phone{ animation:draw 1.2s var(--ease-out) .1s forwards }
+.mvt-phone.is-in .draw-slow{ animation:draw 1s var(--ease-out) .7s forwards }
 @media(min-width:1080px){
   .mvt-lead{ grid-template-columns:minmax(0,1fr) auto; grid-template-areas:"copy cross"; gap:72px; align-items:center }
   .mvt-copy{ grid-area:copy } .mvt-plus{ grid-area:cross; justify-self:end }
@@ -566,7 +573,7 @@ a{ color:inherit }
   .clip-video{ transition:none }
   .reveal{ opacity:1; transform:none; transition:none }
   .photo-mask img, .reveal .photo-mask img{ transform:none; transition:none }
-  .hero-cross .draw,.mvt-plus .draw-slow{ stroke-dashoffset:0; animation:none !important }
+  .hero-cross .draw,.mvt-plus .draw-slow,.mvt-phone .draw-phone{ stroke-dashoffset:0; animation:none !important }
   .mvt-tick::before{ transform:none; transition:none }
   .apply-done:not([hidden]){ animation:none }
   .chip span:active{ transform:none }

@@ -25,6 +25,6 @@ hasta que todo lo de esta lista esté hecho** y Víctor haya dicho «publica».
       email recibido.
 - [ ] Vídeos con reduced-motion y Save-Data: póster + botón «Ver».
 - [ ] Honestidad: sin precios, sin testimonios, sin promesas de resultado,
-      sin datos de salud, sin nada de la app; MVT+ solo como «Próximamente».
+      sin datos de salud, sin nada de la app; la app MUEVET+ solo como «Próximamente».
 - [ ] Push a `main` y comprobación de muevetmas.com en escritorio y en un
       móvil real.
