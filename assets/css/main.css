@@ -231,6 +231,20 @@ a{ color:inherit }
 .clip-play::before{ content:''; width:0; height:0; border-left:8px solid var(--lime); border-top:5px solid transparent; border-bottom:5px solid transparent }
 .clip-play:hover{ border-color:var(--paper) }
 .clip-play:active{ transform:scale(.97) }
+/* Sonido (solo en los clips que lo tienen): abajo a la derecha, con estado visible */
+.clip-sound{
+  position:absolute; right:14px; bottom:14px; z-index:2;
+  display:inline-flex; align-items:center; gap:8px; cursor:pointer;
+  background:rgba(10,10,10,.72); color:var(--paper); border:1px solid var(--line);
+  font-size:11px; letter-spacing:.12em; text-transform:uppercase; padding:11px 14px; min-height:44px;
+  transition:border-color var(--d1) var(--ease-swift), transform .16s var(--ease-out);
+}
+.clip-sound::before{ content:''; width:8px; height:8px; border-radius:50%; border:1px solid var(--lime); transition:background var(--d1) var(--ease-swift) }
+.clip-sound[aria-pressed="true"]{ border-color:var(--lime) }
+.clip-sound[aria-pressed="true"]::before{ background:var(--lime) }
+.clip-sound:hover{ border-color:var(--paper) }
+.clip-sound:active{ transform:scale(.97) }
+.clip-play:focus-visible, .clip-sound:focus-visible{ outline:2px solid var(--lime); outline-offset:3px }
 @media(min-width:1080px){
   .hero-grid{
     display:grid; grid-template-columns:minmax(0,1fr) auto;
@@ -332,12 +346,23 @@ a{ color:inherit }
 @media(min-width:1080px){
   /* La segunda foto sube pegada a la primera; el texto ocupa las filas que necesite */
   .medir-grid{
-    grid-template-columns:5fr 6fr; grid-template-rows:auto auto auto;
-    grid-template-areas:"p1 a" "p2 a" "p2 b";
+    grid-template-columns:5fr 6fr; grid-template-rows:auto auto auto auto;
+    grid-template-areas:"p1 a" "p2 a" "p2 b" "v c";
     gap:56px 72px; align-items:start;
   }
   .medir-p1{ grid-area:p1 } .medir-a{ grid-area:a } .medir-p2{ grid-area:p2 } .medir-b{ grid-area:b }
+  .medir-v{ grid-area:v } .medir-c{ grid-area:c; align-self:center }
+  .ciegas-media{ width:min(340px, 44svh) }
 }
+/* «A ciegas»: el vídeo con sonido cierra el capítulo; mismo marco que los otros clips */
+.medir-c{ display:flex; flex-direction:column; gap:14px }
+.ciegas-kicker{ color:var(--lime); letter-spacing:.14em }
+.ciegas-title{
+  font-family:var(--display); font-weight:800; font-stretch:110%;
+  font-size:clamp(22px,2.6vw,30px); line-height:1.05; letter-spacing:.01em; text-transform:uppercase; max-width:20ch;
+}
+.ciegas-text{ color:var(--dim); font-size:clamp(16px,1.8vw,19px); max-width:44ch }
+.ciegas-media{ width:min(300px, 62vw) }
 .medir-p2{ max-width:420px }
 .medir-intro, .coach-intro{ color:var(--dim); font-size:clamp(16px,1.8vw,19px); max-width:60ch; margin-bottom:28px }
 .medir-a, .medir-b{ display:flex; flex-direction:column; gap:26px }

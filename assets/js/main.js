@@ -176,6 +176,29 @@
       play.hidden = false;
     }
     play.addEventListener('click', () => { play.hidden = true; load(); clip.play().catch(() => {}); });
+
+    /* Sonido (solo «A ciegas»): al activarlo vuelve al segundo 0. Al salir de
+       pantalla el observador lo pausa y aquí vuelve al silencio, para que al
+       volver arranque en silencio como los demás. */
+    const sound = frame.querySelector('.clip-sound');
+    if (sound) {
+      const setSound = (on) => {
+        clip.muted = !on;
+        sound.setAttribute('aria-pressed', String(on));
+        sound.textContent = on ? 'Silenciar' : 'Activar sonido';
+      };
+      sound.addEventListener('click', () => {
+        const on = sound.getAttribute('aria-pressed') !== 'true';
+        setSound(on);
+        if (on) {
+          play.hidden = true;
+          load();
+          clip.currentTime = 0;
+          clip.play().catch(() => { setSound(false); });
+        }
+      });
+      clip.addEventListener('pause', () => { if (!clip.muted && !clip.ended) setSound(false); });
+    }
   });
 
   /* ── Contadores de cotas: de 0 al valor una sola vez, al entrar en pantalla.
