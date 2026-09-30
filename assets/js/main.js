@@ -168,7 +168,7 @@
         near.observe(clip);
       }
       new IntersectionObserver(([e]) => {
-        if (e.isIntersecting) { load(); clip.play().catch(() => { play.hidden = false; }); }
+        if (e.isIntersecting) { load(); clip.play().catch((err) => { if (err && err.name === 'NotAllowedError') play.hidden = false; }); }
         else clip.pause();
       }, { threshold: 0.25 }).observe(clip);
     } else {

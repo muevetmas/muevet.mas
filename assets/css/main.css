@@ -245,6 +245,8 @@ a{ color:inherit }
 .clip-sound:hover{ border-color:var(--paper) }
 .clip-sound:active{ transform:scale(.97) }
 .clip-play:focus-visible, .clip-sound:focus-visible{ outline:2px solid var(--lime); outline-offset:3px }
+/* Si «Ver» está visible (reduced-motion), el sonido sube para no montarse en marcos estrechos */
+.clip-play:not([hidden]) + .clip-sound{ right:auto; left:14px; bottom:70px }
 @media(min-width:1080px){
   .hero-grid{
     display:grid; grid-template-columns:minmax(0,1fr) auto;
