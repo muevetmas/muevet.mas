@@ -350,23 +350,12 @@ a{ color:inherit }
 @media(min-width:1080px){
   /* La segunda foto sube pegada a la primera; el texto ocupa las filas que necesite */
   .medir-grid{
-    grid-template-columns:5fr 6fr; grid-template-rows:auto auto auto auto;
-    grid-template-areas:"p1 a" "p2 a" "p2 b" "v c";
+    grid-template-columns:5fr 6fr; grid-template-rows:auto auto auto;
+    grid-template-areas:"p1 a" "p2 a" "p2 b";
     gap:56px 72px; align-items:start;
   }
   .medir-p1{ grid-area:p1 } .medir-a{ grid-area:a } .medir-p2{ grid-area:p2 } .medir-b{ grid-area:b }
-  .medir-v{ grid-area:v } .medir-c{ grid-area:c; align-self:center }
-  .ciegas-media{ width:min(340px, 44svh) }
 }
-/* «A ciegas»: el vídeo con sonido cierra el capítulo; mismo marco que los otros clips */
-.medir-c{ display:flex; flex-direction:column; gap:14px }
-.ciegas-kicker{ color:var(--lime); letter-spacing:.14em }
-.ciegas-title{
-  font-family:var(--display); font-weight:800; font-stretch:110%;
-  font-size:clamp(22px,2.6vw,30px); line-height:1.05; letter-spacing:.01em; text-transform:uppercase; max-width:20ch;
-}
-.ciegas-text{ color:var(--dim); font-size:clamp(16px,1.8vw,19px); max-width:44ch }
-.ciegas-media{ width:min(300px, 62vw) }
 .medir-p2{ max-width:420px }
 .medir-intro, .coach-intro{ color:var(--dim); font-size:clamp(16px,1.8vw,19px); max-width:60ch; margin-bottom:28px }
 .medir-a, .medir-b{ display:flex; flex-direction:column; gap:26px }
@@ -438,23 +427,12 @@ a{ color:inherit }
 /* 04 · MVT+ */
 .mvt{ padding-bottom:clamp(138px,20vh,253px) }
 .mvt-lead{ display:grid; gap:28px; margin-bottom:clamp(36px,6vh,56px) }
-.mvt-plus{ width:clamp(88px,10vw,150px); height:auto }
-.mvt-plus .draw-slow{
-  stroke:var(--dim); stroke-width:1.5;
-  stroke-dasharray:520; stroke-dashoffset:520;
-}
-.mvt-plus.is-in .draw-slow{ animation:draw 1.6s var(--ease-out) .2s forwards }
-/* La app: un móvil (trazo gris) que se dibuja y, dentro, la cruz de la marca en lima */
-.mvt-phone{ width:clamp(72px,7vw,108px) }
-.mvt-phone .draw-phone{ fill:none; stroke:var(--dim); stroke-width:1.5; stroke-linecap:round; stroke-dasharray:570; stroke-dashoffset:570 }
-.mvt-phone .draw-slot{ stroke-dasharray:16; stroke-dashoffset:16 }
-.mvt-phone .draw-slow{ stroke:var(--lime); stroke-dasharray:312; stroke-dashoffset:312 }
-.mvt-phone.is-in .draw-phone{ animation:draw 1.2s var(--ease-out) .1s forwards }
-.mvt-phone.is-in .draw-slow{ animation:draw 1s var(--ease-out) .7s forwards }
 @media(min-width:1080px){
-  .mvt-lead{ grid-template-columns:minmax(0,1fr) auto; grid-template-areas:"copy cross"; gap:72px; align-items:center }
-  .mvt-copy{ grid-area:copy } .mvt-plus{ grid-area:cross; justify-self:end }
+  .mvt-lead{ grid-template-columns:minmax(0,1fr) auto; grid-template-areas:"copy media"; gap:72px; align-items:center }
+  .mvt-copy{ grid-area:copy } .app-media{ grid-area:media; justify-self:end; width:min(340px, 44svh) }
 }
+/* El vídeo de la app: a la derecha del texto en escritorio, debajo en móvil; mismo marco que los otros clips */
+.app-media{ width:min(300px, 62vw) }
 .mvt-status{ color:var(--lime); letter-spacing:.2em; margin-bottom:16px }
 .mvt-text{ color:var(--dim); max-width:60ch; font-size:clamp(16px,1.8vw,19px) }
 .mvt-text a{ color:var(--paper); text-decoration-color:var(--line); text-underline-offset:4px }
@@ -602,7 +580,7 @@ a{ color:inherit }
   .clip-video{ transition:none }
   .reveal{ opacity:1; transform:none; transition:none }
   .photo-mask img, .reveal .photo-mask img{ transform:none; transition:none }
-  .hero-cross .draw,.mvt-plus .draw-slow,.mvt-phone .draw-phone{ stroke-dashoffset:0; animation:none !important }
+  .hero-cross .draw{ stroke-dashoffset:0; animation:none !important }
   .mvt-tick::before{ transform:none; transition:none }
   .apply-done:not([hidden]){ animation:none }
   .chip span:active{ transform:none }
