@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>MUEVET+ — Movimiento, ciencia y comunidad</title>
-<meta name="description" content="MUEVET+ es un ecosistema de movimiento en Cantabria: antropometría ISAK presencial, entrenamiento personalizado online y RUN+, un club de running social. Muévete más.">
+<title>MUEVET+ · Antropometría ISAK y entrenamiento personalizado · Cantabria</title>
+<meta name="description" content="MUEVET+ mide tu composición corporal con el protocolo ISAK y planifica tu entrenamiento con esos datos, con seguimiento semanal. Presencial en Cantabria y online. Y RUN+, un club de running social.">
 <meta name="theme-color" content="#0A0A0A">
 
 <link rel="canonical" href="https://muevetmas.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://muevetmas.com/">
 <meta property="og:site_name" content="MUEVET+">
-<meta property="og:title" content="MUEVET+ — Movimiento, ciencia y comunidad">
-<meta property="og:description" content="Un ecosistema para entrenar con criterio, correr acompañado y progresar de verdad. Cantabria.">
+<meta property="og:title" content="MUEVET+ · Deja de entrenar a ciegas">
+<meta property="og:description" content="Antropometría ISAK y entrenamiento personalizado con seguimiento semanal. Cantabria y online.">
 <meta property="og:image" content="https://muevetmas.com/assets/img/og-cover.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -25,7 +25,8 @@
 
 <link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/main.css?v=2026-09-30b">
+<link rel="preload" href="assets/img/hero/medir-poster.avif" as="image" type="image/avif" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/main.css?v=2026-10-03a">
 
 <script type="application/ld+json">
 {
@@ -54,532 +55,549 @@
 </script>
 </head>
 <body>
+<!--
+THESIS: La página va de la noche al día: de entrenar a ciegas a entrenar con datos. El degradado oscuro→claro es el argumento, no un adorno. Rechaza la web de gimnasio en negro y rojo y la regla con marcas de la versión anterior.
+OWN-WORLD: Noche #0A0A0A con resplandor lima; día #F2F2EE; tarjetas oscuras de app flotando sobre claro (como el vídeo de la app); Archivo fina en titulares, énfasis por peso y halo lima; JetBrains Mono solo para medidas.
+STORY: Quien entrena sin ver resultados entiende que MUEVET+ mide su cuerpo con protocolo ISAK y planifica con esos datos; lo cree por el vídeo, las fotos y la credencial; pide su valoración.
+FIRST VIEWPORT: Vídeo de medición a sangre (móvil) o en marco 3D sobre su propio resplandor (escritorio); «Deja de entrenar a ciegas.»; vidrio que escribe «Mide. Analiza. Mejora.»; botón lima; MUEVET+ gigante y difuminado.
+FORM: dirección fijada por el cliente (dimenso.ai + vídeo de la app MUEVET+); sin tirada.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+-->
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-lr" viewBox="0 0 24 24"><path d="M8.5 7 3.5 12l5 5M15.5 7l5 5-5 5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.2 4.2L19 7"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M8 5.6v12.8a.8.8 0 0 0 1.2.7l10.3-6.4a.8.8 0 0 0 0-1.4L9.2 4.9a.8.8 0 0 0-1.2.7Z"/></symbol>
+  <symbol id="i-sound-on" viewBox="0 0 24 24"><path d="M3.5 9.5H7l4.5-3.8v12.6L7 14.5H3.5z"/><path d="M15.2 9.2a4 4 0 0 1 0 5.6M17.8 6.6a7.6 7.6 0 0 1 0 10.8"/></symbol>
+  <symbol id="i-sound-off" viewBox="0 0 24 24"><path d="M3.5 9.5H7l4.5-3.8v12.6L7 14.5H3.5z"/><path d="m15.5 9.5 5 5M20.5 9.5l-5 5"/></symbol>
+  <symbol id="i-ruler" viewBox="0 0 24 24"><path d="M3.6 15.6 15.6 3.6l4.8 4.8-12 12z"/><path d="m7.4 11.8 1.9 1.9M10.2 9l1.9 1.9M13 6.2l1.9 1.9"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="m2.5 9 9.5-4.8L21.5 9 12 13.8z"/><path d="M6.5 11v4.6c0 1.4 2.5 2.9 5.5 2.9s5.5-1.5 5.5-2.9V11M21.5 9v5"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.7-6.5-11a6.5 6.5 0 0 1 13 0c0 5.3-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6.5 3.5h7.5l4 4v13h-11.5z"/><path d="M13.5 3.5v4.5H18M9.5 12.5h5M9.5 16h5"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle fill="currentColor" stroke="none" cx="17.3" cy="6.7" r="1"/></symbol>
+</svg>
 
-<a class="skip-link" href="#main">Saltar al contenido</a>
-
-<!-- Regla lateral de progreso (solo desktop, decorativa) -->
-<div class="ruler" aria-hidden="true">
-  <span class="ruler-track"></span>
-  <span class="ruler-cursor" id="rulerCursor"></span>
-</div>
+<a class="skip" href="#main">Saltar al contenido</a>
 
 <header class="nav" id="nav">
-  <a class="nav-brand" href="#top" aria-label="MUEVET+ — inicio">
-    <img src="assets/icons/logo-mv.png" alt="" width="34" height="34">
-  </a>
-  <nav class="nav-links" aria-label="Secciones">
-    <a href="#medir">Medir</a>
-    <a href="#entrena">Entrenar</a>
-    <a href="#corre">Correr</a>
-    <a href="#app">App</a>
-  </nav>
-  <a class="btn-pill nav-cta" href="#contacto">Empieza con tu valoración</a>
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="MUEVET+, inicio">
+      <img src="assets/icons/logo-mv.png" alt="" width="30" height="30">
+      <span class="brand-word">MUEVET<span class="lime">+</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Secciones">
+      <a href="#medir">Medir</a>
+      <a href="#entrena">Entrenar</a>
+      <a href="#corre">Correr</a>
+      <a href="#app">App</a>
+    </nav>
+    <a class="btn btn-sm nav-cta" href="#contacto">Empieza con tu valoración</a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="menu">
+      <span class="sr" data-label>Abrir menú</span><i></i><i></i>
+    </button>
+  </div>
 </header>
+
+<div class="menu" id="menu" hidden>
+  <nav class="menu-links" aria-label="Menú">
+    <a href="#medir" style="--i:0">Medir</a>
+    <a href="#entrena" style="--i:1">Entrenar</a>
+    <a href="#corre" style="--i:2">Correr</a>
+    <a href="#app" style="--i:3">App</a>
+  </nav>
+  <div class="menu-foot" style="--i:4">
+    <a class="btn" href="#contacto">Empieza con tu valoración <svg class="ico"><use href="#i-arrow"/></svg></a>
+    <p class="micro">Dos minutos. Te digo por dónde empezar.</p>
+  </div>
+</div>
 
 <main id="main">
 
-<!-- ══════════ ACTO 1 · CALIBRACIÓN ══════════ -->
-<section class="hero" id="top" aria-label="MUEVET+">
-  <svg class="hero-cross" viewBox="0 0 40 40" aria-hidden="true">
-    <path class="draw" d="M20 4 V36 M4 20 H36" fill="none"/>
-  </svg>
-
-  <div class="hero-grid">
+<!-- ═══ NOCHE · PORTADA ═══ -->
+<section class="hero tone-dark" id="top" aria-labelledby="h-hero">
+  <canvas class="hero-ambient" id="heroAmbient" width="64" height="36" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
     <div class="hero-copy">
-      <p class="label hero-label"><span class="line"><span class="line-in">MUEVET+ &nbsp;·&nbsp; CANTABRIA Y ONLINE</span></span></p>
-
-      <h1 class="hero-title">
-        <span class="line"><span class="line-in">Deja de</span></span>
-        <span class="line"><span class="line-in">entrenar</span></span>
-        <span class="line"><span class="line-in">a ciegas<span class="plus">.</span></span></span>
-      </h1>
-
-      <p class="hero-sub"><span class="line"><span class="line-in">Mido tu composición corporal con el protocolo ISAK y planifico tu</span></span>
-      <span class="line"><span class="line-in">entrenamiento con esos datos, con seguimiento semanal. Nada genérico.</span></span></p>
-
-      <div class="hero-actions">
-        <a class="btn-pill btn-big" href="#contacto">Empieza con tu valoración <span class="arr">→</span></a>
-        <p class="mono hero-micro">DOS MINUTOS. TE DIGO POR DÓNDE EMPEZAR.</p>
+      <h1 id="h-hero" class="d1 hero-title">Deja de entrenar <em>a&nbsp;ciegas.</em></h1>
+      <p class="hero-type glass">
+        <span class="sr">Mide. Analiza. Mejora.</span>
+        <span class="type" id="heroType" aria-hidden="true" data-text="Mide. Analiza. Mejora.">Mide. Analiza. Mejora.</span><span class="caret" aria-hidden="true"></span>
+      </p>
+      <p class="hero-sub">Antropometría ISAK y entrenamiento personalizado. Cantabria y online.</p>
+      <div class="hero-act">
+        <a class="btn btn-lg" href="#contacto">Empieza con tu valoración <svg class="ico"><use href="#i-arrow"/></svg></a>
+        <p class="micro">Dos minutos. Te digo por dónde empezar.</p>
       </div>
-
-      <div class="hero-rule" role="group" aria-label="Perfil restringido ISAK: 8 pliegues, 5 perímetros, 2 diámetros">
-        <span><b data-count="8">8</b>PLIEGUES</span>
-        <span><b data-count="5">5</b>PERÍMETROS</span>
-        <span><b data-count="2">2</b>DIÁMETROS</span>
-      </div>
-
-      <p class="mono hero-cred"><span class="note-line" aria-hidden="true"></span>VÍCTOR &nbsp;·&nbsp; GRADUADO CAFYD &nbsp;·&nbsp; ANTROPOMETRISTA ISAK NIVEL 1</p>
     </div>
 
-    <!-- ▓▓ VÍDEO DE MEDICIÓN — EDITABLE ▓▓
-         Para cambiarlo: sustituye assets/img/hero/medir-clip.mp4 y los dos
-         pósteres medir-poster.avif / .jpg (vertical 9:16, sin audio, ideal < 300 KB).
-         El póster debe ser un fotograma del propio vídeo. -->
-    <figure class="hero-media">
-      <div class="clip-frame">
+    <!-- ▓▓ VÍDEO DE MEDICIÓN — EDITABLE: assets/img/hero/medir-clip.mp4 + medir-poster.avif/.jpg ▓▓ -->
+    <figure class="hero-media" id="heroMedia">
+      <div class="clip-frame hero-frame">
         <picture class="clip-poster">
           <source type="image/avif" srcset="assets/img/hero/medir-poster.avif">
-          <img src="assets/img/hero/medir-poster.jpg" width="512" height="910" decoding="async"
-               alt="Medición de pliegues cutáneos con plicómetro en el brazo, protocolo ISAK.">
+          <img src="assets/img/hero/medir-poster.jpg" width="512" height="910" fetchpriority="high" decoding="async" alt="Víctor mide un pliegue cutáneo con el plicómetro siguiendo el protocolo ISAK.">
         </picture>
-        <video class="clip-video" width="512" height="910" muted loop playsinline preload="none"
-               aria-label="Vídeo: medición de pliegues cutáneos con plicómetro, protocolo ISAK.">
+        <video class="clip-video" id="heroVideo" width="512" height="910" muted loop playsinline preload="none" aria-label="Vídeo: medición de pliegues cutáneos con plicómetro, protocolo ISAK.">
           <source src="assets/img/hero/medir-clip.mp4" type="video/mp4">
         </video>
-        <button class="clip-play mono" type="button" hidden>VER · 5 S</button>
+        <button class="clip-play" type="button" hidden><svg class="ico"><use href="#i-play"/></svg>Ver · 5 s</button>
       </div>
-      <figcaption class="photo-note">
-        <span class="note-line" aria-hidden="true"></span>
-        <span class="mono">MEDICIÓN DE PLIEGUES&nbsp;·&nbsp;PROTOCOLO ISAK</span>
-      </figcaption>
+      <figcaption class="hero-cap">Medición de pliegues · Protocolo ISAK</figcaption>
     </figure>
+  </div>
+
+  <p class="hero-cred"><span class="dot" aria-hidden="true"></span>Víctor Blanco · Graduado CAFYD · Antropometrista ISAK nivel 1</p>
+  <div class="hero-mark" id="heroMark" aria-hidden="true">MUEVET<span>+</span></div>
+</section>
+
+<!-- ═══ AMANECER · de la noche al día ═══ -->
+<div class="fade fade-n2d" aria-hidden="true"></div>
+
+<section class="dawn tone-day" aria-labelledby="h-manifest">
+  <div class="wrap">
+    <ul class="creds" aria-label="Credenciales">
+      <li data-rv><svg class="ico"><use href="#i-ruler"/></svg>Antropometrista ISAK nivel&nbsp;1</li>
+      <li data-rv style="--i:1"><svg class="ico"><use href="#i-cap"/></svg>Graduado en CAFYD</li>
+      <li data-rv style="--i:2"><svg class="ico"><use href="#i-pin"/></svg>Presencial en Cantabria · Online</li>
+    </ul>
+
+    <h2 id="h-manifest" class="manifest" data-words>No creemos en entrenar por entrenar. <em>Creemos en entender.</em></h2>
+
+    <div class="manifest-body">
+      <p class="lead" data-rv>Mido tu composición corporal con el protocolo ISAK y planifico tu entrenamiento con esos datos, con seguimiento semanal. Nada genérico.</p>
+      <p data-rv style="--i:1">Datos reales para decidir mejor. Progreso poco a poco. Y disfrutar del camino — porque de eso va moverse.</p>
+      <ul class="tags" aria-label="Lo que nos mueve" data-rv style="--i:2">
+        <li>Ciencia</li><li>Comunidad</li><li>Tecnología</li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<!-- ══════════ ACTO 2 · PRINCIPIOS ══════════ -->
-<section class="manifest" aria-label="Filosofía">
-  <p class="manifest-text reveal">
-    No creemos en entrenar por entrenar.<br>
-    <em>Creemos en entender.</em>
-  </p>
-  <p class="manifest-body reveal">
-    Datos reales para decidir mejor. Progreso poco a poco.
-    Y disfrutar del camino — porque de eso va moverse.
-  </p>
-  <ul class="manifest-tags reveal" aria-label="Pilares">
-    <li class="mono">[ CIENCIA ]</li>
-    <li class="mono">[ COMUNIDAD ]</li>
-    <li class="mono">[ TECNOLOGÍA ]</li>
-  </ul>
+<!-- ═══ COMPARADOR · sin datos / con MUEVET+ ═══ -->
+<section class="compare tone-day" aria-labelledby="h-cmp">
+  <div class="wrap">
+    <header class="sec-head center">
+      <h2 id="h-cmp" class="d2" data-rv>De la intuición <br class="br-d">a la medida.</h2>
+      <p class="lead" data-rv style="--i:1">Lo que antes era una sensación, ahora es un dato que puedes repetir.</p>
+    </header>
+
+    <div class="cmp" id="cmp" style="--x:50%" data-rv>
+      <!-- Antes: notas de alguien que entrena sin datos (ilustrativo) -->
+      <div class="cmp-layer cmp-before">
+        <div class="notes">
+          <p class="notes-date">Lunes</p>
+          <p class="notes-title">Mi entreno</p>
+          <ul class="notes-list">
+            <li>Peso igual. ¿Mejoro?</li>
+            <li>Rutina de un vídeo</li>
+            <li><s>Descanso</s> A tope, otra vez</li>
+            <li>¿Grasa o músculo?</li>
+            <li>Si me aburro, cambio</li>
+            <li class="notes-q">¿Por dónde empiezo?</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Después: lo que contiene una valoración (sin cifras inventadas) -->
+      <div class="cmp-layer cmp-after">
+        <div class="report">
+          <div class="report-bar"><span></span><span></span><span></span><b>Tu valoración ISAK</b></div>
+          <div class="report-head">
+            <p class="report-title">Perfil restringido</p>
+            <span class="report-pill">Protocolo internacional</span>
+          </div>
+          <ul class="report-rows">
+            <li><span><span class="l-long">Pliegues cutáneos</span><span class="l-short">Pliegues</span></span><em>×8</em><i class="ok"><svg class="ico"><use href="#i-check"/></svg><b>Medido</b></i></li>
+            <li><span>Perímetros</span><em>×5</em><i class="ok"><svg class="ico"><use href="#i-check"/></svg><b>Medido</b></i></li>
+            <li><span><span class="l-long">Diámetros óseos</span><span class="l-short">Diámetros</span></span><em>×2</em><i class="ok"><svg class="ico"><use href="#i-check"/></svg><b>Medido</b></i></li>
+            <li><span>Peso y talla</span><em></em><i class="ok"><svg class="ico"><use href="#i-check"/></svg><b>Medido</b></i></li>
+            <li><span><span class="l-long">Composición corporal y somatotipo</span><span class="l-short">Composición</span></span><em>Informe</em><i class="ok"><svg class="ico"><use href="#i-check"/></svg><b>Incluido</b></i></li>
+            <li><span>Tu plan</span><em class="e-long">Con tus datos</em><i class="ok"><svg class="ico"><use href="#i-check"/></svg><b>Incluido</b></i></li>
+            <li><span><span class="l-long">Siguiente medición</span><span class="l-short">Repetible</span></span><em class="e-long">Mismo protocolo</em><i class="ok"><svg class="ico"><use href="#i-check"/></svg><b>Repetible</b></i></li>
+          </ul>
+        </div>
+      </div>
+
+      <span class="cmp-tag cmp-tag-l" aria-hidden="true">Sin datos</span>
+      <span class="cmp-tag cmp-tag-r" aria-hidden="true">Con MUEVET+</span>
+      <div class="cmp-handle" aria-hidden="true"><span class="cmp-knob"><svg class="ico"><use href="#i-lr"/></svg></span></div>
+      <input class="cmp-range" id="cmpRange" type="range" min="0" max="100" value="50" aria-label="Comparar: a la izquierda, sin datos; a la derecha, con MUEVET+">
+    </div>
+    <p class="cmp-hint" aria-hidden="true">Arrastra para comparar</p>
+  </div>
 </section>
 
-<!-- ══════════ ACTO 3 · 01 ENTRENA ══════════ -->
-<section class="chapter" id="medir" aria-labelledby="h-medir">
-  <svg class="topo" viewBox="0 0 600 600" aria-hidden="true">
-    <defs>
-      <g id="topo-rings">
-        <path d="M355 300C354 303 354 306 354 310C354 314 358 319 356 322C355 325 346 325 343 327C340 330 340 334 338 336C335 339 332 342 328 343C325 343 319 341 316 342C312 343 309 348 306 349C302 350 298 348 294 348C290 348 285 351 282 349C279 347 278 340 275 337C273 335 268 335 265 334C263 332 262 328 259 326C255 324 246 324 244 322C242 319 244 314 245 310C246 307 251 304 250 300C249 296 241 292 239 289C238 285 240 281 242 277C244 274 250 273 253 270C256 268 259 265 262 263C265 261 269 259 273 259C276 258 281 261 285 260C289 258 291 250 294 250C297 249 302 255 305 257C309 258 312 257 316 258C319 259 323 260 326 261C329 263 330 266 333 268C337 269 344 268 346 271C349 273 347 278 349 281C351 284 358 286 359 289C360 292 356 297 355 300Z"/>
-        <path d="M393 298C392 304 391 309 391 315C391 321 395 329 392 333C389 338 377 339 372 343C367 346 365 351 360 355C356 359 352 364 347 366C342 369 335 368 329 370C323 372 317 375 311 377C305 378 299 377 292 378C286 378 277 381 272 379C267 376 265 365 261 361C256 357 249 357 245 354C240 351 238 346 233 342C227 339 216 338 213 333C209 329 211 321 212 315C213 309 220 304 219 299C218 293 206 286 205 280C203 274 205 267 209 262C212 257 219 253 225 250C230 246 236 243 241 240C247 237 252 233 258 232C264 231 272 235 278 233C283 231 287 221 293 220C298 219 305 223 311 225C317 227 322 229 327 230C333 232 340 231 345 234C349 237 349 245 354 248C360 251 371 249 376 252C381 255 382 261 386 266C389 271 396 275 397 281C399 286 394 293 393 298Z"/>
-        <path d="M432 297C431 305 426 311 426 320C426 328 434 339 430 346C427 353 412 356 406 361C399 367 395 373 389 379C382 384 375 390 367 393C360 396 350 394 341 397C333 400 326 408 318 410C309 412 300 408 291 408C281 408 269 413 262 408C256 404 256 385 249 380C242 375 229 380 222 376C215 372 217 362 210 357C202 352 183 352 177 346C171 340 171 329 173 321C176 313 193 305 193 297C192 289 173 281 171 272C168 264 172 254 177 248C183 241 197 239 204 234C211 228 211 218 219 214C226 211 239 213 248 212C256 211 263 210 270 207C278 204 284 194 291 192C299 190 308 194 316 195C324 197 331 201 339 203C347 206 355 206 362 210C369 213 371 221 379 224C387 228 402 226 408 231C414 236 408 248 413 255C417 262 431 266 434 273C438 280 434 289 432 297Z"/>
-        <path d="M467 296C466 306 471 316 472 326C472 337 476 350 471 359C466 368 450 374 440 381C431 387 421 392 412 398C404 405 398 415 388 419C378 422 363 416 352 419C342 423 334 437 324 441C313 445 299 446 288 445C276 444 264 440 255 433C246 426 242 411 234 404C226 398 212 399 204 394C197 388 198 376 189 370C180 363 157 364 149 356C141 349 138 336 140 326C142 316 162 306 162 296C162 285 142 275 139 265C137 254 140 242 145 233C151 224 164 219 172 211C181 203 185 193 194 188C204 182 216 179 227 177C238 174 250 176 260 172C270 168 279 155 289 154C299 153 311 164 322 166C332 168 344 165 354 168C363 171 371 180 380 185C389 189 398 192 408 197C418 201 431 204 439 211C448 218 451 228 457 237C464 246 478 254 480 263C481 273 468 285 467 296Z"/>
-        <path d="M557 292C555 307 545 321 542 335C540 350 545 368 540 382C535 396 524 409 512 420C501 432 486 441 473 450C459 458 445 467 429 472C414 477 396 477 380 481C365 484 350 489 334 493C318 498 302 505 284 508C266 511 242 520 228 513C213 506 208 477 195 466C182 455 162 456 152 446C142 435 147 414 135 403C122 393 88 394 78 382C67 371 70 352 71 337C72 322 88 308 84 293C81 277 53 260 50 244C46 228 53 210 63 197C73 184 97 177 111 167C126 157 135 145 148 136C162 128 179 123 194 118C209 112 224 110 239 103C254 96 268 76 284 75C300 74 317 92 334 96C350 100 367 96 382 99C398 102 416 106 427 116C439 125 440 146 453 155C466 164 492 160 505 169C517 179 517 196 526 209C534 222 548 234 553 248C558 261 559 278 557 292Z"/>
-        <path d="M580 291C575 309 585 324 587 342C588 360 594 382 587 397C580 413 556 423 543 437C530 451 524 470 509 482C495 493 474 501 455 507C437 513 416 513 397 520C379 526 362 542 343 547C323 553 301 554 280 552C260 550 236 548 221 536C205 524 200 494 186 482C171 469 148 473 135 462C122 452 123 431 108 420C93 409 59 407 44 395C30 382 21 362 21 345C21 327 48 310 45 291C41 272 3 252 0 233C-2 215 18 197 30 182C42 166 59 154 73 140C87 126 94 105 113 99C132 92 166 104 185 100C205 97 216 87 232 76C248 65 263 38 281 36C299 33 321 56 340 61C359 66 378 61 396 66C414 71 432 78 446 89C460 100 462 121 478 130C495 140 531 133 545 144C559 154 552 178 564 194C575 209 612 219 615 235C618 251 585 273 580 291Z"/>
-      </g>
-      <path id="topo-lime" d="M505 294C504 306 506 318 505 330C504 343 506 357 501 369C495 380 482 389 471 397C461 406 448 412 437 419C426 426 418 438 406 442C394 447 378 442 365 445C352 449 341 459 328 463C315 467 301 470 287 470C273 470 256 471 245 463C234 456 231 434 220 426C210 418 192 422 183 415C174 408 176 392 165 385C153 377 124 378 115 369C107 360 112 343 112 330C113 318 122 307 119 294C115 281 91 266 91 254C90 241 104 229 113 219C122 208 134 200 144 190C154 181 160 169 172 163C184 157 202 157 216 155C229 153 242 156 254 149C266 143 274 117 286 114C299 110 315 124 328 128C341 132 354 135 366 139C379 142 393 144 403 151C413 158 415 174 425 181C435 189 453 188 464 196C474 203 478 215 487 225C495 235 511 244 514 256C517 267 506 282 505 294Z"/>
-    </defs>
-    <use href="#topo-rings"/>
-    <use class="t-lime" href="#topo-lime"/>
-  </svg>
-  <header class="chapter-head reveal">
-    <span class="mono chapter-num">01</span>
-    <div>
-      <h2 id="h-medir" class="chapter-title">Mide. Analiza.<br><span class="plus">Mejora.</span></h2>
-      <p class="chapter-sub">Antropometría ISAK, presencial en Cantabria.</p>
-    </div>
-  </header>
-
-  <div class="medir-grid">
-    <figure class="photo reveal medir-p1">
-      <div class="photo-mask" data-drift>
+<!-- ═══ MEDIR ═══ -->
+<section class="medir tone-day" id="medir" aria-labelledby="h-medir">
+  <div class="wrap medir-grid">
+    <div class="medir-media" id="medirMedia">
+      <figure class="ph ph-a" data-rv>
         <picture>
-          <source type="image/avif" srcset="assets/img/isak-01-480.avif 480w, assets/img/isak-01-768.avif 768w, assets/img/isak-01-1200.avif 1200w" sizes="(min-width:1080px) 42vw, 100vw">
-          <source type="image/webp" srcset="assets/img/isak-01-480.webp 480w, assets/img/isak-01-768.webp 768w, assets/img/isak-01-1200.webp 1200w" sizes="(min-width:1080px) 42vw, 100vw">
-          <img src="assets/img/isak-01-768.jpg" srcset="assets/img/isak-01-480.jpg 480w, assets/img/isak-01-768.jpg 768w, assets/img/isak-01-1200.jpg 1200w" sizes="(min-width:1080px) 42vw, 100vw"
+          <source type="image/avif" srcset="assets/img/isak-01-480.avif 480w, assets/img/isak-01-768.avif 768w, assets/img/isak-01-1200.avif 1200w" sizes="(min-width:1024px) 40vw, 86vw">
+          <source type="image/webp" srcset="assets/img/isak-01-480.webp 480w, assets/img/isak-01-768.webp 768w, assets/img/isak-01-1200.webp 1200w" sizes="(min-width:1024px) 40vw, 86vw">
+          <img src="assets/img/isak-01-768.jpg" srcset="assets/img/isak-01-480.jpg 480w, assets/img/isak-01-768.jpg 768w, assets/img/isak-01-1200.jpg 1200w" sizes="(min-width:1024px) 40vw, 86vw"
                width="4080" height="5100" loading="lazy" decoding="async"
                alt="Evaluación antropométrica real: medición del perímetro de brazo con cinta métrica siguiendo el protocolo ISAK.">
         </picture>
-      </div>
-      <figcaption class="photo-note">
-        <span class="note-line" aria-hidden="true"></span>
-        <span class="mono">PERÍMETRO DE BRAZO&nbsp;·&nbsp;PROTOCOLO ISAK</span>
-      </figcaption>
-    </figure>
-
-    <div class="medir-a">
-      <p class="medir-intro reveal">Antes de entrenar, entiende. Una evaluación con el protocolo internacional ISAK convierte tu punto de partida en datos con los que decidir: qué cambia, cuánto y dónde.</p>
-      <h3 class="isak-title reveal"><span class="plus" aria-hidden="true">+</span> ¿Qué mide una evaluación ISAK?</h3>
-      <div class="isak-list">
-        <article class="isak-item reveal">
-          <h4 class="mono isak-num"><span class="plus" aria-hidden="true">+</span> 01&nbsp;·&nbsp;PLIEGUES CUTÁNEOS (×<b data-count="8">8</b>)</h4>
-          <p>Tríceps, subescapular, bíceps, cresta ilíaca, supraespinal, abdominal, muslo y pierna. Estiman tu grasa subcutánea y, sobre todo, cómo se distribuye. Es el dato que mejor refleja tus cambios reales cuando entrenas y comes bien.</p>
-        </article>
-        <article class="isak-item reveal">
-          <h4 class="mono isak-num"><span class="plus" aria-hidden="true">+</span> 02&nbsp;·&nbsp;PERÍMETROS (×<b data-count="5">5</b>)</h4>
-          <p>Brazo relajado y contraído, cintura, cadera y pierna. Hablan de tu masa muscular y de su distribución. Junto a los pliegues, permiten separar qué parte del cambio es músculo y qué parte no.</p>
-        </article>
-        <article class="isak-item reveal">
-          <h4 class="mono isak-num"><span class="plus" aria-hidden="true">+</span> 03&nbsp;·&nbsp;DIÁMETROS ÓSEOS (×<b data-count="2">2</b>)</h4>
-          <p>Húmero y fémur. Tu estructura no cambia con el entrenamiento, pero condiciona la interpretación de todo lo demás: dos cuerpos con el mismo peso pueden ser completamente distintos.</p>
-        </article>
-        <article class="isak-item reveal">
-          <h4 class="mono isak-num"><span class="plus" aria-hidden="true">+</span> 04&nbsp;·&nbsp;EL INFORME</h4>
-          <p>Con las medidas construyo tu perfil: sumatorio de pliegues, estimación de composición corporal y somatotipo. No es un número suelto: es tu punto de partida medido con un protocolo internacional, repetible en cada seguimiento para ver la evolución de verdad.</p>
-        </article>
-      </div>
-    </div>
-
-    <figure class="photo reveal medir-p2">
-      <div class="photo-mask">
+        <span class="pin" aria-hidden="true"></span>
+        <figcaption class="pin-label">Perímetro de brazo</figcaption>
+      </figure>
+      <figure class="ph ph-b" data-rv style="--i:2">
         <picture>
-          <source type="image/avif" srcset="assets/img/medir/pliegue-480.avif 480w, assets/img/medir/pliegue-640.avif 640w" sizes="(min-width:1080px) 30vw, 100vw">
-          <source type="image/webp" srcset="assets/img/medir/pliegue-480.webp 480w, assets/img/medir/pliegue-640.webp 640w" sizes="(min-width:1080px) 30vw, 100vw">
-          <img src="assets/img/medir/pliegue-640.jpg" srcset="assets/img/medir/pliegue-480.jpg 480w, assets/img/medir/pliegue-640.jpg 640w" sizes="(min-width:1080px) 30vw, 100vw"
+          <source type="image/avif" srcset="assets/img/medir/pliegue-480.avif 480w, assets/img/medir/pliegue-640.avif 640w" sizes="(min-width:1024px) 22vw, 52vw">
+          <source type="image/webp" srcset="assets/img/medir/pliegue-480.webp 480w, assets/img/medir/pliegue-640.webp 640w" sizes="(min-width:1024px) 22vw, 52vw">
+          <img src="assets/img/medir/pliegue-640.jpg" srcset="assets/img/medir/pliegue-480.jpg 480w, assets/img/medir/pliegue-640.jpg 640w" sizes="(min-width:1024px) 22vw, 52vw"
                width="640" height="640" loading="lazy" decoding="async"
                alt="Medición antropométrica con plicómetro, protocolo ISAK.">
         </picture>
-      </div>
-    </figure>
-
-    <div class="medir-b">
-      <ul class="gains reveal">
-        <li><span class="mono gain-n">01</span> Conoce tu punto de partida</li>
-        <li><span class="mono gain-n">02</span> Toma mejores decisiones</li>
-        <li><span class="mono gain-n">03</span> Sigue tu progreso</li>
-      </ul>
-      <p class="mono isak-close reveal">PROTOCOLO ISAK&nbsp;·&nbsp;PERFIL RESTRINGIDO&nbsp;·&nbsp;ANTROPOMETRISTA NIVEL 1</p>
-      <div class="cta-row reveal">
-        <a class="btn-pill" href="#contacto" data-preset="Análisis ISAK">Empieza con tu valoración <span class="arr">→</span></a>
-        <p class="mono cta-micro">DOS MINUTOS. TE DIGO POR DÓNDE EMPEZAR.</p>
-      </div>
+      </figure>
     </div>
+
+    <div class="medir-copy">
+      <h2 id="h-medir" class="d2" data-rv>Mide. Analiza. <em>Mejora.</em></h2>
+      <p class="sub" data-rv style="--i:1">Antropometría ISAK, presencial en Cantabria.</p>
+      <p class="lead" data-rv style="--i:2">Antes de entrenar, entiende. Una evaluación con el protocolo internacional ISAK convierte tu punto de partida en datos con los que decidir: qué cambia, cuánto y dónde.</p>
+
+      <h3 class="h3" data-rv>¿Qué mide una evaluación ISAK?</h3>
+      <ol class="isak">
+        <li class="icard" data-rv>
+          <div class="icard-top"><span class="icard-label">Pliegues cutáneos</span><span class="icard-num">×<b data-count="8">8</b></span></div>
+          <p>Tríceps, subescapular, bíceps, cresta ilíaca, supraespinal, abdominal, muslo y pierna. Estiman tu grasa subcutánea y, sobre todo, cómo se distribuye. Es el dato que mejor refleja tus cambios reales cuando entrenas y comes bien.</p>
+        </li>
+        <li class="icard" data-rv>
+          <div class="icard-top"><span class="icard-label">Perímetros</span><span class="icard-num">×<b data-count="5">5</b></span></div>
+          <p>Brazo relajado y contraído, cintura, cadera y pierna. Hablan de tu masa muscular y de su distribución. Junto a los pliegues, permiten separar qué parte del cambio es músculo y qué parte no.</p>
+        </li>
+        <li class="icard" data-rv>
+          <div class="icard-top"><span class="icard-label">Diámetros óseos</span><span class="icard-num">×<b data-count="2">2</b></span></div>
+          <p>Húmero y fémur. Tu estructura no cambia con el entrenamiento, pero condiciona la interpretación de todo lo demás: dos cuerpos con el mismo peso pueden ser completamente distintos.</p>
+        </li>
+        <li class="icard icard-report" data-rv>
+          <div class="icard-top"><span class="icard-label">El informe</span><svg class="ico icard-ico" aria-hidden="true"><use href="#i-doc"/></svg></div>
+          <p>Con las medidas construyo tu perfil: sumatorio de pliegues, estimación de composición corporal y somatotipo. No es un número suelto: es tu punto de partida medido con un protocolo internacional, repetible en cada seguimiento para ver la evolución de verdad.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="wrap steps" id="steps">
+    <span class="steps-line" aria-hidden="true"><i id="stepsFill"></i></span>
+    <ol class="step-list">
+      <li data-rv><span class="step-n">01</span><strong class="step-w">Mide.</strong><span class="step-t">Conoce tu punto de partida</span></li>
+      <li data-rv style="--i:1"><span class="step-n">02</span><strong class="step-w">Analiza.</strong><span class="step-t">Toma mejores decisiones</span></li>
+      <li data-rv style="--i:2"><span class="step-n">03</span><strong class="step-w">Mejora.</strong><span class="step-t">Sigue tu progreso</span></li>
+    </ol>
+  </div>
+
+  <div class="wrap cta-row" data-rv>
+    <p class="cred-line">Protocolo ISAK · Perfil restringido · Antropometrista nivel 1</p>
+    <a class="btn" href="#contacto" data-preset="Análisis ISAK">Empieza con tu valoración <svg class="ico"><use href="#i-arrow"/></svg></a>
+    <p class="micro">Dos minutos. Te digo por dónde empezar.</p>
   </div>
 </section>
 
-<!-- ══════════ 02 · ENTRENAR: MUEVET+ COACH ══════════ -->
-<section class="chapter coach" id="entrena" aria-labelledby="h-entrena">
-  <header class="chapter-head reveal">
-    <span class="mono chapter-num">02</span>
-    <div>
-      <h2 id="h-entrena" class="chapter-title">Planifica. Entrena.<br><span class="plus">Ajusta.</span></h2>
-      <p class="chapter-sub">MUEVET+ COACH: entrenamiento personalizado, presencial en Cantabria y online.</p>
-    </div>
-  </header>
-
-  <div class="coach-grid">
-    <div class="coach-a">
-      <p class="coach-intro reveal">Un plan hecho a partir de tu valoración, no de una plantilla. No te prometo resultados: te prometo criterio y a alguien mirando tu entrenamiento cada semana.</p>
-      <h3 class="isak-title reveal"><span class="plus" aria-hidden="true">+</span> Qué incluye</h3>
-      <div class="isak-list coach-list">
-        <article class="isak-item reveal">
-          <h4 class="mono isak-num"><span class="plus" aria-hidden="true">+</span> 01&nbsp;·&nbsp;VALORACIÓN INICIAL</h4>
-          <p>Empezamos por medir y por hablar: tu composición corporal con el protocolo ISAK, tu contexto, tu tiempo y lo que quieres conseguir.</p>
-        </article>
-        <article class="isak-item reveal">
-          <h4 class="mono isak-num"><span class="plus" aria-hidden="true">+</span> 02&nbsp;·&nbsp;PLANIFICACIÓN PERSONALIZADA</h4>
-          <p>Tu plan, construido con esos datos y con tu semana real: los días que tienes, el material que tienes y el punto del que partes.</p>
-        </article>
-        <article class="isak-item reveal">
-          <h4 class="mono isak-num"><span class="plus" aria-hidden="true">+</span> 03&nbsp;·&nbsp;VÍDEOS DE EJERCICIOS</h4>
-          <p>Cada ejercicio con su vídeo, para que sepas qué hacer y cómo hacerlo sin dudar en la sala.</p>
-        </article>
-        <article class="isak-item reveal">
-          <h4 class="mono isak-num"><span class="plus" aria-hidden="true">+</span> 04&nbsp;·&nbsp;SEGUIMIENTO SEMANAL CON VIDEOLLAMADA</h4>
-          <p>Cada semana nos vemos, repasamos qué ha pasado y ajustamos lo que toque. El plan se mueve contigo.</p>
-        </article>
-        <article class="isak-item reveal">
-          <h4 class="mono isak-num"><span class="plus" aria-hidden="true">+</span> 05&nbsp;·&nbsp;CONTACTO DURANTE EL PROCESO</h4>
-          <p>Si te surge una duda entre sesiones, me escribes. No esperas a la siguiente videollamada.</p>
-        </article>
-        <article class="isak-item reveal">
-          <h4 class="mono isak-num"><span class="plus" aria-hidden="true">+</span> 06&nbsp;·&nbsp;LA APP MUEVET+, INCLUIDA <span class="tag-soon">PRÓXIMAMENTE</span></h4>
-          <p>La app MUEVET+ para el móvil todavía no está disponible. Cuando lo esté, la tendrás incluida: tus datos, tu plan y tu progreso en el mismo sitio.</p>
-        </article>
+<!-- ═══ ENTRENAR · MUEVET+ COACH (isla oscura) ═══ -->
+<section class="coach-sec tone-day" id="entrena" aria-labelledby="h-entrena">
+  <div class="island tone-dark">
+    <div class="wrap coach-grid">
+      <div class="coach-side">
+        <h2 id="h-entrena" class="d2" data-rv>Planifica. Entrena. <em>Ajusta.</em></h2>
+        <p class="sub" data-rv style="--i:1">MUEVET+ COACH: entrenamiento personalizado, presencial en Cantabria y online.</p>
+        <p class="lead" data-rv style="--i:2">Un plan hecho a partir de tu valoración, no de una plantilla. No te prometo resultados: te prometo criterio y a alguien mirando tu entrenamiento cada semana.</p>
+        <figure class="ph ph-coach" data-rv>
+          <picture>
+            <source type="image/avif" srcset="assets/img/coach/valoracion-480.avif 480w, assets/img/coach/valoracion-768.avif 768w" sizes="(min-width:1024px) 34vw, 88vw">
+            <source type="image/webp" srcset="assets/img/coach/valoracion-480.webp 480w, assets/img/coach/valoracion-768.webp 768w" sizes="(min-width:1024px) 34vw, 88vw">
+            <img src="assets/img/coach/valoracion-768.jpg" srcset="assets/img/coach/valoracion-480.jpg 480w, assets/img/coach/valoracion-768.jpg 768w" sizes="(min-width:1024px) 34vw, 88vw"
+                 width="768" height="960" loading="lazy" decoding="async"
+                 alt="Valoración antropométrica, protocolo ISAK.">
+          </picture>
+        </figure>
       </div>
-    </div>
 
-    <figure class="photo reveal coach-photo">
-      <div class="photo-mask" data-drift>
-        <picture>
-          <source type="image/avif" srcset="assets/img/coach/valoracion-480.avif 480w, assets/img/coach/valoracion-768.avif 768w" sizes="(min-width:1080px) 38vw, 100vw">
-          <source type="image/webp" srcset="assets/img/coach/valoracion-480.webp 480w, assets/img/coach/valoracion-768.webp 768w" sizes="(min-width:1080px) 38vw, 100vw">
-          <img src="assets/img/coach/valoracion-768.jpg" srcset="assets/img/coach/valoracion-480.jpg 480w, assets/img/coach/valoracion-768.jpg 768w" sizes="(min-width:1080px) 38vw, 100vw"
-               width="768" height="960" loading="lazy" decoding="async"
-               alt="Valoración antropométrica, protocolo ISAK.">
-        </picture>
-      </div>
-    </figure>
-
-    <div class="coach-b">
-      <p class="mono isak-close reveal">PRESENCIAL EN CANTABRIA&nbsp;·&nbsp;ONLINE&nbsp;·&nbsp;SEGUIMIENTO SEMANAL</p>
-      <div class="cta-row reveal">
-        <a class="btn-pill" href="#contacto" data-preset="MUEVET+ COACH">Empieza con tu valoración <span class="arr">→</span></a>
-        <p class="mono cta-micro">DOS MINUTOS. TE DIGO POR DÓNDE EMPEZAR.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ ACTO 4 · 02 CORRE ══════════ -->
-<section class="chapter run" id="corre" aria-labelledby="h-corre">
-  <header class="chapter-head reveal">
-    <span class="mono chapter-num">03</span>
-    <h2 id="h-corre" class="visually-hidden">RUN+, el club de running social de MUEVET+</h2>
-  </header>
-
-  <p class="run-logo reveal" aria-hidden="true">RUN<svg class="run-plus" viewBox="0 0 100 100" aria-hidden="true"><path class="draw-plus draw-v" d="M50 12V88"/><path class="draw-plus draw-h" d="M12 50H88"/></svg></p>
-
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>CORRER.&nbsp;&nbsp;CONECTAR.&nbsp;&nbsp;REPETIR.&nbsp;&nbsp;+&nbsp;&nbsp;</span><span>CORRER.&nbsp;&nbsp;CONECTAR.&nbsp;&nbsp;REPETIR.&nbsp;&nbsp;+&nbsp;&nbsp;</span><span>CORRER.&nbsp;&nbsp;CONECTAR.&nbsp;&nbsp;REPETIR.&nbsp;&nbsp;+&nbsp;&nbsp;</span><span>CORRER.&nbsp;&nbsp;CONECTAR.&nbsp;&nbsp;REPETIR.&nbsp;&nbsp;+&nbsp;&nbsp;</span>
-    </div>
-  </div>
-
-  <div class="run-body">
-    <!-- ▓▓ VÍDEO RUN+ — EDITABLE: assets/img/run/run-clip.mp4 + run-poster.avif/jpg ▓▓ -->
-    <figure class="run-media reveal">
-      <div class="clip-frame">
-        <picture class="clip-poster">
-          <source type="image/avif" srcset="assets/img/run/run-poster.avif">
-          <img src="assets/img/run/run-poster.jpg" width="512" height="910" loading="lazy" decoding="async" alt="Fotograma del vídeo de RUN+: una medalla de 21 K y unas zapatillas de running.">
-        </picture>
-        <video class="clip-video" width="512" height="910" muted loop playsinline preload="none" data-src="assets/img/run/run-clip.mp4" aria-label="Vídeo de RUN+, el club de running social de MUEVET+."></video>
-        <button class="clip-play mono" type="button" hidden>VER&nbsp;·&nbsp;8 S</button>
-      </div>
-    </figure>
-
-    <div class="run-copy">
-      <p class="run-text reveal">Un club de running social en Cantabria. La carrera es la excusa: lo importante es quién corre a tu lado. Da igual tu ritmo — aquí no se viene a competir, se viene a compartir el movimiento.</p>
-      <p class="mono run-note reveal">QUEDADAS ABIERTAS A TODOS LOS NIVELES&nbsp;·&nbsp;SE ANUNCIAN EN INSTAGRAM</p>
-      <a class="btn-pill reveal" href="https://chat.whatsapp.com/J52jzClYnoVD17e3LXn0wf?mode=gi_t" target="_blank" rel="noopener">Únete al grupo de WhatsApp <span class="arr">→</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ 04 · LA APP MUEVET+ ══════════ -->
-<section class="chapter mvt" id="app" aria-labelledby="h-app">
-  <header class="chapter-head reveal">
-    <span class="mono chapter-num">04</span>
-    <div>
-      <h2 id="h-app" class="chapter-title">App MUEVET<span class="plus">+</span></h2>
-      <p class="chapter-sub">La app MUEVET+, para tu móvil.</p>
-    </div>
-  </header>
-
-  <div class="mvt-lead">
-    <div class="mvt-copy">
-      <p class="mono mvt-status reveal">PRÓXIMAMENTE</p>
-      <p class="mvt-text reveal">La idea es simple: que tu entrenamiento, tus datos y tu progreso vivan en tu móvil, en el mismo sitio y conectados.</p>
-    </div>
-    <!-- ▓▓ VÍDEO «A CIEGAS» — EDITABLE: assets/img/ciegas/ciegas-clip.mp4 + ciegas-poster.avif/.jpg ▓▓ -->
-    <figure class="app-media reveal">
-      <div class="clip-frame">
-        <picture class="clip-poster">
-          <source type="image/avif" srcset="assets/img/ciegas/ciegas-poster.avif">
-          <img src="assets/img/ciegas/ciegas-poster.jpg" width="720" height="1280" loading="lazy" decoding="async" alt="Fotograma del vídeo «A ciegas»: «Esta noche has dormido 5 horas. Tu rutina no lo sabe.»">
-        </picture>
-        <video class="clip-video" width="720" height="1280" muted loop playsinline preload="none" data-src="assets/img/ciegas/ciegas-clip.mp4" aria-label="Vídeo «A ciegas» de la app MUEVET+, 24 segundos con sonido."></video>
-        <button class="clip-play mono" type="button" hidden>VER&nbsp;·&nbsp;24 S</button>
-        <button class="clip-sound mono" type="button" aria-pressed="false">Activar sonido</button>
-      </div>
-    </figure>
-  </div>
-
-  <!-- Los módulos como escala de medida: ticks que crecen al entrar -->
-  <ol class="mvt-scale reveal" aria-label="Qué tendrá la app MUEVET+">
-    <li class="mvt-tick"><span class="mono mvt-tick-n">01</span><strong>Entrenamiento</strong><p>Tu planificación y tus sesiones, registradas con criterio.</p></li>
-    <li class="mvt-tick"><span class="mono mvt-tick-n">02</span><strong>Evaluaciones</strong><p>Tus datos ISAK integrados en tu perfil, medición a medición.</p></li>
-    <li class="mvt-tick"><span class="mono mvt-tick-n">03</span><strong>Readiness</strong><p>Cómo llegas hoy, para ajustar lo que toca hoy.</p></li>
-    <li class="mvt-tick"><span class="mono mvt-tick-n">04</span><strong>Hábitos y objetivos</strong><p>El progreso lento que acaba siendo el importante.</p></li>
-  </ol>
-
-  <p class="mvt-text reveal">Sin fecha y sin humo: cuando esté lista, lo sabrás aquí y en <a href="https://www.instagram.com/muevet.mas" target="_blank" rel="noopener">@muevet.mas</a>.</p>
-</section>
-
-<!-- ══════════ ACTO 7 · INSTAGRAM ══════════ -->
-<section class="chapter ig" id="instagram" aria-labelledby="h-ig">
-  <header class="chapter-head reveal">
-    <span class="mono chapter-num">+</span>
-    <h2 id="h-ig" class="chapter-title">Todo pasa aquí.</h2>
-  </header>
-
-  <div class="ig-module reveal">
-    <div class="ig-profile">
-      <img class="ig-avatar" src="assets/icons/logo-mv.png" alt="" width="72" height="72">
-      <p class="ig-handle">@muevet.mas</p>
-      <p class="ig-bio">CAFYD&nbsp;·&nbsp;Antropometrista ISAK 1<br>Mejora tu salud y rendimiento</p>
-      <div class="ig-actions">
-        <a class="btn-ghost" href="https://www.instagram.com/muevet.mas" target="_blank" rel="noopener">Seguir</a>
-        <a class="link-arrow" href="#contacto">Empieza con tu valoración <span class="arr">→</span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ ACTO 8 · CIERRE ══════════ -->
-<section class="closing" id="contacto" aria-labelledby="h-cierre">
-  <svg class="topo topo-closing" viewBox="0 0 600 600" aria-hidden="true">
-    <use href="#topo-rings"/>
-    <use class="t-lime" href="#topo-lime"/>
-  </svg>
-  <h2 id="h-cierre" class="closing-title reveal">Tu valoración<br>empieza aquí<span class="plus">.</span></h2>
-
-  <p class="closing-lead reveal">
-    <strong>No hace falta que lo tengas claro.</strong>
-    Cuéntame dónde estás hoy y qué quieres, y te digo por dónde empezar.
-  </p>
-
-  <form class="apply reveal" id="applyForm" novalidate>
-
-    <!-- 01 · CAPTURA -->
-    <div class="apply-block">
-      <p class="mono apply-step"><span class="plus" aria-hidden="true">+</span> 01&nbsp;·&nbsp;QUIÉN ERES</p>
-      <div class="apply-fields">
-        <p class="field">
-          <label class="mono" for="f-nombre">NOMBRE</label>
-          <input id="f-nombre" name="nombre" type="text" autocomplete="name" required>
-        </p>
-        <p class="field">
-          <label class="mono" for="f-email">EMAIL</label>
-          <input id="f-email" name="email" type="email" autocomplete="email" required>
-        </p>
-        <p class="field">
-          <label class="mono" for="f-contacto">WHATSAPP O INSTAGRAM <span class="opt">(OPCIONAL)</span></label>
-          <input id="f-contacto" name="contacto" type="text" autocomplete="tel">
-        </p>
-      </div>
-    </div>
-
-    <!-- 02 · CUALIFICACIÓN -->
-    <div class="apply-block">
-      <p class="mono apply-step"><span class="plus" aria-hidden="true">+</span> 02&nbsp;·&nbsp;DÓNDE ESTÁS</p>
-
-      <fieldset class="chips">
-        <legend>¿Qué te interesa?</legend>
-        <label class="chip"><input type="radio" name="interes" value="Análisis ISAK" required><span>Análisis ISAK</span></label>
-        <label class="chip"><input type="radio" name="interes" value="MUEVET+ COACH"><span>MUEVET+ COACH</span></label>
-        <label class="chip"><input type="radio" name="interes" value="Todavía no lo tengo claro"><span>Todavía no lo tengo claro</span></label>
-      </fieldset>
-
-      <fieldset class="chips">
-        <legend>¿De dónde partes?</legend>
-        <label class="chip"><input type="radio" name="punto" value="Empiezo de cero" required><span>Empiezo de cero</span></label>
-        <label class="chip"><input type="radio" name="punto" value="Entreno por mi cuenta"><span>Entreno por mi cuenta</span></label>
-        <label class="chip"><input type="radio" name="punto" value="Vuelvo tras un parón"><span>Vuelvo tras un parón</span></label>
-        <label class="chip"><input type="radio" name="punto" value="Compito o quiero competir"><span>Compito o quiero competir</span></label>
-      </fieldset>
-    </div>
-
-    <!-- 03 · PROFUNDIDAD (solo si no es el análisis suelto) -->
-    <div class="apply-deep" id="applyDeep">
-      <div class="apply-deep-in" id="applyDeepIn" inert>
-        <div class="apply-block">
-          <p class="mono apply-step"><span class="plus" aria-hidden="true">+</span> 03&nbsp;·&nbsp;QUÉ QUIERES</p>
-
-          <p class="field">
-            <label class="mono" for="f-objetivo">¿QUÉ QUIERES CONSEGUIR?</label>
-            <textarea id="f-objetivo" name="objetivo" rows="2" placeholder="Con una o dos frases me vale."></textarea>
-          </p>
-
-          <p class="field">
-            <label class="mono" for="f-antes">¿QUÉ HAS INTENTADO ANTES QUE NO TE HA FUNCIONADO? <span class="opt">(OPCIONAL)</span></label>
-            <textarea id="f-antes" name="intentos" rows="2"></textarea>
-          </p>
-
-          <fieldset class="chips">
-            <legend>¿Cuántos días a la semana puedes entrenar de verdad?</legend>
-            <label class="chip"><input type="radio" name="dias" value="1-2 días"><span>1-2</span></label>
-            <label class="chip"><input type="radio" name="dias" value="3-4 días"><span>3-4</span></label>
-            <label class="chip"><input type="radio" name="dias" value="5 o más días"><span>5 o más</span></label>
-          </fieldset>
-
-          <fieldset class="chips">
-            <legend>¿Cuándo quieres empezar?</legend>
-            <label class="chip"><input type="radio" name="cuando" value="Ya"><span>Ya</span></label>
-            <label class="chip"><input type="radio" name="cuando" value="Este mes"><span>Este mes</span></label>
-            <label class="chip"><input type="radio" name="cuando" value="En 2-3 meses"><span>En 2-3 meses</span></label>
-            <label class="chip"><input type="radio" name="cuando" value="Solo me estoy informando"><span>Solo me informo</span></label>
-          </fieldset>
+      <div class="coach-main">
+        <h3 class="h3" data-rv>Qué incluye</h3>
+        <div class="csteps-wrap" id="csteps">
+        <span class="rail" aria-hidden="true"><i id="railFill"></i></span>
+        <ol class="csteps">
+          <li class="cstep"><span class="cstep-n">01</span><h4>Valoración inicial</h4><p>Empezamos por medir y por hablar: tu composición corporal con el protocolo ISAK, tu contexto, tu tiempo y lo que quieres conseguir.</p></li>
+          <li class="cstep"><span class="cstep-n">02</span><h4>Planificación personalizada</h4><p>Tu plan, construido con esos datos y con tu semana real: los días que tienes, el material que tienes y el punto del que partes.</p></li>
+          <li class="cstep"><span class="cstep-n">03</span><h4>Vídeos de ejercicios</h4><p>Cada ejercicio con su vídeo, para que sepas qué hacer y cómo hacerlo sin dudar en la sala.</p></li>
+          <li class="cstep"><span class="cstep-n">04</span><h4>Seguimiento semanal con videollamada</h4><p>Cada semana nos vemos, repasamos qué ha pasado y ajustamos lo que toque. El plan se mueve contigo.</p></li>
+          <li class="cstep"><span class="cstep-n">05</span><h4>Contacto durante el proceso</h4><p>Si te surge una duda entre sesiones, me escribes. No esperas a la siguiente videollamada.</p></li>
+          <li class="cstep"><span class="cstep-n">06</span><h4>La app MUEVET+, incluida <span class="soon-tag">Próximamente</span></h4><p>La app MUEVET+ para el móvil todavía no está disponible. Cuando lo esté, la tendrás incluida: tus datos, tu plan y tu progreso en el mismo sitio.</p></li>
+        </ol>
+        </div>
+        <div class="cta-row cta-row-l" data-rv>
+          <p class="cred-line">Presencial en Cantabria · Online · Seguimiento semanal</p>
+          <a class="btn" href="#contacto" data-preset="MUEVET+ COACH">Empieza con tu valoración <svg class="ico"><use href="#i-arrow"/></svg></a>
+          <p class="micro">Dos minutos. Te digo por dónde empezar.</p>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="apply-send">
-      <label class="check" for="f-privacidad">
-        <input id="f-privacidad" name="privacidad" type="checkbox" value="Sí" required>
-        <span class="check-box" aria-hidden="true"></span>
-        <span class="check-text">He leído la <a href="privacidad.html">política de privacidad</a></span>
-      </label>
-      <button class="btn-pill btn-big" type="submit" id="applySubmit">Empieza con tu valoración <span class="arr">→</span></button>
-      <p class="mono apply-note">TE CONTESTO YO, EN CUANTO LO LEA&nbsp;·&nbsp;SIN COMPROMISO</p>
+<!-- ═══ CORRER · RUN+ ═══ -->
+<div class="fade fade-d2n" aria-hidden="true"></div>
+
+<section class="run tone-dark" id="corre" aria-labelledby="h-corre">
+  <div class="run-stage" id="runStage">
+    <!-- ▓▓ VÍDEO RUN+ — EDITABLE: assets/img/run/run-clip.mp4 + run-poster.avif/.jpg ▓▓ -->
+    <div class="clip-frame run-frame">
+      <picture class="clip-poster">
+        <source type="image/avif" srcset="assets/img/run/run-poster.avif">
+        <img src="assets/img/run/run-poster.jpg" width="512" height="910" loading="lazy" decoding="async" alt="Fotograma del vídeo de RUN+: una medalla de 21 K y unas zapatillas de running.">
+      </picture>
+      <video class="clip-video" width="512" height="910" muted loop playsinline preload="none" data-src="assets/img/run/run-clip.mp4" aria-label="Vídeo de RUN+, el club de running social de MUEVET+."></video>
+      <button class="clip-play" type="button" hidden><svg class="ico"><use href="#i-play"/></svg>Ver · 8 s</button>
     </div>
+    <div class="run-mask" id="runMask" aria-hidden="true"><span class="run-word">RUN<span class="run-plus" id="runPlus">+</span></span></div>
+    <div class="run-mask run-outline" id="runOutline" aria-hidden="true"><span class="run-word">RUN<span>+</span></span></div>
+    <div class="run-shade" id="runShade" aria-hidden="true"></div>
+    <div class="wrap run-copy" id="runCopy">
+      <h2 id="h-corre" class="run-title">RUN<span class="lime">+</span><span class="sr">, el club de running social de MUEVET+</span></h2>
+      <p class="run-text">Un club de running social en Cantabria. La carrera es la excusa: lo importante es quién corre a tu lado. Da igual tu ritmo — aquí no se viene a competir, se viene a compartir el movimiento.</p>
+      <p class="run-note">Quedadas abiertas a todos los niveles · Se anuncian en Instagram</p>
+      <a class="btn" href="https://chat.whatsapp.com/J52jzClYnoVD17e3LXn0wf?mode=gi_t" target="_blank" rel="noopener">Únete al grupo de WhatsApp <svg class="ico"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
 
-    <p class="apply-status mono" id="applyStatus" role="status" aria-live="polite"></p>
+<!-- ═══ APP MUEVET+ (día, como el vídeo) ═══ -->
+<div class="fade fade-n2a" aria-hidden="true"></div>
 
-    <p class="apply-alt">¿Prefieres escribirme directamente? <a href="https://ig.me/m/muevet.mas" target="_blank" rel="noopener">Instagram DM</a></p>
-  </form>
-
-  <div class="apply-done" id="applyDone" hidden>
-    <p class="mono apply-done-tag"><span class="plus" aria-hidden="true">+</span> RECIBIDO</p>
-    <p class="apply-done-title" id="applyDoneTitle">Gracias.</p>
-    <p class="apply-done-text">Te escribo con el siguiente paso en cuanto lo lea. Si prefieres adelantarlo, escríbeme por <a href="https://ig.me/m/muevet.mas" target="_blank" rel="noopener">Instagram</a>.</p>
+<section class="app tone-day" id="app" aria-labelledby="h-app">
+  <div class="app-float" aria-hidden="true">
+    <span style="--x:6%;--y:9%;--d:9s">35 %</span>
+    <span style="--x:78%;--y:6%;--d:11s">RPE 8</span>
+    <span style="--x:88%;--y:44%;--d:10s">1RM</span>
+    <span style="--x:4%;--y:58%;--d:12s">7 h</span>
+    <span style="--x:46%;--y:92%;--d:8s">40 %</span>
+    <span style="--x:64%;--y:72%;--d:13s">Readiness</span>
+    <span style="--x:22%;--y:84%;--d:10s">Sueño</span>
   </div>
 
-  <div class="faq reveal">
-    <details>
-      <summary>¿Qué incluye una evaluación ISAK? <span class="plus" aria-hidden="true">+</span></summary>
-      <div class="faq-body"><div class="faq-inner">
+  <div class="wrap app-grid">
+    <header class="app-head">
+      <h2 id="h-app" class="d2" data-rv>App MUEVET<span class="plus">+</span></h2>
+      <p class="sub" data-rv style="--i:1">La app MUEVET+, para tu móvil.</p>
+      <p class="soon" data-rv style="--i:2"><i aria-hidden="true"></i>Próximamente</p>
+    </header>
+
+    <!-- ▓▓ VÍDEO DE LA APP — EDITABLE: assets/img/app/app-clip.mp4 + app-poster.avif/.jpg ▓▓ -->
+    <div class="app-device" id="appDevice">
+      <div class="phone" id="phone">
+        <div class="clip-frame phone-screen">
+          <picture class="clip-poster">
+            <source type="image/avif" srcset="assets/img/app/app-poster.avif">
+            <img src="assets/img/app/app-poster.jpg" width="720" height="1280" loading="lazy" decoding="async" alt="Pantalla final del vídeo de la app: MUEVET+, «Entrena con datos. Cada día.», próximamente en App Store.">
+          </picture>
+          <video class="clip-video" width="720" height="1280" muted loop playsinline preload="none" data-src="assets/img/app/app-clip.mp4" aria-label="Vídeo de la app MUEVET+, 25 segundos con sonido."></video>
+          <button class="clip-play" type="button" hidden><svg class="ico"><use href="#i-play"/></svg>Ver · 25 s</button>
+          <button class="clip-sound" type="button" aria-pressed="false" aria-label="Activar sonido">
+            <svg class="ico s-off"><use href="#i-sound-off"/></svg><svg class="ico s-on"><use href="#i-sound-on"/></svg>
+          </button>
+        </div>
+        <span class="phone-island" aria-hidden="true"></span>
+      </div>
+      <span class="phone-shadow" aria-hidden="true"></span>
+    </div>
+
+    <div class="app-body">
+      <p class="lead" data-rv>La idea es simple: que tu entrenamiento, tus datos y tu progreso vivan en tu móvil, en el mismo sitio y conectados.</p>
+      <ul class="mods" aria-label="Qué tendrá la app MUEVET+">
+        <li data-rv><strong>Entrenamiento</strong><span>Tu planificación y tus sesiones, registradas con criterio.</span></li>
+        <li data-rv style="--i:1"><strong>Evaluaciones</strong><span>Tus datos ISAK integrados en tu perfil, medición a medición.</span></li>
+        <li data-rv style="--i:2"><strong>Readiness</strong><span>Cómo llegas hoy, para ajustar lo que toca hoy.</span></li>
+        <li data-rv style="--i:3"><strong>Hábitos y objetivos</strong><span>El progreso lento que acaba siendo el importante.</span></li>
+      </ul>
+      <p class="app-close" data-rv>Sin fecha y sin humo: cuando esté lista, lo sabrás aquí y en <a href="https://www.instagram.com/muevet.mas" target="_blank" rel="noopener">@muevet.mas</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INSTAGRAM ═══ -->
+<section class="ig tone-day" id="instagram" aria-labelledby="h-ig">
+  <div class="wrap ig-in" data-rv>
+    <h2 id="h-ig" class="d3">Todo pasa aquí.</h2>
+    <div class="ig-card">
+      <img class="ig-avatar" src="assets/icons/logo-mv.png" alt="" width="64" height="64" loading="lazy">
+      <div class="ig-meta">
+        <p class="ig-handle">@muevet.mas</p>
+        <p class="ig-bio">CAFYD · Antropometrista ISAK 1<br>Mejora tu salud y rendimiento</p>
+      </div>
+      <div class="ig-actions">
+        <a class="btn btn-sm btn-ink" href="https://www.instagram.com/muevet.mas" target="_blank" rel="noopener"><svg class="ico"><use href="#i-ig"/></svg>Seguir</a>
+        <a class="link" href="#contacto">Empieza con tu valoración <svg class="ico"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CUESTIONARIO ═══ -->
+<section class="contact tone-day" id="contacto" aria-labelledby="h-cierre">
+  <div class="wrap contact-grid">
+    <div class="contact-side">
+      <h2 id="h-cierre" class="d2" data-rv>Tu valoración <em>empieza aquí.</em></h2>
+      <p class="lead" data-rv style="--i:1"><strong>No hace falta que lo tengas claro.</strong> Cuéntame dónde estás hoy y qué quieres, y te digo por dónde empezar.</p>
+      <ol class="flow" data-rv style="--i:2" aria-label="Las tres partes del cuestionario">
+        <li><span>01</span>Quién eres</li>
+        <li><span>02</span>Dónde estás</li>
+        <li><span>03</span>Qué quieres</li>
+      </ol>
+    </div>
+
+    <div class="form-card" data-rv>
+      <form class="apply" id="applyForm" novalidate>
+        <div class="apply-block">
+          <p class="apply-step"><span>01</span>Quién eres</p>
+          <div class="apply-fields">
+            <p class="field">
+              <label for="f-nombre">Nombre</label>
+              <input id="f-nombre" name="nombre" type="text" autocomplete="name" required>
+            </p>
+            <p class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+            </p>
+            <p class="field">
+              <label for="f-contacto">WhatsApp o Instagram <span class="opt">(opcional)</span></label>
+              <input id="f-contacto" name="contacto" type="text" autocomplete="tel">
+            </p>
+          </div>
+        </div>
+
+        <div class="apply-block">
+          <p class="apply-step"><span>02</span>Dónde estás</p>
+          <fieldset class="chips">
+            <legend>¿Qué te interesa?</legend>
+            <label class="chip"><input type="radio" name="interes" value="Análisis ISAK" required><span>Análisis ISAK</span></label>
+            <label class="chip"><input type="radio" name="interes" value="MUEVET+ COACH"><span>MUEVET+ COACH</span></label>
+            <label class="chip"><input type="radio" name="interes" value="Todavía no lo tengo claro"><span>Todavía no lo tengo claro</span></label>
+          </fieldset>
+          <fieldset class="chips">
+            <legend>¿De dónde partes?</legend>
+            <label class="chip"><input type="radio" name="punto" value="Empiezo de cero" required><span>Empiezo de cero</span></label>
+            <label class="chip"><input type="radio" name="punto" value="Entreno por mi cuenta"><span>Entreno por mi cuenta</span></label>
+            <label class="chip"><input type="radio" name="punto" value="Vuelvo tras un parón"><span>Vuelvo tras un parón</span></label>
+            <label class="chip"><input type="radio" name="punto" value="Compito o quiero competir"><span>Compito o quiero competir</span></label>
+          </fieldset>
+        </div>
+
+        <!-- 03 · solo si no es el análisis suelto -->
+        <div class="apply-deep" id="applyDeep">
+          <div class="apply-deep-in" id="applyDeepIn" inert>
+            <div class="apply-block">
+              <p class="apply-step"><span>03</span>Qué quieres</p>
+              <p class="field">
+                <label for="f-objetivo">¿Qué quieres conseguir?</label>
+                <textarea id="f-objetivo" name="objetivo" rows="2" placeholder="Con una o dos frases me vale."></textarea>
+              </p>
+              <p class="field">
+                <label for="f-antes">¿Qué has intentado antes que no te ha funcionado? <span class="opt">(opcional)</span></label>
+                <textarea id="f-antes" name="intentos" rows="2"></textarea>
+              </p>
+              <fieldset class="chips">
+                <legend>¿Cuántos días a la semana puedes entrenar de verdad?</legend>
+                <label class="chip"><input type="radio" name="dias" value="1-2 días"><span>1-2</span></label>
+                <label class="chip"><input type="radio" name="dias" value="3-4 días"><span>3-4</span></label>
+                <label class="chip"><input type="radio" name="dias" value="5 o más días"><span>5 o más</span></label>
+              </fieldset>
+              <fieldset class="chips">
+                <legend>¿Cuándo quieres empezar?</legend>
+                <label class="chip"><input type="radio" name="cuando" value="Ya"><span>Ya</span></label>
+                <label class="chip"><input type="radio" name="cuando" value="Este mes"><span>Este mes</span></label>
+                <label class="chip"><input type="radio" name="cuando" value="En 2-3 meses"><span>En 2-3 meses</span></label>
+                <label class="chip"><input type="radio" name="cuando" value="Solo me estoy informando"><span>Solo me informo</span></label>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+
+        <div class="apply-send">
+          <label class="check" for="f-privacidad">
+            <input id="f-privacidad" name="privacidad" type="checkbox" value="Sí" required>
+            <span class="check-box" aria-hidden="true"></span>
+            <span class="check-text">He leído la <a href="privacidad.html">política de privacidad</a></span>
+          </label>
+          <button class="btn btn-lg btn-block" type="submit" id="applySubmit">Empieza con tu valoración <svg class="ico"><use href="#i-arrow"/></svg></button>
+          <p class="apply-note">Te contesto yo, en cuanto lo lea · Sin compromiso</p>
+        </div>
+
+        <p class="apply-status" id="applyStatus" role="status" aria-live="polite"></p>
+        <p class="apply-alt">¿Prefieres escribirme directamente? <a href="https://ig.me/m/muevet.mas" target="_blank" rel="noopener">Instagram DM</a></p>
+      </form>
+
+      <div class="apply-done" id="applyDone" hidden>
+        <p class="apply-done-tag"><svg class="ico"><use href="#i-check"/></svg>Recibido</p>
+        <p class="apply-done-title" id="applyDoneTitle">Gracias.</p>
+        <p class="apply-done-text">Te escribo con el siguiente paso en cuanto lo lea. Si prefieres adelantarlo, escríbeme por <a href="https://ig.me/m/muevet.mas" target="_blank" rel="noopener">Instagram</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap faq-wrap">
+    <h2 class="d3" data-rv>Preguntas frecuentes</h2>
+    <div class="faq">
+      <details data-rv>
+        <summary>¿Qué incluye una evaluación ISAK?<span class="faq-i" aria-hidden="true"></span></summary>
         <p>Las mediciones del perfil restringido (8 pliegues, 5 perímetros, 2 diámetros, peso y talla), tu informe de composición corporal y somatotipo, y la explicación de qué significa cada dato en tu caso.</p>
-      </div></div>
-    </details>
-    <details>
-      <summary>¿Cada cuánto conviene repetirla? <span class="plus" aria-hidden="true">+</span></summary>
-      <div class="faq-body"><div class="faq-inner">
+      </details>
+      <details data-rv>
+        <summary>¿Cada cuánto conviene repetirla?<span class="faq-i" aria-hidden="true"></span></summary>
         <p>Depende de tu fase y tu objetivo; lo habitual es cada 6-12 semanas, coincidiendo con los ciclos de entrenamiento. Lo importante es que las condiciones de medición sean comparables.</p>
-      </div></div>
-    </details>
-    <details>
-      <summary>¿Cómo funciona el entrenamiento personalizado? <span class="plus" aria-hidden="true">+</span></summary>
-      <div class="faq-body"><div class="faq-inner">
+      </details>
+      <details data-rv>
+        <summary>¿Cómo funciona el entrenamiento personalizado?<span class="faq-i" aria-hidden="true"></span></summary>
         <p>Con MUEVET+ COACH: empezamos por una valoración inicial (tu composición corporal y tu contexto), construyo tu plan con esos datos, cada ejercicio va con su vídeo, nos vemos cada semana por videollamada para ajustar y, entre sesiones, me escribes. Nada de rutinas genéricas.</p>
-      </div></div>
-    </details>
-    <details>
-      <summary>¿Dónde estás? <span class="plus" aria-hidden="true">+</span></summary>
-      <div class="faq-body"><div class="faq-inner">
+      </details>
+      <details data-rv>
+        <summary>¿Dónde estás?<span class="faq-i" aria-hidden="true"></span></summary>
         <p>En Cantabria. La evaluación ISAK es presencial; MUEVET+ COACH puede ser presencial u online. Si no estás cerca, escríbeme igualmente y vemos tu caso.</p>
-      </div></div>
-    </details>
-    <details>
-      <summary>¿Necesito nivel para RUN+? <span class="plus" aria-hidden="true">+</span></summary>
-      <div class="faq-body"><div class="faq-inner">
+      </details>
+      <details data-rv>
+        <summary>¿Necesito nivel para RUN+?<span class="faq-i" aria-hidden="true"></span></summary>
         <p>No. RUN+ es un club social: da igual tu ritmo. Las quedadas se anuncian en Instagram y están abiertas a todos los niveles.</p>
-      </div></div>
-    </details>
-    <details>
-      <summary>¿Cuándo sale la app MUEVET+? <span class="plus" aria-hidden="true">+</span></summary>
-      <div class="faq-body"><div class="faq-inner">
+      </details>
+      <details data-rv>
+        <summary>¿Cuándo sale la app MUEVET+?<span class="faq-i" aria-hidden="true"></span></summary>
         <p>No doy fecha hasta tenerla. Cuando esté lista, lo sabrás en esta web y en <a href="https://www.instagram.com/muevet.mas" target="_blank" rel="noopener">@muevet.mas</a>.</p>
-      </div></div>
-    </details>
-    <details>
-      <summary>¿Cuánto cuesta? <span class="plus" aria-hidden="true">+</span></summary>
-      <div class="faq-body"><div class="faq-inner">
+      </details>
+      <details data-rv>
+        <summary>¿Cuánto cuesta?<span class="faq-i" aria-hidden="true"></span></summary>
         <p>Depende de lo que necesites: no es lo mismo un análisis que el acompañamiento de COACH. Empieza con tu valoración y te lo cuento sin compromiso.</p>
-      </div></div>
-    </details>
+      </details>
+    </div>
   </div>
 </section>
 
 </main>
 
-<footer class="footer">
-  <img src="assets/icons/logo-mv.png" alt="MUEVET+" width="40" height="40">
-  <p class="footer-claim">Muévete más. Vive mejor.</p>
-  <nav class="footer-links" aria-label="Contacto">
-    <a href="https://www.instagram.com/muevet.mas" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://chat.whatsapp.com/J52jzClYnoVD17e3LXn0wf?mode=gi_t" target="_blank" rel="noopener">WhatsApp RUN+</a>
-    <a href="mailto:info.muevetmas@gmail.com">info.muevetmas@gmail.com</a>
-    <a href="privacidad.html">Privacidad</a>
-    <a href="aviso-legal.html">Aviso legal</a>
-  </nav>
-  <p class="mono footer-legal">© MUEVET+ 2026&nbsp;·&nbsp;CANTABRIA</p>
+<div class="fade fade-d2n" aria-hidden="true"></div>
+
+<footer class="foot tone-dark">
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <img src="assets/icons/logo-mv.png" alt="MUEVET+" width="44" height="44" loading="lazy">
+      <p class="foot-claim">Muévete más. <span>Vive mejor.</span></p>
+    </div>
+    <nav class="foot-links" aria-label="Contacto y legal">
+      <a href="https://www.instagram.com/muevet.mas" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://chat.whatsapp.com/J52jzClYnoVD17e3LXn0wf?mode=gi_t" target="_blank" rel="noopener">WhatsApp RUN+</a>
+      <a href="mailto:info.muevetmas@gmail.com">info.muevetmas@gmail.com</a>
+      <a href="privacidad.html">Privacidad</a>
+      <a href="aviso-legal.html">Aviso legal</a>
+    </nav>
+    <p class="foot-legal">© MUEVET+ 2026 · Cantabria</p>
+  </div>
+  <div class="foot-mark" aria-hidden="true">MUEVET<span>+</span></div>
 </footer>
 
-<!-- CTA persistente móvil -->
 <div class="sticky-cta" id="stickyCta" aria-hidden="true">
-  <a class="btn-pill" href="#contacto" tabindex="-1">Empieza con tu valoración <span class="arr">→</span></a>
+  <a class="btn" href="#contacto" tabindex="-1">Empieza con tu valoración <svg class="ico"><use href="#i-arrow"/></svg></a>
 </div>
 
-<script src="assets/js/main.js?v=2026-09-30b" defer></script>
+<script src="assets/js/main.js?v=2026-10-03a" defer></script>
 </body>
 </html>
