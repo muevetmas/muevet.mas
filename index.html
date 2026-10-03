@@ -146,7 +146,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </figure>
   </div>
 
-  <p class="hero-cred"><span class="dot" aria-hidden="true"></span>Víctor Blanco · Graduado CAFYD · Antropometrista ISAK nivel 1</p>
+  <p class="hero-cred"><span class="dot" aria-hidden="true"></span><span class="nw">Víctor Blanco</span> · <span class="nw">Graduado CAFYD</span> · <span class="nw">Antropometrista ISAK nivel 1</span></p>
   <div class="hero-mark" id="heroMark" aria-hidden="true">MUEVET<span>+</span></div>
 </section>
 
@@ -190,7 +190,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           <ul class="notes-list">
             <li>Peso igual. ¿Mejoro?</li>
             <li>Rutina de un vídeo</li>
-            <li><s>Descanso</s> A tope, otra vez</li>
+            <li><s>Descanso</s> A tope</li>
             <li>¿Grasa o músculo?</li>
             <li>Si me aburro, cambio</li>
             <li class="notes-q">¿Por dónde empiezo?</li>
@@ -201,18 +201,18 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       <!-- Después: lo que contiene una valoración (sin cifras inventadas) -->
       <div class="cmp-layer cmp-after">
         <div class="report">
-          <div class="report-bar"><span></span><span></span><span></span><b>Tu valoración ISAK</b></div>
+          <div class="report-bar"><span></span><span></span><span></span><b><span class="l-long">Tu valoración ISAK</span><span class="l-short">Valoración ISAK</span></b></div>
           <div class="report-head">
             <p class="report-title">Perfil restringido</p>
             <span class="report-pill">Protocolo internacional</span>
           </div>
           <ul class="report-rows">
-            <li><span><span class="l-long">Pliegues cutáneos</span><span class="l-short">Pliegues</span></span><em>×8</em><i class="ok"><svg class="ico"><use href="#i-check"/></svg><b>Medido</b></i></li>
-            <li><span>Perímetros</span><em>×5</em><i class="ok"><svg class="ico"><use href="#i-check"/></svg><b>Medido</b></i></li>
-            <li><span><span class="l-long">Diámetros óseos</span><span class="l-short">Diámetros</span></span><em>×2</em><i class="ok"><svg class="ico"><use href="#i-check"/></svg><b>Medido</b></i></li>
-            <li><span>Peso y talla</span><em></em><i class="ok"><svg class="ico"><use href="#i-check"/></svg><b>Medido</b></i></li>
-            <li><span><span class="l-long">Composición corporal y somatotipo</span><span class="l-short">Composición</span></span><em>Informe</em><i class="ok"><svg class="ico"><use href="#i-check"/></svg><b>Incluido</b></i></li>
-            <li><span>Tu plan</span><em class="e-long">Con tus datos</em><i class="ok"><svg class="ico"><use href="#i-check"/></svg><b>Incluido</b></i></li>
+            <li><span><span class="l-long">Pliegues cutáneos</span><span class="l-short">Pliegues ×8</span></span><em class="e-long">×8</em><i class="ok"><svg class="ico"><use href="#i-check"/></svg><b>Medido</b></i></li>
+            <li><span><span class="l-long">Perímetros</span><span class="l-short">Perímetros ×5</span></span><em class="e-long">×5</em><i class="ok"><svg class="ico"><use href="#i-check"/></svg><b>Medido</b></i></li>
+            <li><span><span class="l-long">Diámetros óseos</span><span class="l-short">Diámetros ×2</span></span><em class="e-long">×2</em><i class="ok"><svg class="ico"><use href="#i-check"/></svg><b>Medido</b></i></li>
+            <li><span>Peso y talla</span><em class="e-long"></em><i class="ok"><svg class="ico"><use href="#i-check"/></svg><b>Medido</b></i></li>
+            <li><span><span class="l-long">Composición corporal y somatotipo</span><span class="l-short">Composición</span></span><em class="e-long">Informe</em><i class="ok"><svg class="ico"><use href="#i-check"/></svg><b>Incluido</b></i></li>
+            <li><span><span class="l-long">Qué significa cada dato</span><span class="l-short">Explicación</span></span><em class="e-long">En tu caso</em><i class="ok"><svg class="ico"><use href="#i-check"/></svg><b>Incluido</b></i></li>
             <li><span><span class="l-long">Siguiente medición</span><span class="l-short">Repetible</span></span><em class="e-long">Mismo protocolo</em><i class="ok"><svg class="ico"><use href="#i-check"/></svg><b>Repetible</b></i></li>
           </ul>
         </div>
@@ -355,8 +355,16 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div class="run-mask" id="runMask" aria-hidden="true"><span class="run-word">RUN<span class="run-plus" id="runPlus">+</span></span></div>
     <div class="run-mask run-outline" id="runOutline" aria-hidden="true"><span class="run-word">RUN<span>+</span></span></div>
     <div class="run-shade" id="runShade" aria-hidden="true"></div>
+    <div class="clip-frame run-side" id="runSide" aria-hidden="true">
+      <picture class="clip-poster">
+        <source type="image/avif" srcset="assets/img/run/run-poster.avif">
+        <img src="assets/img/run/run-poster.jpg" width="512" height="910" loading="lazy" decoding="async" alt="">
+      </picture>
+      <video class="clip-video" width="512" height="910" muted loop playsinline preload="none" data-src="assets/img/run/run-clip.mp4" tabindex="-1"></video>
+    </div>
     <div class="wrap run-copy" id="runCopy">
       <h2 id="h-corre" class="run-title">RUN<span class="lime">+</span><span class="sr">, el club de running social de MUEVET+</span></h2>
+      <p class="run-tag">Correr. Conectar. Repetir.</p>
       <p class="run-text">Un club de running social en Cantabria. La carrera es la excusa: lo importante es quién corre a tu lado. Da igual tu ritmo — aquí no se viene a competir, se viene a compartir el movimiento.</p>
       <p class="run-note">Quedadas abiertas a todos los niveles · Se anuncian en Instagram</p>
       <a class="btn" href="https://chat.whatsapp.com/J52jzClYnoVD17e3LXn0wf?mode=gi_t" target="_blank" rel="noopener">Únete al grupo de WhatsApp <svg class="ico"><use href="#i-arrow"/></svg></a>
@@ -393,7 +401,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
             <source type="image/avif" srcset="assets/img/app/app-poster.avif">
             <img src="assets/img/app/app-poster.jpg" width="720" height="1280" loading="lazy" decoding="async" alt="Pantalla final del vídeo de la app: MUEVET+, «Entrena con datos. Cada día.», próximamente en App Store.">
           </picture>
-          <video class="clip-video" width="720" height="1280" muted loop playsinline preload="none" data-src="assets/img/app/app-clip.mp4" aria-label="Vídeo de la app MUEVET+, 25 segundos con sonido."></video>
+          <video class="clip-video" width="720" height="1280" muted playsinline preload="none" data-src="assets/img/app/app-clip.mp4" data-start="4.6" aria-label="Vídeo de la app MUEVET+, 25 segundos con sonido."></video>
           <button class="clip-play" type="button" hidden><svg class="ico"><use href="#i-play"/></svg>Ver · 25 s</button>
           <button class="clip-sound" type="button" aria-pressed="false" aria-label="Activar sonido">
             <svg class="ico s-off"><use href="#i-sound-off"/></svg><svg class="ico s-on"><use href="#i-sound-on"/></svg>

@@ -14,11 +14,21 @@
   const easeOut = (t) => 1 - Math.pow(1 - t, 3);
 
   /* Recargar abre siempre arriba (sin restauración ni salto a ancla) */
+  let jumpTo = null;
   try {
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-    if (location.hash && !d.body.classList.contains('doc-page')) history.replaceState(null, '', location.pathname + location.search);
+    const nav0 = performance.getEntriesByType('navigation')[0];
+    if (nav0 && nav0.type === 'reload') {
+      if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+      window.scrollTo(0, 0);
+    } else if (location.hash.length > 1) {
+      jumpTo = d.getElementById(decodeURIComponent(location.hash.slice(1)));
+    }
   } catch (e) { /* entornos con historial restringido */ }
-  window.scrollTo(0, 0);
+  if (jumpTo) {
+    const go = () => jumpTo.scrollIntoView({ behavior: 'auto', block: 'start' });
+    (d.fonts && d.fonts.ready ? d.fonts.ready : Promise.resolve()).then(() => requestAnimationFrame(go));
+  }
 
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -28,9 +38,19 @@
 
   /* ── Nav: vidrio al hacer scroll ── */
   const nav = $('#nav');
-  const navGlass = () => nav && nav.classList.toggle('is-scrolled', scrollY > 24);
+  const dayEls = $$('.tone-day');
+  const islands = $$('.island');
+  const under = (els, y) => els.some((el) => { const r = el.getBoundingClientRect(); return r.top <= y && r.bottom >= y; });
+  let navTick = false;
+  const navGlass = () => {
+    navTick = false;
+    if (!nav) return;
+    nav.classList.toggle('is-scrolled', scrollY > 24);
+    /* ¿Qué hay bajo la barra? Día → vidrio claro; noche, isla o fundido → vidrio negro */
+    nav.classList.toggle('on-day', under(dayEls, 32) && !under(islands, 32));
+  };
   navGlass();
-  addEventListener('scroll', navGlass, { passive: true });
+  addEventListener('scroll', () => { if (!navTick) { navTick = true; requestAnimationFrame(navGlass); } }, { passive: true });
 
   /* ── Menú móvil ── */
   const toggle = $('#navToggle');
@@ -135,7 +155,7 @@
     /* Manifiesto palabra a palabra */
     if (manifest && words.length) {
       scene(manifest, (r, vh) => {
-        const q = clamp((vh * 0.88 - r.top) / (r.height + vh * 0.38));
+        const q = clamp((vh * 0.9 - r.top) / (r.height + vh * 0.2));
         const n = words.length;
         words.forEach((w, i) => { w.style.opacity = (0.16 + 0.84 * clamp(q * (n + 4) - i)).toFixed(3); });
       });
@@ -177,6 +197,7 @@
     const outline = $('#runOutline');
     const plus = $('#runPlus');
     const shade = $('#runShade');
+    const side = $('#runSide');
     const copy = $('#runCopy');
     if (run && mask && plus) {
       const setOrigin = () => {
@@ -199,7 +220,8 @@
         const c = clamp((p - 0.5) / 0.2);
         shade.style.opacity = c.toFixed(3);
         copy.style.opacity = c.toFixed(3);
-        copy.style.transform = `translateY(${((1 - c) * 28).toFixed(1)}px)`;
+        copy.style.transform = isDesktop() ? `translateY(calc(-50% + ${((1 - c) * 28).toFixed(1)}px))` : `translateY(${((1 - c) * 28).toFixed(1)}px)`;
+        if (side) { side.style.opacity = c.toFixed(3); side.style.transform = `translateY(calc(-50% + ${((1 - c) * 40).toFixed(1)}px)) rotateY(${((1 - c) * -18).toFixed(1)}deg)`; }
         copy.style.pointerEvents = c > 0.5 ? 'auto' : 'none';
       });
     }
@@ -285,6 +307,12 @@
       delete clip.dataset.src;
     };
     clip.addEventListener('playing', () => frame.classList.add('is-ready'), { once: true });
+    /* data-start: en silencio empieza (y vuelve) en ese segundo; con sonido, desde el principio */
+    const start = parseFloat(clip.dataset.start || '0');
+    if (start) {
+      clip.addEventListener('loadedmetadata', () => { if (clip.muted && clip.currentTime < start) clip.currentTime = start; });
+      clip.addEventListener('ended', () => { clip.currentTime = clip.muted ? start : 0; clip.play().catch(() => {}); });
+    }
     if (!reduced && !saveData && 'IntersectionObserver' in window) {
       if (!clip.dataset.src) clip.preload = 'auto';
       else {
@@ -388,17 +416,18 @@
     };
     const fromEvent = (e) => { const r = cmp.getBoundingClientRect(); set(((e.clientX - r.left) / r.width) * 100); };
     let dragging = false, pending = null;
+    const capture = (id) => { try { cmp.setPointerCapture(id); } catch (err) { /* puntero ya liberado */ } };
     cmp.addEventListener('pointerdown', (e) => {
       if (e.button !== 0) return;
       if (e.pointerType === 'mouse') {
-        dragging = true; cmp.classList.add('is-drag'); cmp.setPointerCapture(e.pointerId); fromEvent(e);
+        dragging = true; cmp.classList.add('is-drag'); capture(e.pointerId); fromEvent(e);
       } else pending = { id: e.pointerId, x: e.clientX, y: e.clientY };
     });
     cmp.addEventListener('pointermove', (e) => {
       if (dragging) { fromEvent(e); return; }
       if (pending && e.pointerId === pending.id) {
         const dx = Math.abs(e.clientX - pending.x), dy = Math.abs(e.clientY - pending.y);
-        if (dx > 6 && dx > dy) { dragging = true; cmp.classList.add('is-drag'); cmp.setPointerCapture(e.pointerId); fromEvent(e); pending = null; }
+        if (dx > 6 && dx > dy) { dragging = true; cmp.classList.add('is-drag'); capture(e.pointerId); fromEvent(e); pending = null; }
         else if (dy > 10) pending = null;
       }
     });
