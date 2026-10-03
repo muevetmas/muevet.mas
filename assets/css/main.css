@@ -357,13 +357,14 @@ html{ scrollbar-color:#3a3b38 var(--night); scrollbar-width:thin }
   padding:14px 10px 4px 12px; border-radius:14px; background:#141517; box-shadow:0 30px 60px -30px rgba(0,0,0,.8), inset 0 0 0 1px rgba(255,255,255,.07);
 }
 .report-bar{ display:flex; align-items:center; gap:6px; padding-bottom:12px; margin-bottom:12px; border-bottom:1px solid rgba(255,255,255,.08) }
-.report-bar span{ width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.16) }
-.report-bar b{ margin-left:8px; font-weight:600; font-size:12px; color:var(--snow-dim); white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
+.report-bar > span{ width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.16) }
+.report-bar > span{ display:none }
+.report-bar b{ margin-left:0; font-weight:600; font-size:12px; color:var(--snow-dim); white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
 .report-head{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:6px 10px; margin-bottom:6px }
 .report-title{ font-family:var(--display); font-weight:600; font-size:clamp(15px, 2vw, 22px); line-height:1.2; letter-spacing:-.02em }
 .report-pill{ display:none; padding:4px 10px; border-radius:999px; background:rgba(200,224,0,.14); color:var(--lime); font-size:12px; font-weight:600; white-space:nowrap }
 .report-rows li{
-  display:grid; grid-template-columns:minmax(0,1fr) auto auto; align-items:center; gap:8px;
+  display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:8px;
   min-height:38px; border-top:1px solid rgba(255,255,255,.07); font-size:12.5px; gap:5px;
 }
 .report-rows span{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap }
@@ -379,6 +380,9 @@ html{ scrollbar-color:#3a3b38 var(--night); scrollbar-width:thin }
   .report{ left:min(calc(var(--x) + (100% - var(--x)) * .5), 75%); width:min(46%, 460px) }
   .report{ padding:20px 22px 10px; border-radius:18px }
   .report-bar b{ font-size:13.5px }
+  .report-bar > span{ display:block }
+  .report-bar b{ margin-left:8px }
+  .report-rows li{ grid-template-columns:minmax(0,1fr) auto auto }
   .report-pill{ display:inline-block }
   .report-rows li{ min-height:48px; font-size:15px; gap:12px }
   .report-rows em{ font-size:12px }

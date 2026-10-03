@@ -198,6 +198,7 @@
     const plus = $('#runPlus');
     const shade = $('#runShade');
     const side = $('#runSide');
+    const frameRun = $('#runStage .run-frame');
     const copy = $('#runCopy');
     if (run && mask && plus) {
       const setOrigin = () => {
@@ -221,6 +222,7 @@
         shade.style.opacity = c.toFixed(3);
         copy.style.opacity = c.toFixed(3);
         copy.style.transform = isDesktop() ? `translateY(calc(-50% + ${((1 - c) * 28).toFixed(1)}px))` : `translateY(${((1 - c) * 28).toFixed(1)}px)`;
+        if (frameRun && isDesktop()) frameRun.style.opacity = (1 - 0.78 * c).toFixed(3);
         if (side) { side.style.opacity = c.toFixed(3); side.style.transform = `translateY(calc(-50% + ${((1 - c) * 40).toFixed(1)}px)) rotateY(${((1 - c) * -18).toFixed(1)}deg)`; }
         copy.style.pointerEvents = c > 0.5 ? 'auto' : 'none';
       });
