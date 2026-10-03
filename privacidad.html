@@ -12,84 +12,114 @@
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/main.css?v=2026-09-30b">
+<link rel="stylesheet" href="assets/css/main.css?v=2026-10-03a">
 </head>
-<body class="is-loaded">
+<body class="doc-page">
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</svg>
 
-<a class="skip-link" href="#main">Saltar al contenido</a>
+<a class="skip" href="#main">Saltar al contenido</a>
 
 <header class="nav" id="nav">
-  <a class="nav-brand" href="index.html#top" aria-label="MUEVET+ — inicio">
-    <img src="assets/icons/logo-mv.png" alt="" width="34" height="34">
-  </a>
-  <nav class="nav-links" aria-label="Secciones">
-    <a href="index.html#medir">Medir</a>
-    <a href="index.html#entrena">Entrenar</a>
-    <a href="index.html#corre">Correr</a>
-    <a href="index.html#app">App</a>
-  </nav>
-  <a class="btn-pill nav-cta" href="index.html#contacto">Empieza con tu valoración</a>
+  <div class="nav-in">
+    <a class="brand" href="index.html" aria-label="MUEVET+, inicio">
+      <img src="assets/icons/logo-mv.png" alt="" width="30" height="30">
+      <span class="brand-word">MUEVET<span class="lime">+</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Secciones">
+      <a href="index.html#medir">Medir</a>
+      <a href="index.html#entrena">Entrenar</a>
+      <a href="index.html#corre">Correr</a>
+      <a href="index.html#app">App</a>
+    </nav>
+    <a class="btn btn-sm nav-cta" href="index.html#contacto">Empieza con tu valoración</a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="menu">
+      <span class="sr" data-label>Abrir menú</span><i></i><i></i>
+    </button>
+  </div>
 </header>
 
-<main id="main" class="doc">
-  <header class="doc-head">
-    <p class="label">MUEVET+ &nbsp;·&nbsp; PRIVACIDAD</p>
-    <h1 class="doc-title">Tus datos, claros<span class="plus">.</span></h1>
-    <p class="doc-lede">Esta web recoge lo mínimo para poder contestarte. Aquí está todo: qué guardo, para qué, cuánto tiempo y cómo pedirme que lo borre.</p>
-  </header>
+<div class="menu" id="menu" hidden>
+  <nav class="menu-links" aria-label="Menú">
+    <a href="index.html#medir" style="--i:0">Medir</a>
+    <a href="index.html#entrena" style="--i:1">Entrenar</a>
+    <a href="index.html#corre" style="--i:2">Correr</a>
+    <a href="index.html#app" style="--i:3">App</a>
+  </nav>
+  <div class="menu-foot" style="--i:4">
+    <a class="btn" href="index.html#contacto">Empieza con tu valoración <svg class="ico"><use href="#i-arrow"/></svg></a>
+    <p class="micro">Dos minutos. Te digo por dónde empezar.</p>
+  </div>
+</div>
 
-  <section class="doc-body">
-    <h2>Quién es el responsable</h2>
-    <p>Víctor Blanco Solana, NIF 72207742R, con domicilio en Av. Juan Hormaechea 17, 39195 Arnuero, Cantabria. Me escribes a <a href="mailto:info.muevetmas@gmail.com">info.muevetmas@gmail.com</a>.</p>
+<main id="main" class="doc tone-day">
+<div class="wrap">
+    <header class="doc-head">
+      <p class="doc-label">MUEVET+ &nbsp;·&nbsp; PRIVACIDAD</p>
+      <h1 class="doc-title">Tus datos, claros<span class="plus">.</span></h1>
+      <p class="doc-lede">Esta web recoge lo mínimo para poder contestarte. Aquí está todo: qué guardo, para qué, cuánto tiempo y cómo pedirme que lo borre.</p>
+    </header>
 
-    <h2>Qué datos recojo y para qué</h2>
-    <ul>
-      <li><strong>Cuestionario («Empieza con tu valoración»):</strong> tu nombre, tu email, tu WhatsApp o Instagram si lo pones, y tus respuestas sobre lo que te interesa, de dónde partes y qué quieres conseguir. Los uso para contestarte y preparar tu valoración. Nada más.</li>
-      <li><strong>Email y WhatsApp:</strong> si me escribes por tu cuenta, uso tus datos de contacto para responderte.</li>
-    </ul>
+    <section class="doc-body">
+      <h2>Quién es el responsable</h2>
+      <p>Víctor Blanco Solana, NIF 72207742R, con domicilio en Av. Juan Hormaechea 17, 39195 Arnuero, Cantabria. Me escribes a <a href="mailto:info.muevetmas@gmail.com">info.muevetmas@gmail.com</a>.</p>
 
-    <h2>Con qué base legal</h2>
-    <p>Tu consentimiento, que das al enviar el cuestionario (artículo 6.1.a del RGPD). Puedes retirarlo cuando quieras escribiéndome; eso no afecta a lo tratado antes.</p>
+      <h2>Qué datos recojo y para qué</h2>
+      <ul>
+        <li><strong>Cuestionario («Empieza con tu valoración»):</strong> tu nombre, tu email, tu WhatsApp o Instagram si lo pones, y tus respuestas sobre lo que te interesa, de dónde partes y qué quieres conseguir. Los uso para contestarte y preparar tu valoración. Nada más.</li>
+        <li><strong>Email y WhatsApp:</strong> si me escribes por tu cuenta, uso tus datos de contacto para responderte.</li>
+      </ul>
 
-    <h2>Menores de 14 años</h2>
-    <p>Si tienes menos de 14 años, necesito el consentimiento de tu madre, padre o tutor.</p>
+      <h2>Con qué base legal</h2>
+      <p>Tu consentimiento, que das al enviar el cuestionario (artículo 6.1.a del RGPD). Puedes retirarlo cuando quieras escribiéndome; eso no afecta a lo tratado antes.</p>
 
-    <h2>Dónde se guardan y quién los ve</h2>
-    <p>En una hoja de cálculo de Google de mi cuenta y en mi correo. Uso los servicios de Google (Gmail y Hojas de cálculo), que pueden tratar datos fuera de la UE con las garantías que publica Google. No cedo tus datos a nadie ni los vendo.</p>
+      <h2>Menores de 14 años</h2>
+      <p>Si tienes menos de 14 años, necesito el consentimiento de tu madre, padre o tutor.</p>
 
-    <h2>Cuánto tiempo</h2>
-    <ul>
-      <li>Las solicitudes del cuestionario: mientras hablemos y hasta un año después del último contacto.</li>
-      <li>Lo que la ley me obligue a conservar (facturación, si llegamos a trabajar juntos): los plazos legales.</li>
-    </ul>
+      <h2>Dónde se guardan y quién los ve</h2>
+      <p>En una hoja de cálculo de Google de mi cuenta y en mi correo. Uso los servicios de Google (Gmail y Hojas de cálculo), que pueden tratar datos fuera de la UE con las garantías que publica Google. No cedo tus datos a nadie ni los vendo.</p>
 
-    <h2>Tus derechos</h2>
-    <p>Puedes pedirme acceder a tus datos, corregirlos, borrarlos, limitar su uso, oponerte a él o llevártelos (portabilidad). Escríbeme a <a href="mailto:info.muevetmas@gmail.com">info.muevetmas@gmail.com</a> y te respondo en menos de un mes; puedo pedirte que confirmes que eres tú. Si crees que algo no está bien, puedes reclamar ante la Agencia Española de Protección de Datos en <a href="https://www.aepd.es" target="_blank" rel="noopener">aepd.es</a>.</p>
+      <h2>Cuánto tiempo</h2>
+      <ul>
+        <li>Las solicitudes del cuestionario: mientras hablemos y hasta un año después del último contacto.</li>
+        <li>Lo que la ley me obligue a conservar (facturación, si llegamos a trabajar juntos): los plazos legales.</li>
+      </ul>
 
-    <h2>Cookies y analítica</h2>
-    <p>Esta web no usa cookies ni herramientas de analítica.</p>
+      <h2>Tus derechos</h2>
+      <p>Puedes pedirme acceder a tus datos, corregirlos, borrarlos, limitar su uso, oponerte a él o llevártelos (portabilidad). Escríbeme a <a href="mailto:info.muevetmas@gmail.com">info.muevetmas@gmail.com</a> y te respondo en menos de un mes; puedo pedirte que confirmes que eres tú. Si crees que algo no está bien, puedes reclamar ante la Agencia Española de Protección de Datos en <a href="https://www.aepd.es" target="_blank" rel="noopener">aepd.es</a>.</p>
 
-    <h2>Cambios</h2>
-    <p>Si cambio algo de esta política, lo publico aquí con la fecha nueva.</p>
+      <h2>Cookies y analítica</h2>
+      <p>Esta web no usa cookies ni herramientas de analítica.</p>
 
-    <p class="mono doc-date">ÚLTIMA ACTUALIZACIÓN&nbsp;·&nbsp;22 DE SEPTIEMBRE DE 2026</p>
-  </section>
+      <h2>Cambios</h2>
+      <p>Si cambio algo de esta política, lo publico aquí con la fecha nueva.</p>
 
+      <p class="mono doc-date">ÚLTIMA ACTUALIZACIÓN&nbsp;·&nbsp;22 DE SEPTIEMBRE DE 2026</p>
+    </section>
+</div>
 </main>
 
-<footer class="footer">
-  <img src="assets/icons/logo-mv.png" alt="MUEVET+" width="40" height="40">
-  <p class="footer-claim">Muévete más. Vive mejor.</p>
-  <nav class="footer-links" aria-label="Contacto">
-    <a href="https://www.instagram.com/muevet.mas" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://chat.whatsapp.com/J52jzClYnoVD17e3LXn0wf?mode=gi_t" target="_blank" rel="noopener">WhatsApp RUN+</a>
-    <a href="mailto:info.muevetmas@gmail.com">info.muevetmas@gmail.com</a>
-    <a href="privacidad.html">Privacidad</a>
-    <a href="aviso-legal.html">Aviso legal</a>
-  </nav>
-  <p class="mono footer-legal">© MUEVET+ 2026&nbsp;·&nbsp;CANTABRIA</p>
+<div class="fade fade-d2n" aria-hidden="true"></div>
+
+<footer class="foot tone-dark">
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <img src="assets/icons/logo-mv.png" alt="MUEVET+" width="44" height="44" loading="lazy">
+      <p class="foot-claim">Muévete más. <span>Vive mejor.</span></p>
+    </div>
+    <nav class="foot-links" aria-label="Contacto y legal">
+      <a href="https://www.instagram.com/muevet.mas" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://chat.whatsapp.com/J52jzClYnoVD17e3LXn0wf?mode=gi_t" target="_blank" rel="noopener">WhatsApp RUN+</a>
+      <a href="mailto:info.muevetmas@gmail.com">info.muevetmas@gmail.com</a>
+      <a href="privacidad.html">Privacidad</a>
+      <a href="aviso-legal.html">Aviso legal</a>
+    </nav>
+    <p class="foot-legal">© MUEVET+ 2026 · Cantabria</p>
+  </div>
+  <div class="foot-mark" aria-hidden="true">MUEVET<span>+</span></div>
 </footer>
 
-<script src="assets/js/main.js?v=2026-09-30b" defer></script>
+<script src="assets/js/main.js?v=2026-10-03a" defer></script>
 </body>
 </html>
