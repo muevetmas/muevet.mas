@@ -13,6 +13,9 @@ HTML + CSS + JS vanilla · sin dependencias · GitHub Pages.
 
 ## Ediciones frecuentes
 - **Vídeo del hero (medición):** sustituye `assets/img/hero/medir-clip.mp4` y los pósteres `medir-poster.avif` / `.jpg` (vertical 9:16, sin audio, ideal < 300 KB; el póster es un fotograma del vídeo). Busca `VÍDEO DE MEDICIÓN — EDITABLE` en `index.html`.
+- **Vídeo de RUN+:** `assets/img/run/run-clip.mp4` + `run-poster.avif` / `.jpg`. Se usa dos veces (fondo y marco de escritorio). Busca `VÍDEO RUN+ — EDITABLE`.
+- **Vídeo de la app:** `assets/img/app/app-clip.mp4` + `app-poster.avif` / `.jpg` (con sonido; en silencio empieza en el segundo de `data-start`). Busca `VÍDEO DE LA APP — EDITABLE`.
+- **Sistema visual:** colores, tipografía, componentes y movimiento están en `DESIGN.md`.
 - **Dominio propio:** añade fichero `CNAME` con el dominio, actualiza `sitemap.xml`, `robots.txt` y las metas OG (`og:image` con URL absoluta).
 
 ## Deploy
